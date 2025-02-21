@@ -53,6 +53,7 @@ public class TranslatorMain {
             LOGGER.info("Reading configuration file (path={})", config.getAbsolutePath());
 
             TranslatorConfiguration.IMP.reload(Path.of("config.yml"));
+            this.parseConfiguration();
 
             Path outputPath = prepareOutputPath(output, input);
 
