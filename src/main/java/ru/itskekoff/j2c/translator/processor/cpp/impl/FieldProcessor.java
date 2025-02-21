@@ -24,7 +24,13 @@ public class FieldProcessor extends BaseProcessor {
         if (insnNode instanceof FieldInsnNode fieldInsnNode) {
             boolean isStatic = insnNode.getOpcode() == GETSTATIC || insnNode.getOpcode() == PUTSTATIC;
 
+            int classId = classContext.output().pushJavaClass(fieldInsnNode.owner);
+
             String class_ptr = "env->FindClass(\"%s\")".formatted(((FieldInsnNode) insnNode).owner);
+
+            if (classContext.isNotClinit(method))
+                class_ptr = "classes[%s].applyDecryption()".formatted(classId);
+
             String fieldIdAddition = "fieldId_%d".formatted(fieldIdIndex++);
 
             classContext.output().pushMethodLine("jfieldID %s = env->Get%sFieldID(%s, \"%s\", \"%s\");".formatted(

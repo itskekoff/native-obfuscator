@@ -244,8 +244,17 @@ public class MethodProcessor {
                 if (handler.exceptionType == null) {
                     writer.output().pushMethodLine("goto %s;".formatted(handler.targetLabel));
                 } else {
-                    writer.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, env->FindClass(\"%s\"))) { env->ExceptionClear(); goto %s; } "
-                            .formatted(handler.exceptionType, handler.targetLabel));
+
+                    if (writer.isNotClinit(method)) {
+
+                        int classId = writer.output().pushJavaClass(handler.exceptionType);
+
+                        writer.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, classes[%s].applyDecryption())) { env->ExceptionClear(); goto %s; } "
+                                .formatted(classId, handler.targetLabel));
+                    }
+                    else
+                        writer.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, env->FindClass(\"%s\"))) { env->ExceptionClear(); goto %s; } "
+                                .formatted(handler.exceptionType, handler.targetLabel));
                 }
             });
         });

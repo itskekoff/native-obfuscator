@@ -16,10 +16,21 @@ public class ThrowProcessor extends BaseProcessor {
     @Override
     public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof InsnNode) {
-            String fieldAddition = "tempThrow_%d".formatted(tempIndex++);
-            writer.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");".formatted(fieldAddition, writer.classNode.name));
-            writer.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(%s, \"\"); else env->Throw((jthrowable) cstack%s.l);"
-                    .formatted(writer.getStackPointer().peek() - 1, fieldAddition, writer.getStackPointer().peek() - 1));
+            if (writer.isNotClinit(method)) {
+//                writer.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");".formatted(fieldAddition, writer.classNode.name));
+
+                int classId = writer.output().pushJavaClass(writer.classNode.name);
+
+                writer.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(classes[%s].applyDecryption(), \"\"); else env->Throw((jthrowable) cstack%s.l);"
+                        .formatted(writer.getStackPointer().peek() - 1, classId, writer.getStackPointer().peek() - 1));
+            } else {
+
+                String fieldAddition = "tempThrow_%d".formatted(tempIndex++);
+
+                writer.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");".formatted(fieldAddition, writer.classNode.name));
+                writer.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(%s, \"\"); else env->Throw((jthrowable) cstack%s.l);"
+                        .formatted(writer.getStackPointer().peek() - 1, fieldAddition, writer.getStackPointer().peek() - 1));
+            }
         }
     }
 

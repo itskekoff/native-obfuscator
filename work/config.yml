@@ -5,7 +5,8 @@
 main:
   # Включает в компиляцию класс(-ы)
   includes:
-    - "dev/**"
+    - "net/minecraft/client/main/**"
+    - "net/minecraft/client/main/Main"
   # Исключает из компиляции класс(-ы)
   excludes:
     - ""
@@ -13,4 +14,4 @@ main:
   # Полностью отключает два предыдущих параметра
   use-annotations: false
   # Включает подробную информацию о компиляции (дебаг)
-  debug-enabled: false
+  debug-enabled: true

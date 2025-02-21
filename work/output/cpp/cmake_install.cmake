@@ -1,4 +1,4 @@
-# Install script for directory: C:/protection/j2c/work/output/cpp
+# Install script for directory: C:/protection/native-obfuscator/work/output/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,6 +47,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/protection/j2c/work/output/cpp/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/protection/native-obfuscator/work/output/cpp/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

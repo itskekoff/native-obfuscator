@@ -1,0 +1,10 @@
+target/
+work/
+/work
+/work/output/cpp
+/zig-windows-x86_64-0.9.1
+/work/output
+/work/output/cpp/x64/Debug/ZERO_CHECK
+/work/output/cpp/CMakeFiles/3.30.3/CompilerIdC
+*.vcxproj
+*.tlog

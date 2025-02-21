@@ -51,4 +51,4 @@ public:
     }
 };
 
-RBM classes[171];
+RBM classes[61];

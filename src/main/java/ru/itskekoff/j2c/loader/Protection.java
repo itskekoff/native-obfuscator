@@ -9,7 +9,15 @@ public class Protection {
     public static void init() {
         if (initialized) return;
         initialized = true;
-        System.load("C:\\IdeaProjects\\native-obfuscator\\work\\output\\cpp\\build\\lib\\AntiAutistLeak.dll");
+
+        String path;
+
+            path = "C:\\%s\\native-obfuscator\\work\\output\\cpp\\build\\lib\\AntiAutistLeak.dll"
+                    .formatted(
+                            (System.getProperty("user.name").contains("kotopushka") ? "protection" : "IdeaProjects"
+            ));
+
+        System.load(path);
         initialize();
         System.out.println("[$] protection initialized");
     }

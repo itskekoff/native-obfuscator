@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\IdeaProjects\j2c\work\output\cpp\dllmain.cpp">
+    <ClCompile Include="C:\protection\native-obfuscator\work\output\cpp\dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\IdeaProjects\j2c\work\output\cpp\jni.h">
+    <ClInclude Include="C:\protection\native-obfuscator\work\output\cpp\jni.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\IdeaProjects\j2c\work\output\cpp\jni_md.h">
+    <ClInclude Include="C:\protection\native-obfuscator\work\output\cpp\jni_md.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\IdeaProjects\j2c\work\output\cpp\CMakeLists.txt" />
+    <CustomBuild Include="C:\protection\native-obfuscator\work\output\cpp\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{D73F6987-585A-37C0-BCE9-88335AF02A9F}</UniqueIdentifier>
+      <UniqueIdentifier>{DB05B398-C6BF-337E-93FD-8DAAFEE9FFA5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{41A3BBE1-1326-359C-ADD5-8B03D7737EF5}</UniqueIdentifier>
+      <UniqueIdentifier>{D52CC090-9B67-341F-B40A-C4D0C453AAB7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

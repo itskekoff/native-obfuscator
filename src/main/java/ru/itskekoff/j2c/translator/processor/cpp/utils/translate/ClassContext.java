@@ -34,6 +34,10 @@ public class ClassContext {
         return stackPointer;
     }
 
+    public boolean isNotClinit(MethodNode methodNode) {
+        return !methodNode.name.contains("$Clinit");
+    }
+
     @SuppressWarnings("all")
     public static class ContextBuilder {
         private final StringBuilder output = new StringBuilder();

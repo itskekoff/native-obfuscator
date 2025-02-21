@@ -14,8 +14,20 @@ public class CheckcastProcessor extends BaseProcessor {
 
     @Override
     public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
-        writer.output().pushMethodLine("if (cstack%s.l != nullptr && !env->IsInstanceOf(cstack%s.l, env->FindClass(\"%s\"))) {}"
-                .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1, ((TypeInsnNode) insn).desc));
+
+        if (writer.isNotClinit(method)) {
+
+            int classId = writer.output().pushJavaClass(((TypeInsnNode) insn).desc);
+
+            writer.output().pushMethodLine("if (cstack%s.l != nullptr && !env->IsInstanceOf(cstack%s.l, classes[%s].applyDecryption())) {}"
+                    .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1, classId));
+
+        } else {
+
+            writer.output().pushMethodLine("if (cstack%s.l != nullptr && !env->IsInstanceOf(cstack%s.l, env->FindClass(\"%s\"))) {}"
+                    .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1, ((TypeInsnNode) insn).desc));
+
+        }
     }
 
     @Override

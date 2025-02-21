@@ -15,8 +15,15 @@ public class NewProcessor extends BaseProcessor {
     @Override
     public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof TypeInsnNode node) {
-            writer.output().pushMethodLine("if (jobject obj = env->AllocObject(env->FindClass(\"%s\"))) { cstack%s.l = obj; }"
-                    .formatted(node.desc, writer.getStackPointer().peek()));
+
+            if (writer.isNotClinit(method)) {
+                writer.output().pushMethodLine("if (jobject obj = env->AllocObject(classes[%s].applyDecryption())) { cstack%s.l = obj; }"
+                        .formatted(writer.output().pushJavaClass(node.desc), writer.getStackPointer().peek()));
+            } else {
+                writer.output().pushMethodLine("if (jobject obj = env->AllocObject(env->FindClass(\"%s\"))) { cstack%s.l = obj; }"
+                        .formatted(node.desc, writer.getStackPointer().peek()));
+            }
+
         }
     }
 

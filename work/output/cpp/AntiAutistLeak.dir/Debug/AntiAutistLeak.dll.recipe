@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\IdeaProjects\j2c\work\output\cpp\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\protection\native-obfuscator\work\output\cpp\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\IdeaProjects\j2c\work\output\cpp\build\lib\AntiAutistLeak.dll</FullPath>
+      <FullPath>C:\protection\native-obfuscator\work\output\cpp\build\lib\AntiAutistLeak.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -16,10 +16,18 @@ public class InstanceofProcessor extends BaseProcessor {
     @Override
     public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof TypeInsnNode) {
-            writer.output().pushMethodLine("cstack%s.i = cstack%s.l == nullptr ? false : env->IsInstanceOf(cstack%s.l, env->FindClass(\"%s\"));"
-                    .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1,
-                            writer.getStackPointer().peek() - 1, ((TypeInsnNode) insn).desc)
-            );
+
+            if (writer.isNotClinit(method)) {
+                writer.output().pushMethodLine("cstack%s.i = cstack%s.l == nullptr ? false : env->IsInstanceOf(cstack%s.l, classes[%s].applyDecryption());"
+                        .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1,
+                                writer.getStackPointer().peek() - 1, writer.output().pushJavaClass(((TypeInsnNode) insn).desc))
+                );
+            } else
+                writer.output().pushMethodLine("cstack%s.i = cstack%s.l == nullptr ? false : env->IsInstanceOf(cstack%s.l, env->FindClass(\"%s\"));"
+                        .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1,
+                                writer.getStackPointer().peek() - 1, ((TypeInsnNode) insn).desc)
+                );
+
         }
     }
 

@@ -14,7 +14,18 @@ public class NewArrayProcessor extends BaseProcessor {
     public void translate(ClassContext writer, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof TypeInsnNode type) {
             if (insnNode.getOpcode() == ANEWARRAY) {
-                writer.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, env->FindClass(\"%s\"), nullptr); }"
+
+                if(writer.isNotClinit(method))
+                writer.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, classes[%s].applyDecryption(), nullptr); }"
+                        .formatted(
+                                writer.getStackPointer().peek() - 1,
+                                writer.getStackPointer().peek() - 1,
+                                writer.getStackPointer().peek() - 1,
+                                writer.output().pushJavaClass(type.desc)
+                        )
+                );
+                else
+                    writer.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, env->FindClass(\"%s\"), nullptr); }"
                         .formatted(
                                 writer.getStackPointer().peek() - 1,
                                 writer.getStackPointer().peek() - 1,
@@ -22,7 +33,7 @@ public class NewArrayProcessor extends BaseProcessor {
                                 type.desc
                         )
                 );
-//                writer.getStackPointer().pop();
+
             }
         } else if (insnNode instanceof IntInsnNode intInsnNode) {
             if (insnNode.getOpcode() == NEWARRAY) {
