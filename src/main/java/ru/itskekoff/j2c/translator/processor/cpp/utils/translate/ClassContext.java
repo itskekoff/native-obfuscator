@@ -5,10 +5,12 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.FieldNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassContext {
     private final LabelPool labelPool = new LabelPool();
@@ -42,8 +44,10 @@ public class ClassContext {
     public static class ContextBuilder {
         private final StringBuilder output = new StringBuilder();
         private final StringBuilder referenceBuilder = new StringBuilder();
-
         private Map<String, Integer> classes = new HashMap<>();
+        private final StringBuilder referenceFieldBuilder = new StringBuilder();
+        private List<FieldNode> fieldNodes = new CopyOnWriteArrayList<>();
+
         private final ClassNode classNode;
 
         public ContextBuilder(ClassNode classNode) {
@@ -68,6 +72,7 @@ public class ClassContext {
             this.pushString(") {");
         }
 
+
         public int pushJavaClass(String klassName) {
             if (this.classes.containsKey(klassName)) {
                 return this.classes.get(klassName);
@@ -80,6 +85,40 @@ public class ClassContext {
                     .formatted(index, klassName));
             this.referenceBuilder.append("\n");
             return index;
+        }
+
+        public List<FieldNode> getFieldNodes() {
+            return fieldNodes;
+        }
+
+        public FieldNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
+
+            for (FieldNode fieldNode : getFieldNodes()) {
+                if (fieldNode.getClassName().equals(className)) {
+                    if (fieldNode.getName().equals(name)) {
+                        if (fieldNode.getSignature().equals(signature)) {
+                            if (fieldNode.isStaticVal() == isStatic) {
+                                return fieldNode;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //not found, we should allocate
+
+            FieldNode fieldNode = new FieldNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
+
+            referenceFieldBuilder.append("methods[%s] = env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\");\n"
+                    .formatted(fieldNode.getId(),
+                            fieldNode.isStatic(),
+                            fieldNode.getClassName(),
+                            fieldNode.getName(),
+                            fieldNode.getSignature()));
+
+            fieldNodes.add(fieldNode);
+
+            return fieldNode;
         }
 
         public ContextBuilder pushLine() {
@@ -120,8 +159,12 @@ public class ClassContext {
             return output.toString();
         }
 
+        public String getFieldReferences() {
+            return "%s\n%s".formatted("/*PROTECTION METHOD TABLE*/", this.referenceFieldBuilder.toString());
+        }
+
         public String getReferences() {
-            return "%s\n%s".formatted("/*PROTECTION TABLE*/", this.referenceBuilder.toString());
+            return "%s\n%s".formatted("/*PROTECTION CLASS TABLE*/", this.referenceBuilder.toString());
         }
     }
 

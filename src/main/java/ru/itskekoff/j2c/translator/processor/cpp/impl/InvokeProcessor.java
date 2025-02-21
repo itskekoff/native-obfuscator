@@ -5,6 +5,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.FieldNode;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.SnippetGenerator;
@@ -20,6 +21,8 @@ public class InvokeProcessor extends BaseProcessor {
     public InvokeProcessor() {
         super(INVOKEINTERFACE, INVOKESPECIAL, INVOKESTATIC, INVOKEVIRTUAL);
     }
+
+    static int id = 0;
 
     @Override
     public void translate(ClassContext classContext, AbstractInsnNode insnNode, MethodNode method) {
@@ -71,7 +74,7 @@ public class InvokeProcessor extends BaseProcessor {
             boolean clinit = method.name.contains("$Clinit");
 
             if (clinit) {
-                tempClassAddition += "\njclass tempClass_%d = env->FindClass(\"%s\");".formatted(index,mh.owner);
+                tempClassAddition += "\njclass tempClass_%d = env->FindClass(\"%s\");".formatted(index, mh.owner);
             } else {
                 tempClassAddition = "classes[%s].applyDecryption()".formatted(classContext.output().pushJavaClass(mh.owner));
             }
@@ -87,9 +90,10 @@ public class InvokeProcessor extends BaseProcessor {
 //                classContext.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");"
 //                        .formatted(tempClassAddition, mh.owner));
                 switch (returnType) {
-                    case "V" ->
-                            classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                    case "V" -> {
+                        classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                                .formatted(invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                    }
                     case "Z" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallBooleanMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
@@ -121,42 +125,134 @@ public class InvokeProcessor extends BaseProcessor {
             }
             if (insnNode.getOpcode() == INVOKESTATIC) {
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
-                
+
                 switch (returnType) {
-                    case "V" -> classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, %s%s);"
-                            .formatted(tempClassAddition, SnippetGenerator.getMethodID(true, mh.name, mh.desc, tempClassAddition), arg4Call));
-                    case "Z" ->
+                    case "V" -> {
+                        if (classContext.isNotClinit(method)) {
+                            FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+//                            classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l,methods[%s]%s);"
+//                                    .formatted(invokeStackPointer, fieldNode.getId(), arg4Call));
+
+                            classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, methods[%s]%s);"
+                                    .formatted(tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
+                            classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, %s%s);"
+                                    .formatted(tempClassAddition, SnippetGenerator.getMethodID(true, mh.name, mh.desc, tempClassAddition), arg4Call));
+                        }
+                    }
+                    case "Z" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+
+                        if (classContext.isNotClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticBooleanMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "C" ->
+                        } else {
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticBooleanMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                        }
+
+                    }
+                    case "C" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticCharMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticCharMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "B" ->
+                        }
+                    }
+                    case "B" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallStaticByteMethod(%s,methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallStaticByteMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "S" ->
+                        }
+                        }
+                    case "S" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticShortMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticShortMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "I" ->
+                        }
+                    }
+                    case "I" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.i = env->CallStaticIntMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.i = env->CallStaticIntMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "F" ->
+                        }
+                    }
+                    case "F" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.f = env->CallStaticFloatMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.f = env->CallStaticFloatMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "J" ->
+                        }
+
+                    }
+                    case "J" -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.j = env->CallStaticLongMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.j = env->CallStaticLongMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    case "D" ->
+                        }
+
+                    }
+                    case "D" -> {
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.d = env->CallStaticDoubleMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.d = env->CallStaticDoubleMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
-                    default ->
+
+                        }
+                    }
+                    default -> {
+
+                        FieldNode fieldNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
+
+                        if (classContext.isNotClinit(method)) {
+                            classContext.output().pushMethodLine("cstack%s.l = env->CallStaticObjectMethod(%s, methods[%s]%s);"
+                                    .formatted(invokeStackPointer, tempClassAddition, fieldNode.getId(), arg4Call));
+                        } else {
                             classContext.output().pushMethodLine("cstack%s.l = env->CallStaticObjectMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
                                     .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                        }
+
+                    }
                 }
             }
             if (insnNode.getOpcode() == INVOKESPECIAL) {
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
-                
+
                 switch (returnType) {
                     case "V" ->
                             classContext.output().pushMethodLine("env->CallNonvirtualVoidMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"

@@ -88,36 +88,44 @@ jobject JNICALL  Java_net_minecraft_client_main_Main_000241_getPasswordAuthentic
     clocal0.l = obj; 
 
 L1:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[0].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETFIELD; Stack pointer: 3
+{
     jfieldID fieldId_0 = env->GetFieldID(classes[1].applyDecryption(), "val$s1", "Ljava/lang/String;");
     cstack2.l = env->GetObjectField(cstack2.l, fieldId_0);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETFIELD; Stack pointer: 4
+{
     jfieldID fieldId_1 = env->GetFieldID(classes[1].applyDecryption(), "val$s2", "Ljava/lang/String;");
     cstack3.l = env->GetObjectField(cstack3.l, fieldId_1);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 4
+{
     cstack3.l = env->CallObjectMethod(cstack3.l, env->GetMethodID(classes[2].applyDecryption(), "toCharArray", "()[C"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[0].applyDecryption(), env->GetMethodID(classes[0].applyDecryption(), "<init>", "(Ljava/lang/String;[C)V"), cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ARETURN; Stack pointer: 1
+{
     return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L2:
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
 
@@ -131,14 +139,17 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000241__0
     };
     env->RegisterNatives(env->FindClass("net/minecraft/client/main/Main$1"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
 
-    /*PROTECTION TABLE*/
+    /*PROTECTION CLASS TABLE*/
     classes[0] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/net/PasswordAuthentication"))))));
     classes[1] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/client/main/Main$1"))))));
     classes[2] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/String"))))));
 
+    /*PROTECTION METHOD TABLE*/
+
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
 
     return;
@@ -152,57 +163,63 @@ void JNICALL  Java_net_minecraft_client_main_Main_000242_run1(JNIEnv *env, jobje
     clocal0.l = obj; 
 
 L1:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[3].applyDecryption(), env->GetStaticMethodID(classes[3].applyDecryption(), "getInstance", "()Lnet/minecraft/client/Minecraft;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[3].applyDecryption(), methods[0]);
+}
     // ASTORE; Stack pointer: 1
+{
     clocal1.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L2:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L3;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L4:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[3].applyDecryption(), "getIntegratedServer", "()Lnet/minecraft/server/integrated/IntegratedServer;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal2.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L5:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal2.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L3;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L6:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal2.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_1; Stack pointer: 1
+{
     cstack1.i = 1;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[4].applyDecryption(), "initiateShutdown", "(Z)V"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L3:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L7:
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
 
@@ -216,13 +233,17 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000242__0
     };
     env->RegisterNatives(env->FindClass("net/minecraft/client/main/Main$2"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
 
-    /*PROTECTION TABLE*/
+    /*PROTECTION CLASS TABLE*/
     classes[3] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/client/Minecraft"))))));
     classes[4] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/server/integrated/IntegratedServer"))))));
 
+    /*PROTECTION METHOD TABLE*/
+methods[0] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "getInstance", "()Lnet/minecraft/client/Minecraft;");
+
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
 
     return;
@@ -238,55 +259,62 @@ void JNICALL  Java_net_minecraft_client_main_Main_000243_run2(JNIEnv *env, jobje
 L2:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ICONST_1; Stack pointer: 0
+{
     cstack0.i = 1;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[5].applyDecryption(), env->GetStaticMethodID(classes[5].applyDecryption(), "initGameThread", "(Z)V"), cstack0.l);
+{
+    env->CallStaticVoidMethod(classes[5].applyDecryption(), methods[1], cstack0.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
 L3:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETFIELD; Stack pointer: 1
+{
     jfieldID fieldId_2 = env->GetFieldID(classes[6].applyDecryption(), "val$minecraft", "Lnet/minecraft/client/Minecraft;");
     cstack0.l = env->GetObjectField(cstack0.l, fieldId_2);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[7].applyDecryption(), "run", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L4:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L5;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L1:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal1.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L6:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_3 = env->GetStaticFieldID(classes[8].applyDecryption(), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     cstack0.l = env->GetStaticObjectField(classes[8].applyDecryption(), fieldId_3);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Exception in client thread");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 3
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[9].applyDecryption(), "error", "(Ljava/lang/String;Ljava/lang/Throwable;)V"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L5:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L7:
 CATCH_0:
     if (env->IsInstanceOf(cstack_exception.l, classes[10].applyDecryption())) { env->ExceptionClear(); goto L1; } 
@@ -302,7 +330,7 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000243__0
     };
     env->RegisterNatives(env->FindClass("net/minecraft/client/main/Main$3"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
 
-    /*PROTECTION TABLE*/
+    /*PROTECTION CLASS TABLE*/
     classes[5] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("com/mojang/blaze3d/systems/RenderSystem"))))));
     classes[6] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/client/main/Main$3"))))));
     classes[7] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/client/Minecraft"))))));
@@ -310,9 +338,13 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000243__0
     classes[9] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("org/apache/logging/log4j/Logger"))))));
     classes[10] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Throwable"))))));
 
+    /*PROTECTION METHOD TABLE*/
+methods[1] = env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V");
+
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
 
     return;
@@ -326,2061 +358,2557 @@ void JNICALL  Java_net_minecraft_client_main_Main_main3(JNIEnv *env, jclass claz
     clocal0.l = arg0; 
 
 L7:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[11].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 2
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[11].applyDecryption(), env->GetMethodID(classes[11].applyDecryption(), "<init>", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal1.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L8:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "allowsUnrecognizedOptions", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L9:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("demo");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L10:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("disableMultiplayer");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L11:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("disableChat");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L12:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("fullscreen");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L13:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("checkGlErrors");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L14:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("server");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal2.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L15:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("port");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // SIPUSH; Stack pointer: 1
+{
     cstack1.i = (jint) 25565;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), env->GetStaticMethodID(classes[13].applyDecryption(), "valueOf", "(I)Ljava/lang/Integer;"), cstack1.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), methods[2], cstack1.i);
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[13].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal3.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L16:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("gameDir");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[15].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 1
+{
     if (jobject obj = env->AllocObject(classes[15].applyDecryption())) { cstack1.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 2
+{
     cstack2 = cstack1;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 3
+{
     cstack3.l = env->NewStringUTF(".");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack2.l, classes[15].applyDecryption(), env->GetMethodID(classes[15].applyDecryption(), "<init>", "(Ljava/lang/String;)V"), cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[15].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal4.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L17:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("assetsDir");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[15].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal5.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L18:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("resourcePackDir");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[15].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal6.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L19:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("dataPackDir");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[15].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal7.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L20:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("proxyHost");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal8.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L21:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("proxyPort");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("8080");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal9.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L22:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("proxyUser");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal10.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L23:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("proxyPass");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal11.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L24:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("username");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    cstack1.j = env->CallStaticLongMethod(classes[17].applyDecryption(), env->GetStaticMethodID(classes[17].applyDecryption(), "milliTime", "()J"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.j = env->CallStaticLongMethod(classes[17].applyDecryption(), methods[3]);
+}
     // LDC; Stack pointer: 3
+{
     cstack3.j = 1000LL;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LREM; Stack pointer: 5
+{
     cstack1.j = (cstack1.j % cstack3.j);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "$hello0_proxy1", "(J)Ljava/lang/String;"), cstack1.j);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[4], cstack1.j);
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal12.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L25:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("uuid");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal13.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L26:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("accessToken");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "required", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal14.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L27:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("version");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "required", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal15.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L28:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("width");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // SIPUSH; Stack pointer: 1
+{
     cstack1.i = (jint) 854;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), env->GetStaticMethodID(classes[13].applyDecryption(), "valueOf", "(I)Ljava/lang/Integer;"), cstack1.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), methods[2], cstack1.i);
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[13].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal16.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L29:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("height");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // SIPUSH; Stack pointer: 1
+{
     cstack1.i = (jint) 480;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), env->GetStaticMethodID(classes[13].applyDecryption(), "valueOf", "(I)Ljava/lang/Integer;"), cstack1.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), methods[2], cstack1.i);
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[13].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal17.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L30:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("fullscreenWidth");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal18.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L31:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("fullscreenHeight");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[13].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "ofType", "(Ljava/lang/Class;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal19.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L32:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("userProperties");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("{}");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal20.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L33:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("profileProperties");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("{}");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal21.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L34:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("assetIndex");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal22.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L35:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("userType");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("legacy");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal23.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L36:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("versionType");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "accepts", "(Ljava/lang/String;)Ljoptsimple/OptionSpecBuilder;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("release");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 2
+{
     cstack2.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ANEWARRAY; Stack pointer: 3
+{
     if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[16].applyDecryption(), nullptr); }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultsTo", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljoptsimple/ArgumentAcceptingOptionSpec;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal24.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L37:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "nonOptions", "()Ljoptsimple/NonOptionArgumentSpec;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal25.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L38:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "parse", "([Ljava/lang/String;)Ljoptsimple/OptionSet;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal26.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L39:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal25.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "valuesOf", "(Ljoptsimple/OptionSpec;)Ljava/util/List;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal27.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L40:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal27.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[20].applyDecryption(), "isEmpty", "()Z"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNE; Stack pointer: 1
+{
     if (cstack0.i != 0) goto L41;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L42:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_4 = env->GetStaticFieldID(classes[21].applyDecryption(), "out", "Ljava/io/PrintStream;");
     cstack0.l = env->GetStaticObjectField(classes[21].applyDecryption(), fieldId_4);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal27.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "$hello1_proxy2", "(Ljava/util/List;)Ljava/lang/String;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[5], cstack1.l);
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[22].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L41:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal8.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal28.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L43:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_5 = env->GetStaticFieldID(classes[23].applyDecryption(), "NO_PROXY", "Ljava/net/Proxy;");
     cstack0.l = env->GetStaticObjectField(classes[23].applyDecryption(), fieldId_5);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal29.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L44:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal28.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L45;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L46:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[23].applyDecryption())) { cstack0.l = obj; }
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // GETSTATIC; Stack pointer: 2
+{
     jfieldID fieldId_6 = env->GetStaticFieldID(classes[24].applyDecryption(), "SOCKS", "Ljava/net/Proxy$Type;");
     cstack2.l = env->GetStaticObjectField(classes[24].applyDecryption(), fieldId_6);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // NEW; Stack pointer: 3
+{
     if (jobject obj = env->AllocObject(classes[25].applyDecryption())) { cstack3.l = obj; }
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // DUP; Stack pointer: 4
+{
     cstack4 = cstack3;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ALOAD; Stack pointer: 5
+{
     cstack5.l = clocal28.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ALOAD; Stack pointer: 6
+{
     cstack6.l = clocal26.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ALOAD; Stack pointer: 7
+{
     cstack7.l = clocal9.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKESTATIC; Stack pointer: 8
-    cstack6.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack6.l, cstack7.l);
+{
+    cstack6.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack6.l, cstack7.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // CHECKCAST; Stack pointer: 7
+{
     if (cstack6.l != nullptr && !env->IsInstanceOf(cstack6.l, classes[13].applyDecryption())) {}
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKEVIRTUAL; Stack pointer: 7
+{
     cstack6.i = env->CallIntMethod(cstack6.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKESPECIAL; Stack pointer: 7
+{
     env->CallNonvirtualVoidMethod(cstack4.l, classes[25].applyDecryption(), env->GetMethodID(classes[25].applyDecryption(), "<init>", "(Ljava/lang/String;I)V"), cstack5.l, cstack6.i);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[23].applyDecryption(), env->GetMethodID(classes[23].applyDecryption(), "<init>", "(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V"), cstack2.l, cstack3.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ASTORE; Stack pointer: 1
+{
     clocal29.l = cstack0.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
 L47:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L45;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L1:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal30.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L45:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal10.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal30.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L48:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal11.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal31.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L49:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal29.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETSTATIC; Stack pointer: 1
+{
     jfieldID fieldId_7 = env->GetStaticFieldID(classes[23].applyDecryption(), "NO_PROXY", "Ljava/net/Proxy;");
     cstack1.l = env->GetStaticObjectField(classes[23].applyDecryption(), fieldId_7);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[23].applyDecryption(), "equals", "(Ljava/lang/Object;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNE; Stack pointer: 1
+{
     if (cstack0.i != 0) goto L50;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal30.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallStaticBooleanMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "isNotEmpty", "(Ljava/lang/String;)Z"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L50;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal31.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallStaticBooleanMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "isNotEmpty", "(Ljava/lang/String;)Z"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L50;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L51:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[26].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal30.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal31.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[26].applyDecryption(), env->GetMethodID(classes[26].applyDecryption(), "<init>", "(Ljava/lang/String;Ljava/lang/String;)V"), cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[27].applyDecryption(), env->GetStaticMethodID(classes[27].applyDecryption(), "setDefault", "(Ljava/net/Authenticator;)V"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[27].applyDecryption(), methods[8], cstack0.l);
+}
 L50:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal16.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = env->CallIntMethod(cstack0.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal32.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L52:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal17.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = env->CallIntMethod(cstack0.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal33.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L53:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal18.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "toOptionalInt", "(Ljava/lang/Integer;)Ljava/util/OptionalInt;"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[9], cstack0.l);
+}
     // ASTORE; Stack pointer: 1
+{
     clocal34.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L54:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal19.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "toOptionalInt", "(Ljava/lang/Integer;)Ljava/util/OptionalInt;"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[9], cstack0.l);
+}
     // ASTORE; Stack pointer: 1
+{
     clocal35.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L55:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("fullscreen");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljava/lang/String;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal36.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L56:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("demo");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljava/lang/String;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal37.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L57:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("disableMultiplayer");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljava/lang/String;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal38.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L58:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("disableChat");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljava/lang/String;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISTORE; Stack pointer: 1
+{
     clocal39.i = cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L59:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal15.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal40.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L60:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[28].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 2
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[28].applyDecryption(), env->GetMethodID(classes[28].applyDecryption(), "<init>", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = classes[29].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 2
+{
     if (jobject obj = env->AllocObject(classes[30].applyDecryption())) { cstack2.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 3
+{
     cstack3 = cstack2;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack3.l, classes[30].applyDecryption(), env->GetMethodID(classes[30].applyDecryption(), "<init>", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 3
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[28].applyDecryption(), "registerTypeAdapter", "(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[28].applyDecryption(), "create", "()Lcom/google/gson/Gson;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal41.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L61:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal41.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal20.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack1.l, cstack2.l);
+}
     // CHECKCAST; Stack pointer: 2
+{
     if (cstack1.l != nullptr && !env->IsInstanceOf(cstack1.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 2
+{
     cstack2.l = classes[29].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 3
-    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), env->GetStaticMethodID(classes[31].applyDecryption(), "fromJson", "(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;"), cstack0.l, cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), methods[10], cstack0.l, cstack1.l, cstack2.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[29].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal42.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L62:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal41.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal21.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack1.l, cstack2.l);
+}
     // CHECKCAST; Stack pointer: 2
+{
     if (cstack1.l != nullptr && !env->IsInstanceOf(cstack1.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 2
+{
     cstack2.l = classes[29].applyDecryption();
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 3
-    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), env->GetStaticMethodID(classes[31].applyDecryption(), "fromJson", "(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;"), cstack0.l, cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), methods[10], cstack0.l, cstack1.l, cstack2.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[29].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal43.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L63:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal24.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal44.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L64:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal4.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal45.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L65:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal5.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljoptsimple/OptionSpec;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L66;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal5.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 1
+{
     goto L67;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L66:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[15].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal45.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 3
+{
     cstack3.l = env->NewStringUTF("assets/");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[15].applyDecryption(), env->GetMethodID(classes[15].applyDecryption(), "<init>", "(Ljava/io/File;Ljava/lang/String;)V"), cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L67:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal46.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L68:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal6.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljoptsimple/OptionSpec;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L69;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal6.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 1
+{
     goto L70;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L69:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[15].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal45.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 3
+{
     cstack3.l = env->NewStringUTF("resourcepacks/");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[15].applyDecryption(), env->GetMethodID(classes[15].applyDecryption(), "<init>", "(Ljava/io/File;Ljava/lang/String;)V"), cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L70:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal47.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L71:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal13.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljoptsimple/OptionSpec;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L72;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal13.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 1
+{
     goto L73;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L72:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal12.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[33].applyDecryption(), env->GetStaticMethodID(classes[33].applyDecryption(), "getOfflineUUID", "(Ljava/lang/String;)Ljava/util/UUID;"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[33].applyDecryption(), methods[11], cstack0.l);
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[34].applyDecryption(), "toString", "()Ljava/lang/String;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L73:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal48.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L74:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal22.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "has", "(Ljoptsimple/OptionSpec;)Z"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L75;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal22.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 1
+{
     goto L76;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L75:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ACONST_NULL; Stack pointer: 0
+{
     cstack0.l = nullptr;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L76:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal49.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L77:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal2.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal50.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L78:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal3.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), env->GetStaticMethodID(classes[18].applyDecryption(), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), methods[6], cstack0.l, cstack1.l);
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal51.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L79:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[35].applyDecryption(), env->GetStaticMethodID(classes[35].applyDecryption(), "crash", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[35].applyDecryption(), methods[12]);
+}
 L80:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[36].applyDecryption(), env->GetStaticMethodID(classes[36].applyDecryption(), "register", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[36].applyDecryption(), methods[13]);
+}
 L81:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[36].applyDecryption(), env->GetStaticMethodID(classes[36].applyDecryption(), "checkTranslations", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[36].applyDecryption(), methods[14]);
+}
 L82:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[17].applyDecryption(), env->GetStaticMethodID(classes[17].applyDecryption(), "func_240994_l_", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[17].applyDecryption(), methods[15]);
+}
 L83:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[37].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal12.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 4
+{
     cstack2.l = env->CallObjectMethod(cstack2.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 3
+{
     if (cstack2.l != nullptr && !env->IsInstanceOf(cstack2.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal48.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 4
+{
     cstack4.l = clocal14.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 5
+{
     cstack5.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 6
+{
     cstack4.l = env->CallObjectMethod(cstack4.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack5.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 5
+{
     if (cstack4.l != nullptr && !env->IsInstanceOf(cstack4.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 5
+{
     cstack5.l = clocal23.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 6
+{
     cstack6.l = clocal26.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 7
+{
     cstack5.l = env->CallObjectMethod(cstack5.l, env->GetMethodID(classes[32].applyDecryption(), "value", "(Ljoptsimple/OptionSet;)Ljava/lang/Object;"), cstack6.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 6
+{
     if (cstack5.l != nullptr && !env->IsInstanceOf(cstack5.l, classes[16].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 6
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[37].applyDecryption(), env->GetMethodID(classes[37].applyDecryption(), "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"), cstack2.l, cstack3.l, cstack4.l, cstack5.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal52.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L84:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[38].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 2
+{
     if (jobject obj = env->AllocObject(classes[39].applyDecryption())) { cstack2.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 3
+{
     cstack3 = cstack2;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 4
+{
     cstack4.l = clocal52.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 5
+{
     cstack5.l = clocal42.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 6
+{
     cstack6.l = clocal43.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 7
+{
     cstack7.l = clocal29.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 8
+{
     env->CallNonvirtualVoidMethod(cstack3.l, classes[39].applyDecryption(), env->GetMethodID(classes[39].applyDecryption(), "<init>", "(Lnet/minecraft/util/Session;Lcom/mojang/authlib/properties/PropertyMap;Lcom/mojang/authlib/properties/PropertyMap;Ljava/net/Proxy;)V"), cstack4.l, cstack5.l, cstack6.l, cstack7.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 3
+{
     if (jobject obj = env->AllocObject(classes[40].applyDecryption())) { cstack3.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 4
+{
     cstack4 = cstack3;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 5
+{
     cstack5.i = clocal32.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 6
+{
     cstack6.i = clocal33.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 7
+{
     cstack7.l = clocal34.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 8
+{
     cstack8.l = clocal35.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 9
+{
     cstack9.i = clocal36.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 10
+{
     env->CallNonvirtualVoidMethod(cstack4.l, classes[40].applyDecryption(), env->GetMethodID(classes[40].applyDecryption(), "<init>", "(IILjava/util/OptionalInt;Ljava/util/OptionalInt;Z)V"), cstack5.i, cstack6.i, cstack7.l, cstack8.l, cstack9.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 4
+{
     if (jobject obj = env->AllocObject(classes[41].applyDecryption())) { cstack4.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 5
+{
     cstack5 = cstack4;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 6
+{
     cstack6.l = clocal45.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 7
+{
     cstack7.l = clocal47.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 8
+{
     cstack8.l = clocal46.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 9
+{
     cstack9.l = clocal49.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 10
+{
     env->CallNonvirtualVoidMethod(cstack5.l, classes[41].applyDecryption(), env->GetMethodID(classes[41].applyDecryption(), "<init>", "(Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/lang/String;)V"), cstack6.l, cstack7.l, cstack8.l, cstack9.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 5
+{
     if (jobject obj = env->AllocObject(classes[42].applyDecryption())) { cstack5.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 6
+{
     cstack6 = cstack5;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 7
+{
     cstack7.i = clocal37.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 8
+{
     cstack8.l = clocal40.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 9
+{
     cstack9.l = clocal44.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 10
+{
     cstack10.i = clocal38.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ILOAD; Stack pointer: 11
+{
     cstack11.i = clocal39.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 12
+{
     env->CallNonvirtualVoidMethod(cstack6.l, classes[42].applyDecryption(), env->GetMethodID(classes[42].applyDecryption(), "<init>", "(ZLjava/lang/String;Ljava/lang/String;ZZ)V"), cstack7.l, cstack8.l, cstack9.l, cstack10.l, cstack11.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 6
+{
     if (jobject obj = env->AllocObject(classes[43].applyDecryption())) { cstack6.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 7
+{
     cstack7 = cstack6;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 8
+{
     cstack8.l = clocal50.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 9
+{
     cstack9.l = clocal51.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 10
+{
     cstack9.i = env->CallIntMethod(cstack9.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 10
+{
     env->CallNonvirtualVoidMethod(cstack7.l, classes[43].applyDecryption(), env->GetMethodID(classes[43].applyDecryption(), "<init>", "(Ljava/lang/String;I)V"), cstack8.l, cstack9.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 7
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[38].applyDecryption(), env->GetMethodID(classes[38].applyDecryption(), "<init>", "(Lnet/minecraft/client/GameConfiguration$UserInformation;Lnet/minecraft/client/renderer/ScreenSize;Lnet/minecraft/client/GameConfiguration$FolderInformation;Lnet/minecraft/client/GameConfiguration$GameInformation;Lnet/minecraft/client/GameConfiguration$ServerInformation;)V"), cstack2.l, cstack3.l, cstack4.l, cstack5.l, cstack6.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal53.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L85:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[44].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 2
+{
     cstack2.l = env->NewStringUTF("Client Shutdown Thread");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 3
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[44].applyDecryption(), env->GetMethodID(classes[44].applyDecryption(), "<init>", "(Ljava/lang/String;)V"), cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal54.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L86:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal54.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // NEW; Stack pointer: 1
+{
     if (jobject obj = env->AllocObject(classes[45].applyDecryption())) { cstack1.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 2
+{
     cstack2 = cstack1;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETSTATIC; Stack pointer: 3
+{
     jfieldID fieldId_8 = env->GetStaticFieldID(classes[18].applyDecryption(), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     cstack3.l = env->GetStaticObjectField(classes[18].applyDecryption(), fieldId_8);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack2.l, classes[45].applyDecryption(), env->GetMethodID(classes[45].applyDecryption(), "<init>", "(Lorg/apache/logging/log4j/Logger;)V"), cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[46].applyDecryption(), "setUncaughtExceptionHandler", "(Ljava/lang/Thread$UncaughtExceptionHandler;)V"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L87:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[47].applyDecryption(), env->GetStaticMethodID(classes[47].applyDecryption(), "getRuntime", "()Ljava/lang/Runtime;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[47].applyDecryption(), methods[16]);
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal54.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[47].applyDecryption(), "addShutdownHook", "(Ljava/lang/Thread;)V"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L88:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[48].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 2
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[48].applyDecryption(), env->GetMethodID(classes[48].applyDecryption(), "<init>", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L89:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_1; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[46].applyDecryption(), env->GetStaticMethodID(classes[46].applyDecryption(), "currentThread", "()Ljava/lang/Thread;"));
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[46].applyDecryption(), methods[17]);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_1; }
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Render thread");
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_1; }
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[46].applyDecryption(), "setName", "(Ljava/lang/String;)V"), cstack1.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_1; }
 L90:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), env->GetStaticMethodID(classes[49].applyDecryption(), "initRenderThread", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), methods[18]);
+}
 L91:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), env->GetStaticMethodID(classes[49].applyDecryption(), "beginInitialization", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), methods[19]);
+}
 L92:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[50].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal53.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 3
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[50].applyDecryption(), env->GetMethodID(classes[50].applyDecryption(), "<init>", "(Lnet/minecraft/client/GameConfiguration;)V"), cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal55.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L93:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), env->GetStaticMethodID(classes[49].applyDecryption(), "finishInitialization", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), methods[20]);
+}
 L94:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L95;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L2:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal56.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L96:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_9 = env->GetStaticFieldID(classes[18].applyDecryption(), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     cstack0.l = env->GetStaticObjectField(classes[18].applyDecryption(), fieldId_9);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Failed to create window: ");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal56.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 3
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[51].applyDecryption(), "warn", "(Ljava/lang/String;Ljava/lang/Throwable;)V"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L97:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L3:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal56.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L98:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal56.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Initializing game");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[35].applyDecryption(), env->GetStaticMethodID(classes[35].applyDecryption(), "makeCrashReport", "(Ljava/lang/Throwable;Ljava/lang/String;)Lnet/minecraft/crash/CrashReport;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[35].applyDecryption(), methods[21], cstack0.l, cstack1.l);
+}
     // ASTORE; Stack pointer: 1
+{
     clocal57.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L99:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal57.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Initialization");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[35].applyDecryption(), "makeCategory", "(Ljava/lang/String;)Lnet/minecraft/crash/CrashReportCategory;"), cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L100:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ACONST_NULL; Stack pointer: 0
+{
     cstack0.l = nullptr;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[52].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal53.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETFIELD; Stack pointer: 2
+{
     jfieldID fieldId_10 = env->GetFieldID(classes[38].applyDecryption(), "gameInfo", "Lnet/minecraft/client/GameConfiguration$GameInformation;");
     cstack1.l = env->GetObjectField(cstack1.l, fieldId_10);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GETFIELD; Stack pointer: 2
+{
     jfieldID fieldId_11 = env->GetFieldID(classes[42].applyDecryption(), "version", "Ljava/lang/String;");
     cstack1.l = env->GetObjectField(cstack1.l, fieldId_11);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ACONST_NULL; Stack pointer: 2
+{
     cstack2.l = nullptr;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 3
+{
     if (cstack2.l != nullptr && !env->IsInstanceOf(cstack2.l, classes[53].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal57.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 4
-    env->CallStaticVoidMethod(classes[50].applyDecryption(), env->GetStaticMethodID(classes[50].applyDecryption(), "fillCrashReport", "(Lnet/minecraft/client/resources/LanguageManager;Ljava/lang/String;Lnet/minecraft/client/GameSettings;Lnet/minecraft/crash/CrashReport;)V"), cstack0.l, cstack1.l, cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[50].applyDecryption(), methods[22], cstack0.l, cstack1.l, cstack2.l, cstack3.l);
+}
 L101:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal57.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[50].applyDecryption(), env->GetStaticMethodID(classes[50].applyDecryption(), "displayCrashReport", "(Lnet/minecraft/crash/CrashReport;)V"), cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    env->CallStaticVoidMethod(classes[50].applyDecryption(), methods[23], cstack0.l);
+}
 L102:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L95:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "isRenderOnThread", "()Z"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L103;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L104:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
+{
     if (jobject obj = env->AllocObject(classes[54].applyDecryption())) { cstack0.l = obj; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // DUP; Stack pointer: 1
+{
     cstack1 = cstack0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 2
+{
     cstack2.l = env->NewStringUTF("Game thread");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 3
+{
     cstack3.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESPECIAL; Stack pointer: 4
+{
     env->CallNonvirtualVoidMethod(cstack1.l, classes[54].applyDecryption(), env->GetMethodID(classes[54].applyDecryption(), "<init>", "(Ljava/lang/String;Lnet/minecraft/client/Minecraft;)V"), cstack2.l, cstack3.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal56.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L105:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal56.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[46].applyDecryption(), "start", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L106:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "isRunning", "()Z"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L107;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 0
+{
     goto L106;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L103:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ACONST_NULL; Stack pointer: 0
+{
     cstack0.l = nullptr;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal56.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L108:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_3; }
     // ICONST_0; Stack pointer: 0
+{
     cstack0.i = 0;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_3; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), env->GetStaticMethodID(classes[49].applyDecryption(), "initGameThread", "(Z)V"), cstack0.l);
+{
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), methods[24], cstack0.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_3; }
 L109:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "run", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L110:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L107;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L4:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal57.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L111:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_12 = env->GetStaticFieldID(classes[18].applyDecryption(), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     cstack0.l = env->GetStaticObjectField(classes[18].applyDecryption(), fieldId_12);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Unhandled game exception");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal57.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 3
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[51].applyDecryption(), "error", "(Ljava/lang/String;Ljava/lang/Throwable;)V"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L107:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_4; }
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_4; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_4; }
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "shutdown", "()V"));
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_4; }
 L112:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal56.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L113;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L114:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal56.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[46].applyDecryption(), "join", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L113:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "shutdownMinecraftApplet", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L115:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L116;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L5:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
     // ASTORE; Stack pointer: 1
+{
     clocal57.l = cstack0.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
 L117:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
+{
     jfieldID fieldId_13 = env->GetStaticFieldID(classes[18].applyDecryption(), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     cstack0.l = env->GetStaticObjectField(classes[18].applyDecryption(), fieldId_13);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("Exception during client thread shutdown");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 2
+{
     cstack2.l = clocal57.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 3
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[51].applyDecryption(), "error", "(Ljava/lang/String;Ljava/lang/Throwable;)V"), cstack1.l, cstack2.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L118:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "shutdownMinecraftApplet", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L119:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // GOTO; Stack pointer: 0
+{
     goto L116;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L6:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
     // ASTORE; Stack pointer: 1
+{
     clocal58.l = cstack0.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_7; }
 L120:
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal55.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[50].applyDecryption(), "shutdownMinecraftApplet", "()V"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L121:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal58.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ATHROW; Stack pointer: 1
+{
     if (cstack0.l == nullptr) env->ThrowNew(classes[18].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L116:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L122:
 CATCH_3:
     if (env->IsInstanceOf(cstack_exception.l, classes[55].applyDecryption())) { env->ExceptionClear(); goto L4; } 
@@ -2410,35 +2938,40 @@ jobject JNICALL  Java_net_minecraft_client_main_Main_toOptionalInt4(JNIEnv *env,
     clocal0.l = arg0; 
 
 L123:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L124;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = env->CallIntMethod(cstack0.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), env->GetStaticMethodID(classes[59].applyDecryption(), "of", "(I)Ljava/util/OptionalInt;"), cstack0.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), methods[25], cstack0.i);
+}
     // GOTO; Stack pointer: 1
+{
     goto L125;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L124:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), env->GetStaticMethodID(classes[59].applyDecryption(), "empty", "()Ljava/util/OptionalInt;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), methods[26]);
+}
 L125:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ARETURN; Stack pointer: 1
+{
     return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L126:
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
 
@@ -2454,91 +2987,108 @@ jobject JNICALL  Java_net_minecraft_client_main_Main_getValue5(JNIEnv *env, jcla
 L128:
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // ALOAD; Stack pointer: 1
+{
     cstack1.l = clocal1.l;
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
     // INVOKEVIRTUAL; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[19].applyDecryption(), "valueOf", "(Ljoptsimple/OptionSpec;)Ljava/lang/Object;"), cstack1.l);
+}
     if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto CATCH_0; }
 L129:
     // ARETURN; Stack pointer: 1
+{
     return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L127:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
+{
     clocal2.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L130:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INSTANCEOF; Stack pointer: 1
+{
     cstack0.i = cstack0.l == nullptr ? false : env->IsInstanceOf(cstack0.l, classes[14].applyDecryption());
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFEQ; Stack pointer: 1
+{
     if (cstack0.i == 0) goto L131;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L132:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal1.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // CHECKCAST; Stack pointer: 1
+{
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[14].applyDecryption())) {}
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal3.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L133:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal3.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[14].applyDecryption(), "defaultValues", "()Ljava/util/List;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ASTORE; Stack pointer: 1
+{
     clocal4.l = cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L134:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal4.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[20].applyDecryption(), "isEmpty", "()Z"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNE; Stack pointer: 1
+{
     if (cstack0.i != 0) goto L131;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L135:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal4.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_0; Stack pointer: 1
+{
     cstack1.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEINTERFACE; Stack pointer: 2
+{
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[20].applyDecryption(), "get", "(I)Ljava/lang/Object;"), cstack1.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ARETURN; Stack pointer: 1
+{
     return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L131:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal2.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ATHROW; Stack pointer: 1
+{
     if (cstack0.l == nullptr) env->ThrowNew(classes[18].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L136:
 CATCH_0:
     if (env->IsInstanceOf(cstack_exception.l, classes[55].applyDecryption())) { env->ExceptionClear(); goto L127; } 
@@ -2554,38 +3104,44 @@ jboolean JNICALL  Java_net_minecraft_client_main_Main_isNotEmpty6(JNIEnv *env, j
     clocal0.l = arg0; 
 
 L137:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNULL; Stack pointer: 1
+{
     if (env->IsSameObject(cstack0.l, nullptr)) goto L138;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ALOAD; Stack pointer: 0
+{
     cstack0.l = clocal0.l;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 1
+{
     cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[16].applyDecryption(), "isEmpty", "()Z"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // IFNE; Stack pointer: 1
+{
     if (cstack0.i != 0) goto L138;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_1; Stack pointer: 0
+{
     cstack0.i = 1;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // GOTO; Stack pointer: 1
+{
     goto L139;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L138:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // ICONST_0; Stack pointer: 0
+{
     cstack0.i = 0;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L139:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // IRETURN; Stack pointer: 1
+{
     return (jboolean) cstack0.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
 L140:
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jboolean) 0; }
 
@@ -2604,7 +3160,7 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main__00024Cli
     };
     env->RegisterNatives(env->FindClass("net/minecraft/client/main/Main"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
 
-    /*PROTECTION TABLE*/
+    /*PROTECTION CLASS TABLE*/
     classes[11] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("joptsimple/OptionParser"))))));
     classes[12] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("joptsimple/OptionSpecBuilder"))))));
     classes[13] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Integer"))))));
@@ -2655,90 +3211,283 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main__00024Cli
     classes[58] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/InterruptedException"))))));
     classes[59] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/util/OptionalInt"))))));
 
+    /*PROTECTION METHOD TABLE*/
+methods[2] = env->GetStaticMethodID(env->FindClass("java/lang/Integer"), "valueOf", "(I)Ljava/lang/Integer;");
+methods[3] = env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "milliTime", "()J");
+methods[4] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello0_proxy1", "(J)Ljava/lang/String;");
+methods[5] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello1_proxy2", "(Ljava/util/List;)Ljava/lang/String;");
+methods[6] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;");
+methods[7] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "isNotEmpty", "(Ljava/lang/String;)Z");
+methods[8] = env->GetStaticMethodID(env->FindClass("java/net/Authenticator"), "setDefault", "(Ljava/net/Authenticator;)V");
+methods[9] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "toOptionalInt", "(Ljava/lang/Integer;)Ljava/util/OptionalInt;");
+methods[10] = env->GetStaticMethodID(env->FindClass("net/minecraft/util/JSONUtils"), "fromJson", "(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;");
+methods[11] = env->GetStaticMethodID(env->FindClass("net/minecraft/entity/player/PlayerEntity"), "getOfflineUUID", "(Ljava/lang/String;)Ljava/util/UUID;");
+methods[12] = env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "crash", "()V");
+methods[13] = env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "register", "()V");
+methods[14] = env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "checkTranslations", "()V");
+methods[15] = env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "func_240994_l_", "()V");
+methods[16] = env->GetStaticMethodID(env->FindClass("java/lang/Runtime"), "getRuntime", "()Ljava/lang/Runtime;");
+methods[17] = env->GetStaticMethodID(env->FindClass("java/lang/Thread"), "currentThread", "()Ljava/lang/Thread;");
+methods[18] = env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initRenderThread", "()V");
+methods[19] = env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "beginInitialization", "()V");
+methods[20] = env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "finishInitialization", "()V");
+methods[21] = env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "makeCrashReport", "(Ljava/lang/Throwable;Ljava/lang/String;)Lnet/minecraft/crash/CrashReport;");
+methods[22] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "fillCrashReport", "(Lnet/minecraft/client/resources/LanguageManager;Ljava/lang/String;Lnet/minecraft/client/GameSettings;Lnet/minecraft/crash/CrashReport;)V");
+methods[23] = env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "displayCrashReport", "(Lnet/minecraft/crash/CrashReport;)V");
+methods[24] = env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V");
+methods[25] = env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "of", "(I)Ljava/util/OptionalInt;");
+methods[26] = env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "empty", "()Ljava/util/OptionalInt;");
+
 L141:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // LDC; Stack pointer: 0
+{
     cstack0.l = env->NewStringUTF("java.awt.headless");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("true");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
+{
 jclass tempClass_198 = env->FindClass("java/lang/System");
     cstack0.l = env->CallStaticObjectMethod(tempClass_198, env->GetStaticMethodID(tempClass_198, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L142:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // LDC; Stack pointer: 0
+{
     cstack0.l = env->NewStringUTF("file.encoding");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("UTF-8");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
+{
 jclass tempClass_199 = env->FindClass("java/lang/System");
     cstack0.l = env->CallStaticObjectMethod(tempClass_199, env->GetStaticMethodID(tempClass_199, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L143:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // LDC; Stack pointer: 0
+{
     cstack0.l = env->NewStringUTF("java.net.preferIPv4Stack");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // LDC; Stack pointer: 1
+{
     cstack1.l = env->NewStringUTF("true");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
+{
 jclass tempClass_200 = env->FindClass("java/lang/System");
     cstack0.l = env->CallStaticObjectMethod(tempClass_200, env->GetStaticMethodID(tempClass_200, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L144:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // LDC; Stack pointer: 0
+{
     cstack0.l = env->NewStringUTF("java.util.concurrent.ForkJoinPool.common.parallelism");
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 1
+{
 jclass tempClass_201 = env->FindClass("java/lang/Runtime");
     cstack1.l = env->CallStaticObjectMethod(tempClass_201, env->GetStaticMethodID(tempClass_201, "getRuntime", "()Ljava/lang/Runtime;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKEVIRTUAL; Stack pointer: 2
+{
 jclass tempClass_202 = env->FindClass("java/lang/Runtime");
     cstack1.i = env->CallIntMethod(cstack1.l, env->GetMethodID(tempClass_202, "availableProcessors", "()I"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ICONST_1; Stack pointer: 2
+{
     cstack2.i = 1;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // ISUB; Stack pointer: 3
+{
     cstack1.i = cstack1.i - cstack2.i;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
+{
 jclass tempClass_203 = env->FindClass("java/lang/String");
     cstack1.l = env->CallStaticObjectMethod(tempClass_203, env->GetStaticMethodID(tempClass_203, "valueOf", "(I)Ljava/lang/String;"), cstack1.i);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // INVOKESTATIC; Stack pointer: 2
+{
 jclass tempClass_204 = env->FindClass("java/lang/System");
     cstack0.l = env->CallStaticObjectMethod(tempClass_204, env->GetStaticMethodID(tempClass_204, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"), cstack0.l, cstack1.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // POP; Stack pointer: 1
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+{
+}
 L145:
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
+{
 jclass tempClass_205 = env->FindClass("org/apache/logging/log4j/LogManager");
     cstack0.l = env->CallStaticObjectMethod(tempClass_205, env->GetStaticMethodID(tempClass_205, "getLogger", "()Lorg/apache/logging/log4j/Logger;"));
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // PUTSTATIC; Stack pointer: 1
+{
     jfieldID fieldId_14 = env->GetStaticFieldID(env->FindClass("net/minecraft/client/main/Main"), "LOGGER", "Lorg/apache/logging/log4j/Logger;");
     env->SetStaticObjectField(env->FindClass("net/minecraft/client/main/Main"), fieldId_14, cstack0.l);
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
     // RETURN; Stack pointer: 0
+{
     return;
-    if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }
+}
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
+
+    return;
+}
+// ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L1:
+    // GETSTATIC; Stack pointer: 0
+{
+    jfieldID fieldId_15 = env->GetStaticFieldID(classes[60].applyDecryption(), "username", "Ljava/lang/String;");
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), fieldId_15);
+}
+    // ARETURN; Stack pointer: 1
+{
+    return (jobject) cstack0.l;
+}
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+jint JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L2:
+    // GETSTATIC; Stack pointer: 0
+{
+    jfieldID fieldId_16 = env->GetStaticFieldID(classes[60].applyDecryption(), "uid", "I");
+    cstack0.i = (jint) env->GetStaticIntField(classes[60].applyDecryption(), fieldId_16);
+}
+    // IRETURN; Stack pointer: 1
+{
+    return (jint) cstack0.i;
+}
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jint) 0; }
+
+    return (jint) 0;
+}
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L3:
+    // GETSTATIC; Stack pointer: 0
+{
+    jfieldID fieldId_17 = env->GetStaticFieldID(classes[60].applyDecryption(), "expire", "Ljava/lang/String;");
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), fieldId_17);
+}
+    // ARETURN; Stack pointer: 1
+{
+    return (jobject) cstack0.l;
+}
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L4:
+    // GETSTATIC; Stack pointer: 0
+{
+    jfieldID fieldId_18 = env->GetStaticFieldID(classes[60].applyDecryption(), "role", "Ljava/lang/String;");
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), fieldId_18);
+}
+    // ARETURN; Stack pointer: 1
+{
+    return (jobject) cstack0.l;
+}
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+extern "C" JNIEXPORT void JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile__00024Clinit(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+    JNINativeMethod jniMethods[] = {
+        "getUsername", "()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7,
+        "getUid", "()I", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8,
+        "getExpire", "()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9,
+        "getRole", "()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10,
+    };
+    env->RegisterNatives(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
+
+    /*PROTECTION CLASS TABLE*/
+    classes[60] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"))))));
+
+    /*PROTECTION METHOD TABLE*/
+
+L5:
+    // LDC; Stack pointer: 0
+{
+    cstack0.l = env->NewStringUTF("username");
+}
+    // INVOKESTATIC; Stack pointer: 1
+{
+jclass tempClass_206 = env->FindClass("java/lang/System");
+    cstack0.l = env->CallStaticObjectMethod(tempClass_206, env->GetStaticMethodID(tempClass_206, "getenv", "(Ljava/lang/String;)Ljava/lang/String;"), cstack0.l);
+}
+    // PUTSTATIC; Stack pointer: 1
+{
+    jfieldID fieldId_19 = env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "username", "Ljava/lang/String;");
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), fieldId_19, cstack0.l);
+}
+L6:
+    // ICONST_1; Stack pointer: 0
+{
+    cstack0.i = 1;
+}
+    // PUTSTATIC; Stack pointer: 1
+{
+    jfieldID fieldId_20 = env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "uid", "I");
+    env->SetStaticIntField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), fieldId_20, (jint) cstack0.i);
+}
+L7:
+    // LDC; Stack pointer: 0
+{
+    cstack0.l = env->NewStringUTF("2038-06-06");
+}
+    // PUTSTATIC; Stack pointer: 1
+{
+    jfieldID fieldId_21 = env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "expire", "Ljava/lang/String;");
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), fieldId_21, cstack0.l);
+}
+L8:
+    // LDC; Stack pointer: 0
+{
+    cstack0.l = env->NewStringUTF("Разработчик");
+}
+    // PUTSTATIC; Stack pointer: 1
+{
+    jfieldID fieldId_22 = env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "role", "Ljava/lang/String;");
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), fieldId_22, cstack0.l);
+}
+    // RETURN; Stack pointer: 0
+{
+    return;
+}
 L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
 
     return;

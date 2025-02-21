@@ -69,6 +69,7 @@ public class MethodProcessor {
             nativeLinker.end();
             writer.output().pushMethodLine(nativeLinker.getMethods().toString());
             writer.output().pushMethodLine(writer.output().getReferences());
+            writer.output().pushMethodLine(writer.output().getFieldReferences());
         }
 
         Map<String, List<CatchInfo>> catchHandlers = new HashMap<>();
@@ -202,11 +203,14 @@ public class MethodProcessor {
                     .ifPresentOrElse(
                             compiler -> {
                                 int currentPointer = writer.getStackPointer().peek();
+                                if (insn.getOpcode() > 0)
+                                writer.output().pushString("\n{");
                                 compiler.translate(writer, insn, method);
                                 writer.getStackPointer().set(compiler.updateStackPointer(insn, writer.getStackPointer().peek()));
                                 int updatedPointer = writer.getStackPointer().peek();
                                 int diff = updatedPointer - currentPointer;
-
+                                if (insn.getOpcode() > 0)
+                                writer.output().pushString("\n}");
                                 if (TranslatorConfiguration.IMP.MAIN.DEBUG_ENABLED)
                                     TranslatorMain.LOGGER.info("Updated pointer from {} to {} (diff: {}) after instruction {} [{}]",
                                             currentPointer, updatedPointer, diff, BaseUtils.getOpcodeString(insn.getOpcode()), insn.getOpcode());
@@ -231,7 +235,7 @@ public class MethodProcessor {
                 writer.output().pushMethodLine("if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto %s; }"
                         .formatted(currentCatchLabel));
             } else {
-                writer.output().pushMethodLine("if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }");
+//                writer.output().pushMethodLine("if (env->ExceptionCheck()) { jthrowable exception = env->ExceptionOccurred(); env->ExceptionClear(); cstack_exception.l = exception; goto L_EXCEPTION; }");
             }
         });
     }

@@ -52,3 +52,4 @@ public:
 };
 
 RBM classes[61];
+jmethodID methods[31];

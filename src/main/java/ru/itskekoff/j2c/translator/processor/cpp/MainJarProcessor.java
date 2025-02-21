@@ -80,7 +80,10 @@ public class MainJarProcessor {
             addProtectionClass(out);
             try (BufferedWriter tableWriter = Files.newBufferedWriter(cppDir.resolve("table.h"))) {
                 tableWriter.write(ResourceUtils.getStringFromResource("/assets/table.h"));
-                tableWriter.append("\nRBM classes[%s];".formatted(ReferenceTable.getClassIndex() + 1));
+                tableWriter.append("\nRBM classes[%s];".formatted(ReferenceTable.getClassIndex()));
+
+                tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getFieldIndex()));
+
             }
         }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());

@@ -5,7 +5,8 @@ public class SnippetGenerator {
 
     public static String getMethodID(boolean isStatic, String name, String signature, String tempClassAddition) {
         return "env->Get%sMethodID(%s, \"%s\", \"%s\")"
-                .formatted(isStatic ? "Static" : "", tempClassAddition,
+                .formatted(isStatic ? "Static" : "",
+                        tempClassAddition,
                         name,
                         signature);
     }
