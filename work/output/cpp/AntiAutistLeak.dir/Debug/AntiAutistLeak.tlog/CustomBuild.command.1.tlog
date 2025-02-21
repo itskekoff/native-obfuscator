@@ -1,0 +1,10 @@
+^C:\IDEAPROJECTS\J2C\WORK\OUTPUT\CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/protection/j2c/work/output/cpp -BC:/protection/j2c/work/output/cpp --check-stamp-file C:/protection/j2c/work/output/cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

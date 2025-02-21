@@ -1,0 +1,3 @@
+C:/protection/j2c/work/output/cpp/CMakeFiles/AntiAutistLeak.dir
+C:/protection/j2c/work/output/cpp/CMakeFiles/ALL_BUILD.dir
+C:/protection/j2c/work/output/cpp/CMakeFiles/ZERO_CHECK.dir
