@@ -47,38 +47,25 @@ public class ClassFilter {
             return false;
         }
 
-        boolean isInWhiteList = isWhitelisted(classNode);
-        boolean isInBlackList = isBlacklisted(classNode);
-
-        if (whiteList != null && blackList == null) {
-            return isInWhiteList;
-        } else if (whiteList == null && blackList != null) {
-            return !isInBlackList;
-        } else if (whiteList != null) {
-            return isInWhiteList && !isInBlackList;
+        if (blackList.getFirst().isBlank() && !whiteList.getFirst().isBlank()) {
+            return isWhitelisted(classNode);
+        } else if (!blackList.getFirst().isBlank() && whiteList.getFirst().isBlank()) {
+            return !isBlacklisted(classNode);
+        } else if (!blackList.getFirst().isBlank()) {
+            return !isBlacklisted(classNode) && isWhitelisted(classNode);
         }
 
-        if (useAnnotations && hasNativeAnnotation(classNode)) {
-            return true;
-        }
-
-        return classNode.methods.stream().anyMatch(method -> shouldProcess(classNode, method));
+        return useAnnotations && hasNativeAnnotation(classNode) ||
+               classNode.methods.stream().anyMatch(method -> shouldProcess(classNode, method));
     }
 
     public boolean shouldProcess(ClassNode classNode, MethodNode methodNode) {
-        if (!shouldProcess(methodNode)) {
+        if (isBlacklisted(classNode, methodNode)) {
             return false;
         }
 
-        boolean isInWhiteList = isWhitelisted(classNode, methodNode);
-        boolean isInBlackList = isBlacklisted(classNode, methodNode);
-
-        if (whiteList != null && blackList == null) {
-            return isInWhiteList;
-        } else if (whiteList == null && blackList != null) {
-            return !isInBlackList;
-        } else if (whiteList != null) {
-            return isInWhiteList && !isInBlackList;
+        if (isWhitelisted(classNode, methodNode)) {
+            return true;
         }
 
         if (useAnnotations) {
@@ -87,10 +74,12 @@ public class ClassFilter {
                     .map(annotations -> annotations.stream()
                             .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
                     .orElse(false);
+
             boolean methodIsExcluded = Optional.ofNullable(methodNode.invisibleAnnotations)
                     .map(annotations -> annotations.stream()
                             .anyMatch(annotation -> annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC)))
                     .orElse(false);
+
             return methodIsMarked || (classIsMarked && !methodIsExcluded);
         }
 
@@ -99,6 +88,10 @@ public class ClassFilter {
 
     private boolean isInterface(ClassNode classNode) {
         return (classNode.access & Opcodes.ACC_INTERFACE) != 0;
+    }
+
+    private boolean isAbstract(ClassNode classNode) {
+        return (classNode.access & Opcodes.ACC_ABSTRACT) != 0;
     }
 
     private boolean isEnum(ClassNode classNode) {
