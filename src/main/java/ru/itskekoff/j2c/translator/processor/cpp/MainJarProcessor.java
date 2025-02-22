@@ -30,6 +30,8 @@ import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -70,16 +72,39 @@ public class MainJarProcessor {
 
         Path cppDir = outputDir.resolve("cpp");
         Files.createDirectories(cppDir);
-        BaseUtils.copyResource("jni.h", cppDir);
 
-        try (BufferedWriter mainWriter = Files.newBufferedWriter(cppDir.resolve("dllmain.cpp"));
+        List<String> resources = List.of("assets/jni.h", "assets/jni_md.h", "assets/xorstr.h");
+        resources.forEach(name -> {
+            try {
+                BaseUtils.copyResource(name, cppDir);
+            } catch (IOException e) {
+                TranslatorMain.LOGGER.info("An error has occurred in copying resource {}", name, e);
+            }
+        });
+
+        Path dllMainPath = cppDir.resolve("dllmain.cpp");
+
+        try (BufferedWriter mainWriter = Files.newBufferedWriter(dllMainPath);
              ZipOutputStream out = new ZipOutputStream(Files.newOutputStream(outputFile));
              JarFile jar = new JarFile(inputJarPath.toFile())) {
 
             mainWriter.write("\n%s".formatted(ResourceUtils.getStringFromResource("/assets/snippets/start.cpp")));
             processJarEntries(jar, out, cppCode, methodProcessor);
 
-            mainWriter.append(cppCode);
+            String regex = "([\"'])((?:(?=\\*)\\.|.)*?)\\1";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(cppCode);
+            StringBuilder modifiedContent = new StringBuilder();
+            while (matcher.find()) {
+                String matchedString = matcher.group(2);
+                if (matchedString.equals("C")) continue;
+                
+                String replacement = "xorstr_(\"" + matchedString + "\")";
+                matcher.appendReplacement(modifiedContent, Matcher.quoteReplacement(replacement));
+            }
+            matcher.appendTail(modifiedContent);
+
+            mainWriter.append(modifiedContent.toString());
             mainWriter.write("\n%s".formatted(ResourceUtils.getStringFromResource("/assets/snippets/initialization.cpp")));
             Optional.ofNullable(jar.getManifest()).ifPresent(manifest -> writeManifest(out, manifest));
             addProtectionClass(out);
@@ -90,6 +115,10 @@ public class MainJarProcessor {
                 tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getFieldIndex()));
 
             }
+        }
+
+        /*
+
             String osName = "windows";
             String platformTypeName = "x86_64";
             String libName = "x64-windows.dll";
@@ -111,7 +140,9 @@ public class MainJarProcessor {
             } else {
                 TranslatorMain.COMPILE_LOGGER.error("Zig compiler not found at path: {}", zigPath);
             }
-        }
+
+             */
+
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
     }
 
@@ -247,6 +278,7 @@ public class MainJarProcessor {
                classNode.methods.stream()
                        .anyMatch(method -> ClassFilter.shouldProcess(method) && classFilter.shouldProcess(classNode, method));
     }
+
     private boolean isClassFile(byte[] bytes) {
         return BaseUtils.byteArrayToInt(Arrays.copyOfRange(bytes, 0, 4)) == 0xCAFEBABE;
     }

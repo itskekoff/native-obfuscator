@@ -37,10 +37,10 @@ public class MethodContext {
     @SuppressWarnings("all")
     public static class ContextBuilder {
         private final StringBuilder output = new StringBuilder();
-        private final StringBuilder referenceBuilder = new StringBuilder();
+        private final StringBuilder classReferenceBuilder = new StringBuilder();
+        private final StringBuilder methodReferenceBuilder = new StringBuilder();
         private Map<String, Integer> classes = new HashMap<>();
-        private final StringBuilder referenceFieldBuilder = new StringBuilder();
-        private List<FieldNode> fieldNodes = new CopyOnWriteArrayList<>();
+        private @Getter List<FieldNode> fields = new CopyOnWriteArrayList<>();
 
         private final ClassNode classNode;
 
@@ -75,19 +75,14 @@ public class MethodContext {
             this.classes.put(klassName, index);
             ReferenceTable.pushClass(klassName, index);
 
-            this.referenceBuilder.append("    classes[%s] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass(\"%s\"))))));"
+            this.classReferenceBuilder.append("    classes[%s] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass(\"%s\"))))));"
                     .formatted(index, klassName));
-            this.referenceBuilder.append("\n");
+            this.classReferenceBuilder.append("\n");
             return index;
         }
 
-        public List<FieldNode> getFieldNodes() {
-            return fieldNodes;
-        }
-
         public FieldNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
-
-            for (FieldNode fieldNode : getFieldNodes()) {
+            for (FieldNode fieldNode : getFields()) {
                 if (fieldNode.getClassName().equals(className)) {
                     if (fieldNode.getName().equals(name)) {
                         if (fieldNode.getSignature().equals(signature)) {
@@ -101,14 +96,14 @@ public class MethodContext {
 
             FieldNode fieldNode = new FieldNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
 
-            referenceFieldBuilder.append("methods[%s] = env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\");\n"
+            methodReferenceBuilder.append("    methods[%s] = env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\");\n"
                     .formatted(fieldNode.getId(),
                             fieldNode.isStatic(),
                             fieldNode.getClassName(),
                             fieldNode.getName(),
                             fieldNode.getSignature()));
 
-            fieldNodes.add(fieldNode);
+            fields.add(fieldNode);
 
             return fieldNode;
         }
@@ -151,12 +146,13 @@ public class MethodContext {
             return output.toString();
         }
 
-        public String getFieldReferences() {
-            return "%s\n%s".formatted("/*PROTECTION METHOD TABLE*/", this.referenceFieldBuilder.toString());
+
+        public String getClassReferences() {
+            return "%s\n%s".formatted("/* CLASS REFERENCE TABLE */", this.classReferenceBuilder.toString());
         }
 
-        public String getReferences() {
-            return "%s\n%s".formatted("/*PROTECTION CLASS TABLE*/", this.referenceBuilder.toString());
+        public String getMethodReferences() {
+            return "%s\n%s".formatted("/* METHOD REFERENCE TABLE */", this.methodReferenceBuilder.toString());
         }
     }
 

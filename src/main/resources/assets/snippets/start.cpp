@@ -1,8 +1,10 @@
-#include "table.h"
-#include "jni.h"
 #include <string>
 #include <stdexcept>
 #include <cmath>
+
+#include "table.h"
+#include "jni.h"
+#include "xorstr.h"
 
 jclass boolean_array_class;
 

@@ -86,8 +86,8 @@ public class MethodProcessor {
         if (isClinit(method)) {
             linker.end();
             context.output().pushMethodLine(linker.getMethods().toString());
-            context.output().pushMethodLine(context.output().getReferences());
-            context.output().pushMethodLine(context.output().getFieldReferences());
+            context.output().pushMethodLine(context.output().getClassReferences());
+            context.output().pushMethodLine(context.output().getMethodReferences());
         }
 
         Map<String, List<CatchInfo>> catchHandlers = new HashMap<>();
