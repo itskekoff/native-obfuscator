@@ -241,9 +241,25 @@ public class BaseUtils {
     }
 
     public static void copyResource(String from, Path to) throws IOException {
-        try (InputStream in = MainJarProcessor.class.getClassLoader().getResourceAsStream(from);) {
+        try (InputStream in = MainJarProcessor.class.getClassLoader().getResourceAsStream(from)) {
             Objects.requireNonNull(in, "Can't copy resource " + from);
             Files.copy(in, to.resolve(Paths.get(from).getFileName()), StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+    public static void copyBin(String from, Path to, String name) throws IOException {
+        try (InputStream in = MainJarProcessor.class.getClassLoader().getResourceAsStream(from)) {
+            Objects.requireNonNull(in, "Can't copy resource " + from);
+
+            String path = to.toFile().getAbsolutePath() + "/" + name;
+
+            File file = new File(path);
+            if (!file.exists()) file.createNewFile();
+
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(in.readAllBytes());
+            fileOutputStream.close();
+
+
         }
     }
 

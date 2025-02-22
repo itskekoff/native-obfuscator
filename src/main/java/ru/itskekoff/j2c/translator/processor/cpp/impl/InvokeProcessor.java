@@ -23,6 +23,7 @@ public class InvokeProcessor extends BaseProcessor {
     @Override
     public void translate(MethodContext classContext, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof MethodInsnNode mh) {
+            classContext.output().begin(method);
             Type[] args = Type.getArgumentTypes(mh.desc);
             List<Integer> argOffsets = new ArrayList<>();
 
@@ -55,7 +56,6 @@ public class InvokeProcessor extends BaseProcessor {
                 }
                 arg4Call.append(appender);
             }
-
             if (insnNode.getOpcode() == INVOKEVIRTUAL || insnNode.getOpcode() == INVOKEINTERFACE) {
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
                 switch (returnType) {
@@ -156,6 +156,7 @@ public class InvokeProcessor extends BaseProcessor {
             if (insnNode.getOpcode() != INVOKESTATIC) {
                 classContext.getStackPointer().pop();
             }
+            classContext.output().end(method);
             classContext.getStackPointer().pop(Arrays.stream(Type.getArgumentTypes(mh.desc)).mapToInt(Type::getSize).sum()).push(Type.getReturnType(mh.desc).getSize());
         }
     }

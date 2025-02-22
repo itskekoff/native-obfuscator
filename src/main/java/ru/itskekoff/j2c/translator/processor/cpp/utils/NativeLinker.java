@@ -4,6 +4,8 @@ import lombok.Getter;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
+import java.util.Random;
+
 public class NativeLinker {
     @Getter
     private final ClassNode classNode;
@@ -16,11 +18,13 @@ public class NativeLinker {
         this.classNode = classNode;
         this.stringBuilder = new StringBuilder();
         this.count = 0;
-
         stringBuilder.append("jclass linkingClass = env->FindClass(\"%s\");\n"
                 .formatted(classNode.name));
 
         this.methods = new StringBuilder();
+        methods.append("      VMProtectBeginUltra(\"clinit_%s\");\n".formatted(
+                String.valueOf(new Random().nextLong()*new Random().nextLong()+new Random().nextLong()+new Random().nextLong())
+        ));
         methods.append("JNINativeMethod jniMethods[] = {\n");
     }
 
@@ -35,6 +39,7 @@ public class NativeLinker {
             methods.append("    };\n");
             methods.append("    env->RegisterNatives(env->FindClass(xorstr_(\"%s\")), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));\n"
                     .formatted(classNode.name));
+            methods.append("VMProtectEnd();\n");
         }
     }
 

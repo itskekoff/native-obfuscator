@@ -3,6 +3,7 @@
 #include <cmath>
 
 #include "table.h"
+#include "VMProtectSDK.h"
 #include "jni.h"
 #include <string>
 #include <stdexcept>

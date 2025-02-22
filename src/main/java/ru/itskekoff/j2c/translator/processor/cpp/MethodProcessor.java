@@ -209,13 +209,14 @@ public class MethodProcessor {
                     TranslatorMain.LOGGER.info("Label start (name={})", labelName);
                 return;
             }
-
+            writer.output().pushMethodLine("\n    { ");
             if (insn.getOpcode() != -1) {
                 String opcodeName = BaseUtils.getOpcodeString(insn.getOpcode()).equals("UNKNOWN")
                         ? String.valueOf(insn.getOpcode())
                         : BaseUtils.getOpcodeString(insn.getOpcode());
-                writer.output().pushMethodLine("// %s; Stack pointer: %d".formatted(opcodeName, writer.getStackPointer().peek()));
+                writer.output().pushString("// %s; Stack pointer: %d\n".formatted(opcodeName, writer.getStackPointer().peek()));
             }
+
 
             processors.stream()
                     .filter(compiler -> compiler.supports(insn.getOpcode()))
@@ -235,7 +236,7 @@ public class MethodProcessor {
                                     BaseUtils.getOpcodeString(insn.getOpcode()),
                                     insn.getOpcode())
                     );
-
+            writer.output().pushMethodLine("\n    }\n");
             boolean inTryCatchBlock = false;
             String currentCatchLabel = null;
 

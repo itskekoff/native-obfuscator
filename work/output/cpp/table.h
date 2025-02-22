@@ -51,6 +51,6 @@ public:
     }
 };
 
-jclass classes[63];
-jmethodID methods[56];
-jfieldID fields[23];
+jclass classes[13];
+jmethodID methods[75];
+jfieldID fields[90];

@@ -15,8 +15,10 @@ public class ThrowProcessor extends BaseProcessor {
     @Override
     public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof InsnNode) {
+            context.output().begin(method);
                 context.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(%s, \"\"); else env->Throw((jthrowable) cstack%s.l);"
                         .formatted(context.getStackPointer().peek() - 1, ReferenceSnippetGenerator.generateJavaClassReference(context, method, context.getClassNode().name), context.getStackPointer().peek() - 1));
+            context.output().end(method);
         }
     }
 

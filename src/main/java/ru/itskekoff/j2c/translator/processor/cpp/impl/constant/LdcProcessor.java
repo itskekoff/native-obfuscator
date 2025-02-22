@@ -72,9 +72,11 @@ public class LdcProcessor extends BaseProcessor {
         } else if (cst instanceof Double) {
             context.output().pushMethodLine("cstack%s.d = %s;".formatted(context.getStackPointer().peek(), getDoubleValue((Double) cst)));
         } else if (cst instanceof Type) {
+            context.output().begin(method);
                 context.output().pushMethodLine("cstack%s.l = %s;"
                         .formatted(context.getStackPointer().peek(),
                                 ReferenceSnippetGenerator.generateJavaClassReference(context, method, ((Type) cst).getClassName().replace(".", "/"))));
+            context.output().end(method);
         }
     }
 

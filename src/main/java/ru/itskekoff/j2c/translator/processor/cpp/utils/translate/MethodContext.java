@@ -4,8 +4,10 @@ import lombok.Getter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.annotations.vmp.VMProtectType;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
@@ -13,6 +15,8 @@ import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import static ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter.*;
 
 @Getter
 public class MethodContext {
@@ -52,6 +56,86 @@ public class MethodContext {
             this.pushLine().pushString("// %s".formatted(classNode.name));
         }
 
+
+        public void begin(MethodNode methodNode) {
+            boolean classIsMarked = hasNativeAnnotation(classNode);
+            boolean methodIsMarked = hasNativeAnnotation(methodNode);
+
+            if (classIsMarked || methodIsMarked) {
+
+                Optional<AnnotationNode> vmProtectAnnotation = Optional.ofNullable(methodNode.visibleAnnotations)
+                        .flatMap(annotations -> annotations.stream()
+                                .filter(annotation -> annotation.desc.equals("Lru/itskekoff/j2c/annotations/vmp/VMProtect;"))
+                                .findFirst())
+                        .or(() -> Optional.ofNullable(methodNode.invisibleAnnotations)
+                                .flatMap(annotations -> annotations.stream()
+                                        .filter(annotation -> annotation.desc.equals("Lru/itskekoff/j2c/annotations/vmp/VMProtect;"))
+                                        .findFirst()));
+
+                if (vmProtectAnnotation.isPresent()) {
+
+                    AnnotationNode annotationNode = vmProtectAnnotation.get();
+                    Object typeValue = null;
+
+                    if (annotationNode.values != null) {
+                        for (int i = 0; i < annotationNode.values.size(); i += 2) {
+                            if ("type".equals(annotationNode.values.get(i))) {
+                                typeValue = annotationNode.values.get(i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (typeValue != null) {
+                        VMProtectType vmProtectType = VMProtectType.valueOf((String) ((String[])typeValue)[1]);
+
+                        pushMethodLine("VMProtectBegin%s(\"%s\");".formatted(
+                                Character.toUpperCase(vmProtectType.name().charAt(0)) + vmProtectType.name().substring(1).toLowerCase(),
+                                String.valueOf(new Random().nextLong()*new Random().nextLong()+new Random().nextLong()+new Random().nextLong())
+                        ));
+
+                    }
+                }
+            }
+        }
+
+        public void end(MethodNode methodNode) {
+            boolean classIsMarked = hasNativeAnnotation(classNode);
+            boolean methodIsMarked = hasNativeAnnotation(methodNode);
+
+            if (classIsMarked || methodIsMarked) {
+
+                Optional<AnnotationNode> vmProtectAnnotation = Optional.ofNullable(methodNode.visibleAnnotations)
+                        .flatMap(annotations -> annotations.stream()
+                                .filter(annotation -> annotation.desc.equals("Lru/itskekoff/j2c/annotations/vmp/VMProtect;"))
+                                .findFirst())
+                        .or(() -> Optional.ofNullable(methodNode.invisibleAnnotations)
+                                .flatMap(annotations -> annotations.stream()
+                                        .filter(annotation -> annotation.desc.equals("Lru/itskekoff/j2c/annotations/vmp/VMProtect;"))
+                                        .findFirst()));
+
+                if (vmProtectAnnotation.isPresent()) {
+
+                    AnnotationNode annotationNode = vmProtectAnnotation.get();
+                    Object typeValue = null;
+
+                    if (annotationNode.values != null) {
+                        for (int i = 0; i < annotationNode.values.size(); i += 2) {
+                            if ("type".equals(annotationNode.values.get(i))) {
+                                typeValue = annotationNode.values.get(i + 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (typeValue != null) {
+                        VMProtectType vmProtectType = VMProtectType.valueOf((String) ((String[])typeValue)[1]);
+                        pushMethodLine("VMProtectEnd();");
+                    }
+                }
+            }
+        }
+
         public void pushMethod(MethodNode methodNode, String nativeName,
                                List<String> argNames, String[] CPP_TYPES, Type[] args,
                                boolean clinit, boolean isStatic) {
@@ -85,12 +169,15 @@ public class MethodContext {
 
             ReferenceNode referenceNode = new ReferenceNode(klassName, "NULL", "NULL", true, index);
 
-
+            classReferenceBuilder.append("    VMProtectBeginUltra(\"classes_%s\");\n".formatted(
+                    String.valueOf(new Random().nextLong()*new Random().nextLong()+new Random().nextLong()+new Random().nextLong())
+            ));
             this.classReferenceBuilder.append("    classes[%s] = (jclass)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->NewGlobalRef(env->FindClass((\"%s\"))) ^ %s), rtdsc)));\n"
                     .formatted(index,
                             referenceNode.getSeed(),
                             klassName,
                             referenceNode.getClinit()));
+            classReferenceBuilder.append("    VMProtectEnd();\n");
 
             classes.add(referenceNode);
 
@@ -113,7 +200,9 @@ public class MethodContext {
             //not found, we should allocate
 
             ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, index);
-
+            referenceStringBuilder.append("    VMProtectBeginUltra(\"%s_%s\");\n".formatted(arrayName,
+                    String.valueOf(new Random().nextLong()*new Random().nextLong()+new Random().nextLong()+new Random().nextLong())
+            ));
             referenceStringBuilder.append("    %ss[%s] = (%s)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%s%sID(%s, (\"%s\"), (\"%s\")) ^ %s), rtdsc)));\n"
                     .formatted(
                             arrayName,
@@ -129,6 +218,7 @@ public class MethodContext {
                             arrayName,
                             castType
                     ));
+            referenceStringBuilder.append("    VMProtectEnd();\n");
 
             getMethods().add(referenceNode);
 

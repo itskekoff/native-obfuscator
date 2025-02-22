@@ -66,7 +66,7 @@ public class MainJarProcessor {
         Path cppDir = outputDir.resolve("cpp");
         Files.createDirectories(cppDir);
 
-        List<String> resources = List.of("assets/jni.h", "assets/jni_md.h", "assets/xorstr.h", "assets/CMakeLists.txt");
+        List<String> resources = List.of("assets/vmp/VMProtectSDK64.dll", "assets/vmp/VMProtectSDK32.dll", "assets/vmp/VMProtect_Ext64.dll", "assets/vmp/VMProtect_Ext32.dll","assets/jni.h", "assets/vmp/VMProtectSDK.h", "assets/jni_md.h", "assets/xorstr.h", "assets/CMakeLists.txt");
         resources.forEach(name -> {
             try {
                 BaseUtils.copyResource(name, cppDir);
@@ -74,6 +74,11 @@ public class MainJarProcessor {
                 TranslatorMain.LOGGER.info("An error has occurred in copying resource {}", name, e);
             }
         });
+
+        //"assets/VMProtectSDK64.dll", "assets/VMProtectSDK64", "assets/VMProtectSDK32", "assets/VMProtectSDK32.dll", "assets/VMProtect_Ext64.dll", "assets/VMProtect_Ext32.dll"
+        BaseUtils.copyResource("assets/vmp.exe", new File("%s/build/lib/".formatted(cppDir.toFile().getAbsolutePath())).toPath());
+        BaseUtils.copyBin("assets/vmp/VMProtectSDK64", cppDir, "VMProtectSDK64.lib");
+        BaseUtils.copyBin("assets/vmp/VMProtectSDK32", cppDir, "VMProtectSDK32.lib");
 
         Path dllMainPath = cppDir.resolve("dllmain.cpp");
 
@@ -99,13 +104,14 @@ public class MainJarProcessor {
             try {
                 executeCommand((new String[]{"cmake", "."}), cppDir.toFile());
                 executeCommand((new String[]{"cmake", "--build", ".", "--config", "Release"}), cppDir.toFile());
+                executeCommand((new String[]{cppDir.toFile()+"/build/lib/vmp.exe", "AntiAutistLeak.dll", "AALProtection.dll"}), new File(cppDir.toFile()+"/build/lib/"));
             } catch (Exception e) {
                 System.err.println("Error during CMake execution: " + e.getMessage());
                 e.printStackTrace();
             }
 
             out.putNextEntry(new ZipEntry("⚜richessssstafffs⚜/AntiAutistLeak.dll"));
-            out.write(Files.readAllBytes(new File("%s/build/lib/AntiAutistLeak.dll".formatted(cppDir.toFile().getAbsolutePath())).toPath()));
+            out.write(Files.readAllBytes(new File("%s/build/lib/AALProtection.dll".formatted(cppDir.toFile().getAbsolutePath())).toPath()));
 
         }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
@@ -126,14 +132,14 @@ public class MainJarProcessor {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+                TranslatorMain.LOGGER.info(line);
             }
         }
 
         try (BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
             String line;
             while ((line = errorReader.readLine()) != null) {
-                System.err.println(line);
+                TranslatorMain.LOGGER.error(line);
             }
         }
 

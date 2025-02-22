@@ -6,6 +6,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.annotations.NativeExclude;
 import ru.itskekoff.j2c.annotations.NativeInclude;
+import ru.itskekoff.j2c.annotations.vmp.VMProtect;
 import ru.itskekoff.j2c.translator.configuration.matcher.AntPathMatcher;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
@@ -13,8 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class ClassFilter {
-    private static final String NATIVE_ANNOTATION_DESC = Type.getDescriptor(NativeInclude.class);
-    private static final String NOT_NATIVE_ANNOTATION_DESC = Type.getDescriptor(NativeExclude.class);
+    public static final String VMPROTECT_ANNOTATION_DESC = Type.getDescriptor(VMProtect.class);
+    public static final String NATIVE_ANNOTATION_DESC = Type.getDescriptor(NativeInclude.class);
+    public static final String NOT_NATIVE_ANNOTATION_DESC = Type.getDescriptor(NativeExclude.class);
 
     private static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
 
@@ -140,10 +142,31 @@ public class ClassFilter {
                 });
     }
 
-    private boolean hasNativeAnnotation(ClassNode classNode) {
-        return Optional.ofNullable(classNode.invisibleAnnotations)
+    public static boolean hasNativeAnnotation(MethodNode classNode) {
+        boolean hasInvisibleAnnotation = Optional.ofNullable(classNode.invisibleAnnotations)
                 .map(annotations -> annotations.stream()
                         .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
                 .orElse(false);
+
+        boolean hasVisibleAnnotation = Optional.ofNullable(classNode.visibleAnnotations)
+                .map(annotations -> annotations.stream()
+                        .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
+                .orElse(false);
+
+        return hasInvisibleAnnotation || hasVisibleAnnotation;
+    }
+
+    public static boolean hasNativeAnnotation(ClassNode classNode) {
+        boolean hasInvisibleAnnotation = Optional.ofNullable(classNode.invisibleAnnotations)
+                .map(annotations -> annotations.stream()
+                        .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
+                .orElse(false);
+
+        boolean hasVisibleAnnotation = Optional.ofNullable(classNode.visibleAnnotations)
+                .map(annotations -> annotations.stream()
+                        .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
+                .orElse(false);
+
+        return hasInvisibleAnnotation || hasVisibleAnnotation;
     }
 }

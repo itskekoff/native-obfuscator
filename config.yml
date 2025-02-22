@@ -15,4 +15,4 @@ main:
   # Полностью отключает два предыдущих параметра
   use-annotations: false
   # Включает подробную информацию о компиляции (дебаг)
-  debug-enabled: true
+  debug-enabled: false
