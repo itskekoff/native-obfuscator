@@ -6,7 +6,6 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.FieldNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.SnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;

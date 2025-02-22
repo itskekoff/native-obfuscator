@@ -195,7 +195,7 @@ void JNICALL  Java_net_minecraft_client_main_Main_000242_run1(JNIEnv *env, jobje
 L1:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[3].applyDecryption(), (jmethodID)(((((((__int64)(methods[0]) ^ -4857899815604518971) ^ 5662874072391988267) ^ 574395229756414827) ^ 4851017200057005847) ^ 6926193672684948713) ^ 6961590817245125613 ^ rtdsc));
+    cstack0.l = env->CallStaticObjectMethod(classes[3].applyDecryption(), (jmethodID)(((((((__int64)(methods[0]) ^ 2815841997600245136) ^ 7308600783070511323) ^ 7623690776222046452) ^ -5653914245529104246) ^ -63396749389446376) ^ 9217895984737865300 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal1.l = cstack0.l;
@@ -262,7 +262,7 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000242__0
     classes[4] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("net/minecraft/server/integrated/IntegratedServer"))))));
 
     /* METHOD REFERENCE TABLE */
-methods[0] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=189&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "getInstance", "()Lnet/minecraft/client/Minecraft;") ^ 1852343305194599597), rtdsc)));
+methods[0] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=291&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "getInstance", "()Lnet/minecraft/client/Minecraft;") ^ 1207874567219948125), rtdsc)));
 
     // RETURN; Stack pointer: 0
     return;
@@ -285,7 +285,7 @@ L2:
     cstack0.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_0; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[5].applyDecryption(), (jmethodID)(((((((__int64)(methods[1]) ^ 7564689463844167518) ^ -863289074701060562) ^ -6114234445189050007) ^ -8928771195349363971) ^ 8475427902141835737) ^ -4827272201259570434 ^ rtdsc), cstack0.l);
+    env->CallStaticVoidMethod(classes[5].applyDecryption(), (jmethodID)(((((((__int64)(methods[1]) ^ -1423612466465997196) ^ 2723263471419064125) ^ -7200264565115801214) ^ 8818785762213487503) ^ 5254456633281678758) ^ 5484133391086609580 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_0; }
 L3:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -353,7 +353,7 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main_000243__0
     classes[10] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Throwable"))))));
 
     /* METHOD REFERENCE TABLE */
-methods[1] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=348&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V") ^ 1166562469622975740), rtdsc)));
+methods[1] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=21&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V") ^ 1706924717701886890), rtdsc)));
 
     // RETURN; Stack pointer: 0
     return;
@@ -498,7 +498,7 @@ L15:
     cstack1.i = (jint) 25565;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -34196407739231504) ^ -6424713675353399833) ^ 8648733912584365945) ^ -6691712787007075768) ^ -2052185214396168953) ^ -3088848737347383697 ^ rtdsc), cstack1.i);
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -7558226346291200035) ^ 2544907912024963592) ^ 8330478027177726241) ^ 5724216657800942160) ^ 6796486282167497107) ^ 2644303357969729463 ^ rtdsc), cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ICONST_0; Stack pointer: 2
     cstack2.i = 0;
@@ -726,7 +726,7 @@ L24:
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[12].applyDecryption(), "withRequiredArg", "()Ljoptsimple/ArgumentAcceptingOptionSpec;"));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack1.j = env->CallStaticLongMethod(classes[17].applyDecryption(), (jmethodID)(((((((__int64)(methods[3]) ^ 1462029091406386664) ^ -4422275841591708416) ^ 3083288352467461573) ^ 7439238045646489145) ^ 6320909143762318174) ^ 4847116492084148928 ^ rtdsc));
+    cstack1.j = env->CallStaticLongMethod(classes[17].applyDecryption(), (jmethodID)(((((((__int64)(methods[3]) ^ -2848631669135735516) ^ -4143393757792891453) ^ 2535629042067617989) ^ 8299886491474501742) ^ -4963309633928974690) ^ 8554133066898760889 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 3
     cstack3.j = 1000LL;
@@ -735,7 +735,7 @@ L24:
     cstack1.j = (cstack1.j % cstack3.j);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[4]) ^ -3578942842442090990) ^ 2862704513318472606) ^ 1749277818686536450) ^ 25737946125234346) ^ -387652755563967674) ^ 7337641678493915560 ^ rtdsc), cstack1.j);
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[4]) ^ 2630526970414542340) ^ -874637817261243077) ^ 8030799126337089276) ^ -5147565986706042201) ^ -1000141869352634185) ^ -4274543730693829515 ^ rtdsc), cstack1.j);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ICONST_0; Stack pointer: 2
     cstack2.i = 0;
@@ -830,7 +830,7 @@ L28:
     cstack1.i = (jint) 854;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -34196407739231504) ^ -6424713675353399833) ^ 8648733912584365945) ^ -6691712787007075768) ^ -2052185214396168953) ^ -3088848737347383697 ^ rtdsc), cstack1.i);
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -7558226346291200035) ^ 2544907912024963592) ^ 8330478027177726241) ^ 5724216657800942160) ^ 6796486282167497107) ^ 2644303357969729463 ^ rtdsc), cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ICONST_0; Stack pointer: 2
     cstack2.i = 0;
@@ -868,7 +868,7 @@ L29:
     cstack1.i = (jint) 480;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -34196407739231504) ^ -6424713675353399833) ^ 8648733912584365945) ^ -6691712787007075768) ^ -2052185214396168953) ^ -3088848737347383697 ^ rtdsc), cstack1.i);
+    cstack1.l = env->CallStaticObjectMethod(classes[13].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ -7558226346291200035) ^ 2544907912024963592) ^ 8330478027177726241) ^ 5724216657800942160) ^ 6796486282167497107) ^ 2644303357969729463 ^ rtdsc), cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ICONST_0; Stack pointer: 2
     cstack2.i = 0;
@@ -1120,7 +1120,7 @@ L42:
     cstack1.l = clocal27.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[5]) ^ -1786943230546432315) ^ 6700573359712970127) ^ -7995904289369818714) ^ 2965121228961912740) ^ 8929391298833808642) ^ 1370269559964808160 ^ rtdsc), cstack1.l);
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[5]) ^ 475196594438448546) ^ -735196775361834596) ^ -1466402559275157380) ^ 4506130270915256257) ^ -6642251253903313321) ^ -2421035443286523534 ^ rtdsc), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
     env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[22].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
@@ -1135,7 +1135,7 @@ L41:
     cstack1.l = clocal8.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1186,7 +1186,7 @@ L46:
     cstack7.l = clocal9.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_0; }
     // INVOKESTATIC; Stack pointer: 8
-    cstack6.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack6.l, cstack7.l);
+    cstack6.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack6.l, cstack7.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_0; }
     // CHECKCAST; Stack pointer: 7
     if (cstack6.l != nullptr && !env->IsInstanceOf(cstack6.l, classes[13].applyDecryption())) {}
@@ -1224,7 +1224,7 @@ L45:
     cstack1.l = clocal10.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1241,7 +1241,7 @@ L48:
     cstack1.l = clocal11.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1299,7 +1299,7 @@ L51:
     env->CallNonvirtualVoidMethod(cstack1.l, classes[26].applyDecryption(), env->GetMethodID(classes[26].applyDecryption(), "<init>", "(Ljava/lang/String;Ljava/lang/String;)V"), cstack2.l, cstack3.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[27].applyDecryption(), (jmethodID)(((((((__int64)(methods[8]) ^ 222324911627383843) ^ -3105694466176942298) ^ -6034670472763648257) ^ 6413990520379408635) ^ -2960112007780114761) ^ 2962811809618443437 ^ rtdsc), cstack0.l);
+    env->CallStaticVoidMethod(classes[27].applyDecryption(), (jmethodID)(((((((__int64)(methods[8]) ^ -2884234817373675440) ^ -1711284060067759373) ^ -8772967016172931587) ^ -7729511324190079994) ^ -4040973679402891529) ^ 3051150618571886218 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L50:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -1311,7 +1311,7 @@ L50:
     cstack1.l = clocal16.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
@@ -1331,7 +1331,7 @@ L52:
     cstack1.l = clocal17.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
@@ -1351,13 +1351,13 @@ L53:
     cstack1.l = clocal18.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 183072122538925979) ^ -1622106282518192754) ^ 1908405763537339950) ^ -6182226774131290970) ^ -4811988505993284351) ^ 4471065630835358981 ^ rtdsc), cstack0.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ -2371192174345477450) ^ 4926754349695221106) ^ -1246287639449856758) ^ 35151208283402605) ^ -5856827270465750443) ^ -3292272365500978427 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal34.l = cstack0.l;
@@ -1371,13 +1371,13 @@ L54:
     cstack1.l = clocal19.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 183072122538925979) ^ -1622106282518192754) ^ 1908405763537339950) ^ -6182226774131290970) ^ -4811988505993284351) ^ 4471065630835358981 ^ rtdsc), cstack0.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ -2371192174345477450) ^ 4926754349695221106) ^ -1246287639449856758) ^ 35151208283402605) ^ -5856827270465750443) ^ -3292272365500978427 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal35.l = cstack0.l;
@@ -1447,7 +1447,7 @@ L59:
     cstack1.l = clocal15.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1499,7 +1499,7 @@ L61:
     cstack2.l = clocal20.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack1.l, cstack2.l);
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 2
     if (cstack1.l != nullptr && !env->IsInstanceOf(cstack1.l, classes[16].applyDecryption())) {}
@@ -1508,7 +1508,7 @@ L61:
     cstack2.l = classes[29].applyDecryption();
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), (jmethodID)(((((((__int64)(methods[10]) ^ 3945087091814910245) ^ -6106917074059890819) ^ 2067533708388143450) ^ 6056552575026768034) ^ 9210419821581917883) ^ 1604489583176802401 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), (jmethodID)(((((((__int64)(methods[10]) ^ 3289631851539985262) ^ -3016516692922342975) ^ 4646702311241590576) ^ 7961275066143230363) ^ -3731126834370507583) ^ 4382726826176883495 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[29].applyDecryption())) {}
@@ -1528,7 +1528,7 @@ L62:
     cstack2.l = clocal21.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack1.l, cstack2.l);
+    cstack1.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 2
     if (cstack1.l != nullptr && !env->IsInstanceOf(cstack1.l, classes[16].applyDecryption())) {}
@@ -1537,7 +1537,7 @@ L62:
     cstack2.l = classes[29].applyDecryption();
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), (jmethodID)(((((((__int64)(methods[10]) ^ 3945087091814910245) ^ -6106917074059890819) ^ 2067533708388143450) ^ 6056552575026768034) ^ 9210419821581917883) ^ 1604489583176802401 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[31].applyDecryption(), (jmethodID)(((((((__int64)(methods[10]) ^ 3289631851539985262) ^ -3016516692922342975) ^ 4646702311241590576) ^ 7961275066143230363) ^ -3731126834370507583) ^ 4382726826176883495 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[29].applyDecryption())) {}
@@ -1554,7 +1554,7 @@ L63:
     cstack1.l = clocal24.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1571,7 +1571,7 @@ L64:
     cstack1.l = clocal4.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
@@ -1600,7 +1600,7 @@ L65:
     cstack1.l = clocal5.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
@@ -1651,7 +1651,7 @@ L68:
     cstack1.l = clocal6.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[15].applyDecryption())) {}
@@ -1725,7 +1725,7 @@ L72:
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[33].applyDecryption(), (jmethodID)(((((((__int64)(methods[11]) ^ 8986059025663387898) ^ 5054846644739479775) ^ 3401544242169068573) ^ -4976691399161528783) ^ -2527762352801347885) ^ -886035603232964232 ^ rtdsc), cstack0.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[33].applyDecryption(), (jmethodID)(((((((__int64)(methods[11]) ^ -1277550228368752265) ^ -6056653814005016252) ^ 335703312480209577) ^ -4283779791120274147) ^ 4339325259326664273) ^ 2038082854025668323 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 1
     cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[34].applyDecryption(), "toString", "()Ljava/lang/String;"));
@@ -1783,7 +1783,7 @@ L77:
     cstack1.l = clocal2.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[16].applyDecryption())) {}
@@ -1800,7 +1800,7 @@ L78:
     cstack1.l = clocal3.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ 731717913805063894) ^ 2583822429519655643) ^ 2296937129086380035) ^ -834910499702778251) ^ -7550178051582226426) ^ 3630625103679303599 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[18].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // CHECKCAST; Stack pointer: 1
     if (cstack0.l != nullptr && !env->IsInstanceOf(cstack0.l, classes[13].applyDecryption())) {}
@@ -1811,22 +1811,22 @@ L78:
 L79:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[35].applyDecryption(), (jmethodID)(((((((__int64)(methods[12]) ^ 3692215409003845541) ^ -8477414769169965817) ^ -2500734200805380130) ^ 7964412820195953116) ^ -5554185006004435173) ^ 6988336836081769371 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[35].applyDecryption(), (jmethodID)(((((((__int64)(methods[12]) ^ 8074082470316814865) ^ 4826227825290504676) ^ 2217373156660978284) ^ 2269071862572968055) ^ 3885361862634691369) ^ -4159458907198710271 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L80:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[36].applyDecryption(), (jmethodID)(((((((__int64)(methods[13]) ^ -1715736934070552467) ^ 1836353964262705966) ^ -3825456242303303883) ^ -1869571287128027020) ^ 7084719385486675024) ^ -6070509608501059521 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[36].applyDecryption(), (jmethodID)(((((((__int64)(methods[13]) ^ -6792312020451937341) ^ -6893300061106499844) ^ 1978681235089805738) ^ -6865725128604311939) ^ 1298493440686472337) ^ -9082966870418167561 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L81:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[36].applyDecryption(), (jmethodID)(((((((__int64)(methods[14]) ^ 2156737120769769510) ^ -8996264414977940395) ^ -7438956478097039168) ^ -316011228963792491) ^ 2667588219923394319) ^ 560625427867152290 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[36].applyDecryption(), (jmethodID)(((((((__int64)(methods[14]) ^ 9135770900316183474) ^ -2776549126618218064) ^ -8314160174776458418) ^ -3065693399939620948) ^ -668681278312076915) ^ 7103421659576888616 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L82:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[17].applyDecryption(), (jmethodID)(((((((__int64)(methods[15]) ^ 5409359083573106428) ^ -723848032801652080) ^ 2835307942908254953) ^ 724925062271934488) ^ 2833318513296189305) ^ -2973763913852264453 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[17].applyDecryption(), (jmethodID)(((((((__int64)(methods[15]) ^ 1608091329503631595) ^ 5244550946693762824) ^ -7827487843646079252) ^ -5663327503392305209) ^ 5405777765512336393) ^ 1401065955023207671 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L83:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2043,7 +2043,7 @@ L86:
 L87:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[47].applyDecryption(), (jmethodID)(((((((__int64)(methods[16]) ^ 4493732883081048159) ^ -1900988362022042421) ^ 2456065073937183535) ^ -7042875219959303568) ^ 6472230275992975809) ^ 764049056020747019 ^ rtdsc));
+    cstack0.l = env->CallStaticObjectMethod(classes[47].applyDecryption(), (jmethodID)(((((((__int64)(methods[16]) ^ -3286818374837535719) ^ 3749614016179863469) ^ -1625530504125960880) ^ -7732649078242802747) ^ -2217915507768963939) ^ 445540604372033046 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 1
     cstack1.l = clocal54.l;
@@ -2067,7 +2067,7 @@ L88:
 L89:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_1; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[46].applyDecryption(), (jmethodID)(((((((__int64)(methods[17]) ^ -8509455695021198228) ^ 3799877280529705332) ^ -3357360904328862049) ^ 373762629319706688) ^ -7089010074319184845) ^ 879133875220898968 ^ rtdsc));
+    cstack0.l = env->CallStaticObjectMethod(classes[46].applyDecryption(), (jmethodID)(((((((__int64)(methods[17]) ^ -2043464558502982255) ^ 3381554159126447184) ^ 6687500095978195487) ^ 8306161995284979952) ^ -8609425977196829869) ^ -4681390987001018974 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_1; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Render thread");
@@ -2078,12 +2078,12 @@ L89:
 L90:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[18]) ^ 8879249580949568127) ^ -6095568331499708303) ^ 6369244210571555783) ^ 2275347366383446265) ^ 239245519366836190) ^ 1051761108316094186 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[18]) ^ 1244760556833261884) ^ 9221860839282636122) ^ -8623127567900096752) ^ 6929752032770704347) ^ 9080712431064466277) ^ -2712797876098593749 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L91:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[19]) ^ -1092235205478016765) ^ 2126584786326738148) ^ -71405046224767839) ^ -4790128045648368896) ^ 5276070379289852082) ^ -2916221504252188479 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[19]) ^ -3140756141035258083) ^ -5030303264949249612) ^ 5910437369175082615) ^ -2388470557867012781) ^ -3133046886018945720) ^ -3000509932688908212 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L92:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2105,7 +2105,7 @@ L92:
 L93:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[20]) ^ -3981526404200918565) ^ 8323602593861062744) ^ 8896714326438539861) ^ 22600196367478889) ^ 1435405416069959916) ^ 4732031668589029684 ^ rtdsc));
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[20]) ^ -5331689665249291801) ^ -2458752525324709050) ^ 3551383690441903407) ^ -8764172111615328762) ^ -7852820316043541695) ^ -6649984097903444199 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L94:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2152,7 +2152,7 @@ L98:
     cstack1.l = env->NewStringUTF("Initializing game");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.l = env->CallStaticObjectMethod(classes[35].applyDecryption(), (jmethodID)(((((((__int64)(methods[21]) ^ 3546153175201567906) ^ 302502511959147264) ^ 8410041999603127991) ^ 2620234295525195854) ^ -4639053627754453392) ^ -8012356700566840987 ^ rtdsc), cstack0.l, cstack1.l);
+    cstack0.l = env->CallStaticObjectMethod(classes[35].applyDecryption(), (jmethodID)(((((((__int64)(methods[21]) ^ 1355219642397599596) ^ 2874053255878655122) ^ 6050988320869948783) ^ -3755467258223120127) ^ 9087917015930502249) ^ 6784913207928174642 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal57.l = cstack0.l;
@@ -2197,7 +2197,7 @@ L100:
     cstack3.l = clocal57.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    env->CallStaticVoidMethod(classes[50].applyDecryption(), (jmethodID)(((((((__int64)(methods[22]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l, cstack3.l);
+    env->CallStaticVoidMethod(classes[50].applyDecryption(), (jmethodID)(((((((__int64)(methods[22]) ^ 329134356341203615) ^ 8044720510062245781) ^ -9002370436871168171) ^ -838048253755501004) ^ -5727119879948298836) ^ 1025015093774417723 ^ rtdsc), cstack0.l, cstack1.l, cstack2.l, cstack3.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L101:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2205,7 +2205,7 @@ L101:
     cstack0.l = clocal57.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[50].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 3435694089637230194) ^ 6650310099658095560) ^ -6264073889166917545) ^ -5141290482895563992) ^ -4646258212620489364) ^ 936676289115942238 ^ rtdsc), cstack0.l);
+    env->CallStaticVoidMethod(classes[50].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 8148938403348245357) ^ 910529939611655756) ^ 5582892982895506949) ^ -5998801174670853836) ^ 4814902397731843206) ^ -164730275793783847 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L102:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2282,7 +2282,7 @@ L108:
     cstack0.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_3; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[24]) ^ -2627713498007060093) ^ 1607735140518763570) ^ -5009627327811394172) ^ 5376191974606469818) ^ -4948900477081804634) ^ 9102811161242746056 ^ rtdsc), cstack0.l);
+    env->CallStaticVoidMethod(classes[49].applyDecryption(), (jmethodID)(((((((__int64)(methods[24]) ^ -7159292429677857696) ^ -3864511678289041787) ^ 1987969735962741700) ^ 9160534937302514340) ^ 2199215657794316766) ^ -6185594431996178765 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto CATCH_3; }
 L109:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2459,7 +2459,7 @@ L123:
     cstack0.i = env->CallIntMethod(cstack0.l, env->GetMethodID(classes[13].applyDecryption(), "intValue", "()I"));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), (jmethodID)(((((((__int64)(methods[25]) ^ -8580661995792045372) ^ 8664096675979969493) ^ -7527808951395376880) ^ 5208455141114679152) ^ -5244338156677083931) ^ 8319913047981733945 ^ rtdsc), cstack0.i);
+    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), (jmethodID)(((((((__int64)(methods[25]) ^ -2299985877869597602) ^ 62534949949989649) ^ 2924160407616658073) ^ -4799541307806537155) ^ -7701499183812884061) ^ 7713692539742705508 ^ rtdsc), cstack0.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GOTO; Stack pointer: 1
     goto L125;
@@ -2467,7 +2467,7 @@ L123:
 L124:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), (jmethodID)(((((((__int64)(methods[26]) ^ 3435694089637230194) ^ 6650310099658095560) ^ -6264073889166917545) ^ -5141290482895563992) ^ -4646258212620489364) ^ 936676289115942238 ^ rtdsc));
+    cstack0.l = env->CallStaticObjectMethod(classes[59].applyDecryption(), (jmethodID)(((((((__int64)(methods[26]) ^ -2809378880047277653) ^ -5626981950041575589) ^ -5407447185643435626) ^ 2449359712275649732) ^ -3111433140010772396) ^ 7045879245681845345 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L125:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2691,31 +2691,31 @@ extern "C" JNIEXPORT void JNICALL  Java_net_minecraft_client_main_Main__00024Cli
     classes[59] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/util/OptionalInt"))))));
 
     /* METHOD REFERENCE TABLE */
-methods[2] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=431&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Integer"), "valueOf", "(I)Ljava/lang/Integer;") ^ 1399562706254652898), rtdsc)));
-methods[3] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=233&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "milliTime", "()J") ^ 1726754529186998314), rtdsc)));
-methods[4] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=254&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello0_proxy1", "(J)Ljava/lang/String;") ^ 1744931848865491019), rtdsc)));
-methods[5] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=259&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello1_proxy2", "(Ljava/util/List;)Ljava/lang/String;") ^ 1260754055923643999), rtdsc)));
-methods[6] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=12&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;") ^ 1668917590833250057), rtdsc)));
-methods[7] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=404&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "isNotEmpty", "(Ljava/lang/String;)Z") ^ 1497059258988689413), rtdsc)));
-methods[8] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=289&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/net/Authenticator"), "setDefault", "(Ljava/net/Authenticator;)V") ^ 1211179537948283678), rtdsc)));
-methods[9] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=168&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "toOptionalInt", "(Ljava/lang/Integer;)Ljava/util/OptionalInt;") ^ 1834165985516106893), rtdsc)));
-methods[10] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=146&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/JSONUtils"), "fromJson", "(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;") ^ 1923400117871755471), rtdsc)));
-methods[11] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=157&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/entity/player/PlayerEntity"), "getOfflineUUID", "(Ljava/lang/String;)Ljava/util/UUID;") ^ 1905222793898295471), rtdsc)));
-methods[12] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=281&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "crash", "()V") ^ 1277278892385452575), rtdsc)));
-methods[13] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=3&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "register", "()V") ^ 1683789948373341801), rtdsc)));
-methods[14] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=70&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "checkTranslations", "()V") ^ 1573073521315897670), rtdsc)));
-methods[15] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=293&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "func_240994_l_", "()V") ^ 1204569605081547165), rtdsc)));
-methods[16] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=246&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Runtime"), "getRuntime", "()Ljava/lang/Runtime;") ^ 1758151723188898635), rtdsc)));
-methods[17] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=76&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Thread"), "currentThread", "()Ljava/lang/Thread;") ^ 1563158617720825606), rtdsc)));
-methods[18] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=285&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initRenderThread", "()V") ^ 1270668959518716063), rtdsc)));
-methods[19] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=352&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "beginInitialization", "()V") ^ 1107073048052543355), rtdsc)));
-methods[20] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=147&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "finishInitialization", "()V") ^ 1921747630360104047), rtdsc)));
-methods[21] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=256&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "makeCrashReport", "(Ljava/lang/Throwable;Ljava/lang/String;)Lnet/minecraft/crash/CrashReport;") ^ 1265711505573696383), rtdsc)));
-methods[22] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=89&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "fillCrashReport", "(Lnet/minecraft/client/resources/LanguageManager;Ljava/lang/String;Lnet/minecraft/client/GameSettings;Lnet/minecraft/crash/CrashReport;)V") ^ 1594555811722725927), rtdsc)));
-methods[23] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=391&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "displayCrashReport", "(Lnet/minecraft/crash/CrashReport;)V") ^ 1465662064986789092), rtdsc)));
-methods[24] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=429&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V") ^ 1402867676982988450), rtdsc)));
-methods[25] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=332&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "of", "(I)Ljava/util/OptionalInt;") ^ 1140122725271127804), rtdsc)));
-methods[26] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=391&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "empty", "()Ljava/util/OptionalInt;") ^ 1465662064986789092), rtdsc)));
+methods[2] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=315&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Integer"), "valueOf", "(I)Ljava/lang/Integer;") ^ 1221094441543355742), rtdsc)));
+methods[3] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=219&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "milliTime", "()J") ^ 1802768787219239276), rtdsc)));
+methods[4] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=209&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello0_proxy1", "(J)Ljava/lang/String;") ^ 1819293627976015148), rtdsc)));
+methods[5] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=186&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "$hello1_proxy2", "(Ljava/util/List;)Ljava/lang/String;") ^ 1857300759139619277), rtdsc)));
+methods[6] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=6&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "getValue", "(Ljoptsimple/OptionSet;Ljoptsimple/OptionSpec;)Ljava/lang/Object;") ^ 1678832494428322121), rtdsc)));
+methods[7] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=411&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "isNotEmpty", "(Ljava/lang/String;)Z") ^ 1485491872176933220), rtdsc)));
+methods[8] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=91&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/net/Authenticator"), "setDefault", "(Ljava/net/Authenticator;)V") ^ 1591250840994390375), rtdsc)));
+methods[9] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=319&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/main/Main"), "toOptionalInt", "(Ljava/lang/Integer;)Ljava/util/OptionalInt;") ^ 1214484504381651934), rtdsc)));
+methods[10] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=398&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/JSONUtils"), "fromJson", "(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;") ^ 1454094673880065603), rtdsc)));
+methods[11] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=238&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/entity/player/PlayerEntity"), "getOfflineUUID", "(Ljava/lang/String;)Ljava/util/UUID;") ^ 1718492108808610378), rtdsc)));
+methods[12] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=39&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "crash", "()V") ^ 1624300522507942120), rtdsc)));
+methods[13] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=408&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "register", "()V") ^ 1490449321826985604), rtdsc)));
+methods[14] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=367&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/registry/Bootstrap"), "checkTranslations", "()V") ^ 1082285791212346842), rtdsc)));
+methods[15] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=226&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/util/Util"), "func_240994_l_", "()V") ^ 1738321911703787210), rtdsc)));
+methods[16] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=240&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Runtime"), "getRuntime", "()Ljava/lang/Runtime;") ^ 1768066626783970699), rtdsc)));
+methods[17] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=433&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Thread"), "currentThread", "()Ljava/lang/Thread;") ^ 1449137224230013219), rtdsc)));
+methods[18] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=272&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initRenderThread", "()V") ^ 1292151249925544320), rtdsc)));
+methods[19] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=201&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "beginInitialization", "()V") ^ 1779634013595726892), rtdsc)));
+methods[20] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=82&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "finishInitialization", "()V") ^ 1606123198534482119), rtdsc)));
+methods[21] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=361&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/crash/CrashReport"), "makeCrashReport", "(Ljava/lang/Throwable;Ljava/lang/String;)Lnet/minecraft/crash/CrashReport;") ^ 1092200690512451611), rtdsc)));
+methods[22] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=161&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "fillCrashReport", "(Lnet/minecraft/client/resources/LanguageManager;Ljava/lang/String;Lnet/minecraft/client/GameSettings;Lnet/minecraft/crash/CrashReport;)V") ^ 1845733372327863085), rtdsc)));
+methods[23] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=288&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("net/minecraft/client/Minecraft"), "displayCrashReport", "(Lnet/minecraft/crash/CrashReport;)V") ^ 1212832021164967806), rtdsc)));
+methods[24] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=141&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("com/mojang/blaze3d/systems/RenderSystem"), "initGameThread", "(Z)V") ^ 1878783049546447534), rtdsc)));
+methods[25] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=63&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "of", "(I)Ljava/util/OptionalInt;") ^ 1637520392536382440), rtdsc)));
+methods[26] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=340&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/OptionalInt"), "empty", "()Ljava/util/OptionalInt;") ^ 1179782339651416061), rtdsc)));
 
 L141:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2792,151 +2792,4 @@ L145:
     // RETURN; Stack pointer: 0
     return;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
-
-    return;
-}
-// ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile
-jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7(JNIEnv *env, jclass clazz) {
-    // stack count: 1, locals count: 0, try-catches: 0
-    jvalue cstack0 = {}, cstack_exception = {};
-    jvalue clocal0 = {};
-
-L1:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "username", "Ljava/lang/String;"));
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // ARETURN; Stack pointer: 1
-    return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
-
-    return (jobject) 0;
-}
-jint JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8(JNIEnv *env, jclass clazz) {
-    // stack count: 1, locals count: 0, try-catches: 0
-    jvalue cstack0 = {}, cstack_exception = {};
-    jvalue clocal0 = {};
-
-L2:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // GETSTATIC; Stack pointer: 0
-    cstack0.i = (jint) env->GetStaticIntField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "uid", "I"));
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // IRETURN; Stack pointer: 1
-    return (jint) cstack0.i;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jint) 0; }
-
-    return (jint) 0;
-}
-jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9(JNIEnv *env, jclass clazz) {
-    // stack count: 1, locals count: 0, try-catches: 0
-    jvalue cstack0 = {}, cstack_exception = {};
-    jvalue clocal0 = {};
-
-L3:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "expire", "Ljava/lang/String;"));
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // ARETURN; Stack pointer: 1
-    return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
-
-    return (jobject) 0;
-}
-jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10(JNIEnv *env, jclass clazz) {
-    // stack count: 1, locals count: 0, try-catches: 0
-    jvalue cstack0 = {}, cstack_exception = {};
-    jvalue clocal0 = {};
-
-L4:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "role", "Ljava/lang/String;"));
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // ARETURN; Stack pointer: 1
-    return (jobject) cstack0.l;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
-
-    return (jobject) 0;
-}
-extern "C" JNIEXPORT void JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile__00024Clinit(JNIEnv *env, jclass clazz) {
-    // stack count: 1, locals count: 0, try-catches: 0
-    jvalue cstack0 = {}, cstack_exception = {};
-    jvalue clocal0 = {};
-
-    JNINativeMethod jniMethods[] = {
-        (char*)"getUsername", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7,
-        (char*)"getUid", (char*)"()I", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8,
-        (char*)"getExpire", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9,
-        (char*)"getRole", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10,
-    };
-    env->RegisterNatives(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
-
-    /* CLASS REFERENCE TABLE */
-    classes[60] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"))))));
-
-    /* METHOD REFERENCE TABLE */
-
-L5:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // LDC; Stack pointer: 0
-    cstack0.l = env->NewStringUTF("username");
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(env->FindClass("java/lang/System"), env->GetStaticMethodID(env->FindClass("java/lang/System"), "getenv", "(Ljava/lang/String;)Ljava/lang/String;"), cstack0.l);
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // PUTSTATIC; Stack pointer: 1
-    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "username", "Ljava/lang/String;"), cstack0.l);
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L6:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // ICONST_1; Stack pointer: 0
-    cstack0.i = 1;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // PUTSTATIC; Stack pointer: 1
-    env->SetStaticIntField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "uid", "I"), (jint) cstack0.i);
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L7:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // LDC; Stack pointer: 0
-    cstack0.l = env->NewStringUTF("2038-06-06");
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // PUTSTATIC; Stack pointer: 1
-    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "expire", "Ljava/lang/String;"), cstack0.l);
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L8:
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // LDC; Stack pointer: 0
-    cstack0.l = env->NewStringUTF("Разработчик");
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // PUTSTATIC; Stack pointer: 1
-    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "role", "Ljava/lang/String;"), cstack0.l);
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-    // RETURN; Stack pointer: 0
-    return;
-    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
-
-    return;
-}
-#ifndef _Included_ru_itskekoff_j2c_loader_Protection
-#define _Included_ru_itskekoff_j2c_loader_Protection
-#ifdef __cplusplus
-extern "C" {
-#endif
-    JNIEXPORT void JNICALL Java_ru_itskekoff_j2c_loader_Protection_initialize(JNIEnv* env, jclass klass) {
-        jclass clazz = env->FindClass("[Z");
-        boolean_array_class = (jclass)env->NewGlobalRef(clazz);
-
-
-    }
-#ifdef __cplusplus
-}
-#endif
-#endif
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->Excep

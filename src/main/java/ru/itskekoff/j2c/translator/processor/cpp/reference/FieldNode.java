@@ -30,7 +30,6 @@ public class FieldNode {
         kluch4 = random.nextLong();
         kluch5 = random.nextLong();
         kluch6 = random.nextLong();
-        long d = 16958223540479980461L;
     }
 
     //ХЪВАЪХАВХЪВАФЫХЪАВЫХЪФЫАВЪХ, Я ПОТОМ САМ ПЕРЕДЕЛАЮ, ТЫ ПОКА ЭТО НЕ ТРОГАЙ ЫВАХЪФВАХЪАВХЪВАХЪФЪАХФВАХЪЫ
