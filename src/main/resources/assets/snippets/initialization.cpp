@@ -4,7 +4,7 @@
 extern "C" {
 #endif
     JNIEXPORT void JNICALL Java_ru_itskekoff_j2c_loader_Protection_initialize(JNIEnv* env, jclass klass) {
-        jclass clazz = env->FindClass("[Z");
+        jclass clazz = env->FindClass(xorstr_("[Z"));
         boolean_array_class = (jclass)env->NewGlobalRef(clazz);
 
 

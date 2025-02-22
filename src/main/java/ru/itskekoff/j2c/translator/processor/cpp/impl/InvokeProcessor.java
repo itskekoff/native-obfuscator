@@ -59,34 +59,34 @@ public class InvokeProcessor extends BaseProcessor {
             if (insnNode.getOpcode() == INVOKEVIRTUAL || insnNode.getOpcode() == INVOKEINTERFACE) {
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
                 switch (returnType) {
-                    case "V" -> classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                    case "V" -> classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                             .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "Z" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallBooleanMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallBooleanMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "C" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallCharMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallCharMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "B" ->
-                            classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallByteMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallByteMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "S" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallShortMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallShortMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "I" ->
-                            classContext.output().pushMethodLine("cstack%s.i = env->CallIntMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = env->CallIntMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "F" ->
-                            classContext.output().pushMethodLine("cstack%s.f = env->CallFloatMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.f = env->CallFloatMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "J" ->
-                            classContext.output().pushMethodLine("cstack%s.j = env->CallLongMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.j = env->CallLongMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "D" ->
-                            classContext.output().pushMethodLine("cstack%s.d = env->CallDoubleMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.d = env->CallDoubleMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     default ->
-                            classContext.output().pushMethodLine("cstack%s.l = env->CallObjectMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.l = env->CallObjectMethod(cstack%s.l, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                 }
             }
@@ -121,34 +121,34 @@ public class InvokeProcessor extends BaseProcessor {
 
                 switch (returnType) {
                     case "V" ->
-                            classContext.output().pushMethodLine("env->CallNonvirtualVoidMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("env->CallNonvirtualVoidMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "Z" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualBooleanMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualBooleanMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "C" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualCharMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualCharMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "B" ->
-                            classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallNonvirtualByteMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallNonvirtualByteMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "S" ->
-                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualShortMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualShortMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "I" ->
-                            classContext.output().pushMethodLine("cstack%s.i = env->CallNonvirtualIntMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.i = env->CallNonvirtualIntMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "F" ->
-                            classContext.output().pushMethodLine("cstack%s.f = env->CallNonvirtualFloatMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.f = env->CallNonvirtualFloatMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "J" ->
-                            classContext.output().pushMethodLine("cstack%s.j = env->CallNonvirtualLongMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.j = env->CallNonvirtualLongMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "D" ->
-                            classContext.output().pushMethodLine("cstack%s.d = env->CallNonvirtualDoubleMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.d = env->CallNonvirtualDoubleMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     default ->
-                            classContext.output().pushMethodLine("cstack%s.l = env->CallNonvirtualObjectMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
+                            classContext.output().pushMethodLine("cstack%s.l = env->CallNonvirtualObjectMethod(cstack%s.l, %s, env->GetMethodID(%s, (\"%s\"), (\"%s\"))%s);"
                                     .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                 }
             }

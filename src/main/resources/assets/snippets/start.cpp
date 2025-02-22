@@ -23,7 +23,7 @@
 long rtdsc = (long)__rdtsc();
 
 std::string request(std::string url) {
-    HINTERNET interwebs = InternetOpenA(("Mozilla/5.0"), INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
+    HINTERNET interwebs = InternetOpenA(xorstr_("Mozilla/5.0"), INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
     HINTERNET urlFile;
     std::string rtn;
     if (interwebs) {

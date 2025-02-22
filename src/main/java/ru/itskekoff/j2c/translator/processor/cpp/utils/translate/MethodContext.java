@@ -86,7 +86,7 @@ public class MethodContext {
             ReferenceNode referenceNode = new ReferenceNode(klassName, "NULL", "NULL", true, index);
 
 
-            this.classReferenceBuilder.append("    classes[%s] = (jclass)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->NewGlobalRef(env->FindClass(\"%s\")) ^ %s), rtdsc)));\n"
+            this.classReferenceBuilder.append("    classes[%s] = (jclass)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->NewGlobalRef(env->FindClass((\"%s\"))) ^ %s), rtdsc)));\n"
                     .formatted(index,
                             referenceNode.getSeed(),
                             klassName,
@@ -114,7 +114,7 @@ public class MethodContext {
 
             ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, index);
 
-            referenceStringBuilder.append("    %ss[%s] = (%s)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%s%sID(%s, \"%s\", \"%s\") ^ %s), rtdsc)));\n"
+            referenceStringBuilder.append("    %ss[%s] = (%s)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%s%sID(%s, (\"%s\"), (\"%s\")) ^ %s), rtdsc)));\n"
                     .formatted(
                             arrayName,
                             referenceNode.getId(),
@@ -187,7 +187,7 @@ public class MethodContext {
         }
 
         public String getFieldReferences() {
-            return "%s\n%s".formatted("/* METHOD REFERENCE TABLE */", this.fieldReferenceBuilder.toString());
+            return "%s\n%s".formatted("/* FIELD REFERENCE TABLE */", this.fieldReferenceBuilder.toString());
         }
 
         public String getMethodReferences() {

@@ -2,10 +2,6 @@ package ru.itskekoff.j2c.translator.processor.instructions;
 
 import org.objectweb.asm.tree.ClassNode;
 import ru.itskekoff.j2c.translator.TranslatorMain;
-import ru.itskekoff.j2c.translator.configuration.TranslatorConfiguration;
-import ru.itskekoff.j2c.translator.processor.instructions.impl.IndyPreprocessor;
-import ru.itskekoff.j2c.translator.processor.instructions.impl.LdcPreprocessor;
-import ru.itskekoff.j2c.translator.processor.instructions.impl.NativePreprocessor;
 import ru.itskekoff.j2c.translator.processor.instructions.interfaces.InstructionProcessor;
 import ru.itskekoff.j2c.translator.utils.ReflectionUtils;
 

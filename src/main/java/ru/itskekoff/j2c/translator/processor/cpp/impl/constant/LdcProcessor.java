@@ -62,7 +62,7 @@ public class LdcProcessor extends BaseProcessor {
     public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         Object cst = ((LdcInsnNode) insnNode).cst;
         if (cst instanceof String) {
-            context.output().pushMethodLine("cstack%s.l = env->NewStringUTF(\"%s\");".formatted(context.getStackPointer().peek(), escapeString(cst.toString())));
+            context.output().pushMethodLine("cstack%s.l = env->NewStringUTF((\"%s\"));".formatted(context.getStackPointer().peek(), escapeString(cst.toString())));
         } else if (cst instanceof Integer) {
             context.output().pushMethodLine("cstack%s.i = %s;".formatted(context.getStackPointer().peek(), getIntString((Integer) cst)));
         } else if (cst instanceof Long) {

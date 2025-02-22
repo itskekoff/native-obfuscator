@@ -15,7 +15,7 @@ public class NewArrayProcessor extends BaseProcessor {
     public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof TypeInsnNode type) {
             if (insnNode.getOpcode() == ANEWARRAY) {
-                context.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, %s, nullptr); }"
+                context.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, xorstr_(\"java/lang/NegativeArraySizeException\"), xorstr_(\"ARRAYLENGTH negative\"), 404); else { cstack%s.l = env->NewObjectArray(cstack%s.i, %s, nullptr); }"
                         .formatted(
                                 context.getStackPointer().peek() - 1,
                                 context.getStackPointer().peek() - 1,

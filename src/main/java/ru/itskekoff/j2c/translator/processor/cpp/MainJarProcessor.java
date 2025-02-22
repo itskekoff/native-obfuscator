@@ -19,10 +19,7 @@ import software.coley.cafedude.classfile.ClassFile;
 import software.coley.cafedude.io.ClassFileReader;
 import software.coley.cafedude.io.ClassFileWriter;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.io.UncheckedIOException;
+import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.jar.JarEntry;
@@ -100,10 +97,11 @@ public class MainJarProcessor {
             mainWriter.close();
 
             try {
-                executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "."}, cppDir.toFile());
-                executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "--build", ".", "--config", "Release"}, cppDir.toFile());
+                executeCommand((new String[]{"cmake", "."}), cppDir.toFile());
+                executeCommand((new String[]{"cmake", "--build", ".", "--config", "Release"}), cppDir.toFile());
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.err.println("Error during CMake execution: " + e.getMessage());
+                e.printStackTrace();
             }
 
             out.putNextEntry(new ZipEntry("⚜richessssstafffs⚜/AntiAutistLeak.dll"));
@@ -113,12 +111,36 @@ public class MainJarProcessor {
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
     }
 
+    private List<String> createCommand(String... args) {
+        List<String> command = new ArrayList<>();
+        command.add("C:\\Program Files\\CMake\\bin\\cmake.exe");
+        command.addAll(Arrays.asList(args));
+        return command;
+    }
+
+
+
     private void executeCommand(String[] command, File directory) throws IOException, InterruptedException {
-        Process process = new ProcessBuilder(command)
-                .directory(directory)
-                .inheritIO()
-                .start();
-        process.waitFor();
+        Process process = Runtime.getRuntime().exec(command, null, directory);
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
+
+        try (BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
+            String line;
+            while ((line = errorReader.readLine()) != null) {
+                System.err.println(line);
+            }
+        }
+
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new IOException("Process exited with code: " + exitCode);
+        }
     }
 
     private void processJarEntries(JarFile jar, ZipOutputStream out, StringBuilder cppCode, MethodProcessor methodProcessor) throws IOException {
