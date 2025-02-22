@@ -2,5 +2,6 @@
 C:\protection\native-obfuscator\work\output\cpp\table.h(8,43): warning C4293: '<<': shift count negative or too big, undefined behavior
   (compiling source file 'dllmain.cpp')
   
+  LINK : C:\protection\native-obfuscator\work\output\cpp\build\lib\AntiAutistLeak.dll not found or not built by the last incremental link; performing full link
      Creating library C:/protection/native-obfuscator/work/output/cpp/build/lib/Debug/AntiAutistLeak.lib and object C:/protection/native-obfuscator/work/output/cpp/build/lib/Debug/AntiAutistLeak.exp
   AntiAutistLeak.vcxproj -> C:\protection\native-obfuscator\work\output\cpp\build\lib\AntiAutistLeak.dll

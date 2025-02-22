@@ -13,7 +13,6 @@ import static ru.itskekoff.j2c.translator.processor.cpp.utils.SnippetGenerator.r
 
 public class FieldProcessor extends BaseProcessor {
     public static String[] TYPES = new String[]{"Void", "Boolean", "Char", "Byte", "Short", "Int", "Float", "Long", "Double", "Array", "Object", "Object"};
-    private int fieldIdIndex = 0;
 
     public FieldProcessor() {
         super(GETFIELD, PUTFIELD, GETSTATIC, PUTSTATIC);
@@ -26,31 +25,27 @@ public class FieldProcessor extends BaseProcessor {
 
             int classId = context.output().pushJavaClass(fieldInsnNode.owner);
 
-            String class_ptr = "env->FindClass(\"%s\")".formatted(((FieldInsnNode) insnNode).owner);
+            String class_ptr = "env->FindClass(\"%s\")".formatted(fieldInsnNode.owner);
 
             if (context.notClinit(method))
                 class_ptr = "classes[%s].applyDecryption()".formatted(classId);
 
-            String fieldIdAddition = "fieldId_%d".formatted(fieldIdIndex++);
-
-            fieldIdAddition = ("env->Get%sFieldID(%s, \"%s\", \"%s\")".formatted(
+            String fieldIdAddition = ("env->Get%sFieldID(%s, \"%s\", \"%s\")".formatted(
                     isStatic ? "Static" : "",
                     class_ptr,
-                    ((FieldInsnNode) insnNode).name,
-                    ((FieldInsnNode) insnNode).desc));
+                    fieldInsnNode.name,
+                    fieldInsnNode.desc));
 
             switch (insnNode.getOpcode()) {
                 case GETSTATIC -> {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
-                        case 1, 2, 4, 5 -> {
-                            context.output().pushMethodLine("cstack%s.i = %s env->GetStatic%sField(%s, %s);".formatted(
-                                    context.getStackPointer().peek(),
-                                    Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(jint)" : "",
-                                    reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                    class_ptr,
-                                    fieldIdAddition
-                            ));
-                        }
+                        case 1, 2, 4, 5 -> context.output().pushMethodLine("cstack%s.i = %s env->GetStatic%sField(%s, %s);".formatted(
+                                context.getStackPointer().peek(),
+                                Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(jint)" : "",
+                                reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
+                                class_ptr,
+                                fieldIdAddition
+                        ));
                         case 6 ->
                                 context.output().pushMethodLine("cstack%s.f = env->GetStatic%sField(%s, %s);".formatted(
                                         context.getStackPointer().peek(),
@@ -83,15 +78,13 @@ public class FieldProcessor extends BaseProcessor {
                 }
                 case GETFIELD -> {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
-                        case 1, 2, 4, 5 -> {
-                            context.output().pushMethodLine("cstack%s.i = %s env->Get%sField(cstack%s.l, %s);".formatted(
-                                    context.getStackPointer().peek() - 1,
-                                    Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(jint)" : "",
-                                    reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                    context.getStackPointer().peek() - 1,
-                                    fieldIdAddition
-                            ));
-                        }
+                        case 1, 2, 4, 5 -> context.output().pushMethodLine("cstack%s.i = %s env->Get%sField(cstack%s.l, %s);".formatted(
+                                context.getStackPointer().peek() - 1,
+                                Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(jint)" : "",
+                                reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
+                                context.getStackPointer().peek() - 1,
+                                fieldIdAddition
+                        ));
                         case 6 ->
                                 context.output().pushMethodLine("cstack%s.f = env->Get%sField(cstack%s.l, %s);".formatted(
                                         context.getStackPointer().peek() - 1,
@@ -124,15 +117,13 @@ public class FieldProcessor extends BaseProcessor {
                 }
                 case PUTSTATIC -> {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
-                        case 1, 2, 4, 5 -> {
-                            context.output().pushMethodLine("env->SetStatic%sField(%s, %s, %s cstack%s.i);".formatted(
-                                    reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                    class_ptr,
-                                    fieldIdAddition,
-                                    Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(%s)".formatted(MethodProcessor.CPP_TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]) : "",
-                                    context.getStackPointer().peek() - 1
-                            ));
-                        }
+                        case 1, 2, 4, 5 -> context.output().pushMethodLine("env->SetStatic%sField(%s, %s, %s cstack%s.i);".formatted(
+                                reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
+                                class_ptr,
+                                fieldIdAddition,
+                                Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(%s)".formatted(MethodProcessor.CPP_TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]) : "",
+                                context.getStackPointer().peek() - 1
+                        ));
                         case 6 ->
                                 context.output().pushMethodLine("env->SetStatic%sField(%s, %s, cstack%s.f);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
@@ -165,15 +156,13 @@ public class FieldProcessor extends BaseProcessor {
                 }
                 case PUTFIELD -> {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
-                        case 1, 2, 4, 5 -> {
-                            context.output().pushMethodLine("env->Set%sField(cstack%s.l, %s, %s cstack%s.i);".formatted(
-                                    reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                    context.getStackPointer().peek() - 2,
-                                    fieldIdAddition,
-                                    Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(%s)".formatted(MethodProcessor.CPP_TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]) : "",
-                                    context.getStackPointer().peek() - 1
-                            ));
-                        }
+                        case 1, 2, 4, 5 -> context.output().pushMethodLine("env->Set%sField(cstack%s.l, %s, %s cstack%s.i);".formatted(
+                                reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
+                                context.getStackPointer().peek() - 2,
+                                fieldIdAddition,
+                                Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(%s)".formatted(MethodProcessor.CPP_TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]) : "",
+                                context.getStackPointer().peek() - 1
+                        ));
                         case 6 ->
                                 context.output().pushMethodLine("env->Set%sField(cstack%s.l, %s, cstack%s.f);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),

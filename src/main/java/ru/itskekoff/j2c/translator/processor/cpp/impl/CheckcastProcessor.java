@@ -8,6 +8,7 @@ import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 
 public class CheckcastProcessor extends BaseProcessor {
+
     public CheckcastProcessor() {
         super(CHECKCAST);
     }

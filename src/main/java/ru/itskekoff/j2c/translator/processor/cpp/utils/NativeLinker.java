@@ -1,11 +1,14 @@
 package ru.itskekoff.j2c.translator.processor.cpp.utils;
 
+import lombok.Getter;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
 public class NativeLinker {
+    @Getter
     private final ClassNode classNode;
     private int count;
+    @Getter
     private final StringBuilder stringBuilder;
     private final StringBuilder methods;
 
@@ -39,11 +42,4 @@ public class NativeLinker {
         return (count != 0 ? new StringBuilder(methods.toString()) : new StringBuilder());
     }
 
-    public StringBuilder getStringBuilder() {
-        return stringBuilder;
-    }
-
-    public ClassNode getClassNode() {
-        return classNode;
-    }
 }

@@ -16,23 +16,15 @@ import java.util.List;
 
 
 public class InvokeProcessor extends BaseProcessor {
-    private int currentIndex = 0;
 
     public InvokeProcessor() {
         super(INVOKEINTERFACE, INVOKESPECIAL, INVOKESTATIC, INVOKEVIRTUAL);
     }
 
-    static int id = 0;
-
     @Override
     public void translate(MethodContext classContext, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof MethodInsnNode mh) {
-            int length = Type.getArgumentTypes(mh.desc).length + 1; // +1 for the 'this' reference
-            int invokeStackPointer = classContext.getStackPointer().peek();
             Type[] args = Type.getArgumentTypes(mh.desc);
-//            instructionName += "_" + returnType.getSort();
-
-            StringBuilder argsBuilder = new StringBuilder();
             List<Integer> argOffsets = new ArrayList<>();
 
             int stackOffset = classContext.getStackPointer().peek();
@@ -48,7 +40,7 @@ public class InvokeProcessor extends BaseProcessor {
             boolean isStatic = insnNode.getOpcode() == Opcodes.INVOKESTATIC;
             int objectOffset = isStatic ? 0 : 1;
 
-            invokeStackPointer = stackOffset - objectOffset;
+            int invokeStackPointer = stackOffset - objectOffset;
 
             StringBuilder arg4Call = new StringBuilder();
             for (int i = 0; i < argOffsets.size(); i++) {
@@ -63,13 +55,9 @@ public class InvokeProcessor extends BaseProcessor {
                     default -> appender.append(".l");
                 }
                 arg4Call.append(appender);
-//                argsBuilder.append(", ").append(context.getSnippets().getSnippet("INVOKE_ARG_" + args[i].getSort(),
-//                        Util.createMap("index", argOffsets.get(i))));
             }
 
-            // Handle INVOKEVIRTUAL and INVOKEINTERFACE
-            int index = currentIndex++;
-            String tempClassAddition = "";
+            String tempClassAddition;
 
             boolean clinit = method.name.contains("$Clinit");
 
@@ -80,10 +68,7 @@ public class InvokeProcessor extends BaseProcessor {
             }
 
             if (insnNode.getOpcode() == INVOKEVIRTUAL || insnNode.getOpcode() == INVOKEINTERFACE) {
-                // String arg4Call = getArg(mh.desc, classContext);
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
-//                classContext.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");"
-//                        .formatted(tempClassAddition, mh.owner));
                 switch (returnType) {
                     case "V" -> {
                         classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
@@ -125,8 +110,6 @@ public class InvokeProcessor extends BaseProcessor {
                     case "V" -> {
                         if (classContext.notClinit(method)) {
                             ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
-//                            classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l,(jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-//                                    .formatted(invokeStackPointer, fieldNode.getId(), fieldNode.getKluch2(), fieldNode.getKluch3(), fieldNode.getKluch4(), fieldNode.getKluch5(), fieldNode.getKluch6(), fieldNode.getKluch(), arg4Call));
 
                             classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
                                     .formatted(tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));

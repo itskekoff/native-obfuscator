@@ -11,23 +11,18 @@ public class ThrowProcessor extends BaseProcessor {
         super(ATHROW);
     }
 
-    private int tempIndex = 0;
-
     @Override
     public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof InsnNode) {
             if (context.notClinit(method)) {
-//                writer.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");".formatted(fieldAddition, writer.classNode.name));
-
                 int classId = context.output().pushJavaClass(context.getClassNode().name);
 
                 context.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(classes[%s].applyDecryption(), \"\"); else env->Throw((jthrowable) cstack%s.l);"
                         .formatted(context.getStackPointer().peek() - 1, classId, context.getStackPointer().peek() - 1));
             } else {
 
-                String fieldAddition = "tempThrow_%d".formatted(tempIndex++);
+                String fieldAddition = "env->FindClass(\"%s\")".formatted(context.getClassNode().name);
 
-                context.output().pushMethodLine("jclass %s = env->FindClass(\"%s\");".formatted(fieldAddition, context.getClassNode().name));
                 context.output().pushMethodLine("if (cstack%s.l == nullptr) env->ThrowNew(%s, \"\"); else env->Throw((jthrowable) cstack%s.l);"
                         .formatted(context.getStackPointer().peek() - 1, fieldAddition, context.getStackPointer().peek() - 1));
             }

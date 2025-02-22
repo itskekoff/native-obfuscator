@@ -99,7 +99,7 @@ public class MethodContext {
 
             ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
 
-            methodReferenceBuilder.append("methods[%s] = (jmethodID)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\") ^ %s), rtdsc)));\n"
+            methodReferenceBuilder.append("    methods[%s] = (jmethodID)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\") ^ %s), rtdsc)));\n"
                     .formatted(referenceNode.getId(),
                             referenceNode.getSeed(),
                             referenceNode.isStatic(),

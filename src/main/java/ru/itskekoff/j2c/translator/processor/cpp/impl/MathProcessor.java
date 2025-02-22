@@ -37,22 +37,10 @@ public class MathProcessor extends BaseProcessor {
                 case LADD -> context.output().pushMethodLine("cstack%s.j = cstack%s.j + cstack%s.j;"
                         .formatted(context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 2)
                 );
-                case FCMPG ->  {
-                    context.output().pushString("\n{ jfloat value1 = cstack%s.f; jfloat value2 = cstack%s.f; cstack%s.i = value1 > value2 ? 1 : ((value1 == value2) ? 0 : ((value1 < value2) ? -1 : 1)); }"
-                            .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1, context.getStackPointer().peek() - 2));
-//                    writer.output().pushMethodBlock(
-//                        "jfloat value1 = cstack%s.f;".formatted(writer.getStackPointer().peek() - 2),
-//                        "jfloat value2 = cstack%s.f;".formatted(writer.getStackPointer().peek() - 1),
-//                        "cstack%s.i = value1 > value2 ? 1 : ((value1 == value2) ? 0 : ((value1 < value2) ? -1 : 1));".formatted(writer.getStackPointer().peek() - 2)
-//                );
-                }
+                case FCMPG -> context.output().pushString("\n{ jfloat value1 = cstack%s.f; jfloat value2 = cstack%s.f; cstack%s.i = value1 > value2 ? 1 : ((value1 == value2) ? 0 : ((value1 < value2) ? -1 : 1)); }"
+                        .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1, context.getStackPointer().peek() - 2));
                 case FCMPL -> context.output().pushString("\n{ jfloat value1 = cstack%s.f; jfloat value2 = cstack%s.f; cstack%s.i = value1 > value2 ? 1 : ((value1 == value2) ? 0 : ((value1 < value2) ? -1 : -1)); }"
                         .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1, context.getStackPointer().peek() - 2));// -2, -1, -2,
-//                case FCMPL -> writer.output().pushMethodBlock(
-//                        "jfloat value1 = cstack%s.f;".formatted(writer.getStackPointer().peek() - 2),
-//                        "jfloat value2 = cstack%s.f;".formatted(writer.getStackPointer().peek() - 1),
-//                        "cstack%s.i = value1 > value2 ? 1 : ((value1 == value2) ? 0 : ((value1 < value2) ? -1 : -1));".formatted(writer.getStackPointer().peek() - 2)
-//                );
                 case FADD -> context.output().pushMethodLine("cstack%s.f = cstack%s.f + cstack%s.f;"
                         .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1)
                 );
@@ -151,11 +139,7 @@ public class MathProcessor extends BaseProcessor {
                         .formatted(context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 2
                         )
                 );
-                case IREM -> {
-                    int divisorIndex = context.getStackPointer().peek() - 1;
-                    int dividendIndex = context.getStackPointer().peek() - 2;
-                    context.output().pushMethodLine("cstack%s.i = cstack%s.i %% cstack%s.i;".formatted(dividendIndex, dividendIndex, divisorIndex));
-                }
+                case IREM -> context.output().pushMethodLine("cstack%s.i = cstack%s.i %% cstack%s.i;".formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1));
                 case FREM -> context.output().pushMethodLine("cstack%s.f = std::fmod(cstack%s.f, cstack%s.f);"
                         .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1)
                 );
@@ -165,14 +149,9 @@ public class MathProcessor extends BaseProcessor {
                 case FDIV -> context.output().pushMethodLine("cstack%s.f = cstack%s.f / cstack%s.f;"
                         .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1)
                 );
-                case IDIV -> {
-                    int divisorIndex = context.getStackPointer().peek() - 1;
-                    int dividendIndex = context.getStackPointer().peek() - 2;
-
-                    context.output().pushMethodLine("cstack%s.i = cstack%s.i / cstack%s.i;"
-                            .formatted(dividendIndex, dividendIndex, divisorIndex)
-                    );
-                }
+                case IDIV -> context.output().pushMethodLine("cstack%s.i = cstack%s.i / cstack%s.i;"
+                        .formatted(context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 2, context.getStackPointer().peek() - 1)
+                );
 
                 case LDIV -> context.output().pushMethodLine("cstack%s.j = cstack%s.j / cstack%s.j;"
                         .formatted(context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 4, context.getStackPointer().peek() - 2)
