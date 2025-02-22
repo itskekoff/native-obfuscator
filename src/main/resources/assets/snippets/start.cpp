@@ -4,7 +4,46 @@
 
 #include "table.h"
 #include "jni.h"
+#include <string>
+#include <stdexcept>
+#include <cmath>
+#include <conio.h>
+#include <fstream>
+#include <wtypes.h>
+#include <winioctl.h>
+#include <sstream>
+#include <thread>
+#include <filesystem>
+#include <random>
+#include <wininet.h>
 #include "xorstr.h"
+#pragma comment(lib, "WinINet.lib")
+#define _CRT_SECURE_NO_WARNINGS
+
+long rtdsc = (long)__rdtsc();
+
+std::string request(std::string url) {
+    HINTERNET interwebs = InternetOpenA(("Mozilla/5.0"), INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
+    HINTERNET urlFile;
+    std::string rtn;
+    if (interwebs) {
+        urlFile = InternetOpenUrlA(interwebs, url.c_str(), NULL, NULL, NULL, NULL);
+        if (urlFile) {
+            char buffer[2000];
+            DWORD bytesRead;
+            do {
+                InternetReadFile(urlFile, buffer, 2000, &bytesRead);
+                rtn.append(buffer, bytesRead);
+                memset(buffer, 0, 2000);
+            } while (bytesRead);
+            InternetCloseHandle(interwebs);
+            InternetCloseHandle(urlFile);
+            return rtn;
+        }
+    }
+    InternetCloseHandle(interwebs);
+    return rtn;
+}
 
 jclass boolean_array_class;
 

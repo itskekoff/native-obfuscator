@@ -82,6 +82,7 @@ public class MethodContext {
         }
 
         public FieldNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
+
             for (FieldNode fieldNode : getFields()) {
                 if (fieldNode.getClassName().equals(className)) {
                     if (fieldNode.getName().equals(name)) {
@@ -94,16 +95,21 @@ public class MethodContext {
                 }
             }
 
+            //not found, we should allocate
+
             FieldNode fieldNode = new FieldNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
 
-            methodReferenceBuilder.append("    methods[%s] = env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\");\n"
+            methodReferenceBuilder.append("methods[%s] = (jmethodID)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\") ^ %s), rtdsc)));\n"
                     .formatted(fieldNode.getId(),
+                            fieldNode.getSeed(),
                             fieldNode.isStatic(),
                             fieldNode.getClassName(),
                             fieldNode.getName(),
-                            fieldNode.getSignature()));
+                            fieldNode.getSignature(),
+                            fieldNode.getClinit()
+                    ));
 
-            fields.add(fieldNode);
+            getFields().add(fieldNode);
 
             return fieldNode;
         }

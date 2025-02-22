@@ -8,3 +8,7 @@ work/
 /work/output/cpp/CMakeFiles/3.30.3/CompilerIdC
 *.vcxproj
 *.tlog
+/work
+/work/output
+*.rar
+/.idea

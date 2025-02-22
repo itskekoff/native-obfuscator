@@ -33,8 +33,7 @@ public class FieldProcessor extends BaseProcessor {
 
             String fieldIdAddition = "fieldId_%d".formatted(fieldIdIndex++);
 
-            context.output().pushMethodLine("jfieldID %s = env->Get%sFieldID(%s, \"%s\", \"%s\");".formatted(
-                    fieldIdAddition,
+            fieldIdAddition = ("env->Get%sFieldID(%s, \"%s\", \"%s\")".formatted(
                     isStatic ? "Static" : "",
                     class_ptr,
                     ((FieldInsnNode) insnNode).name,

@@ -23,7 +23,7 @@ public class NativeLinker {
 
     public void pushMethod(MethodNode methodNode, String nativeName) {
         count++;
-        methods.append("        \"%s\", \"%s\", &Java_%s,\n"
+        methods.append("        (char*)\"%s\", (char*)\"%s\", &Java_%s,\n"
                 .formatted(methodNode.name, methodNode.desc, nativeName));
     }
 

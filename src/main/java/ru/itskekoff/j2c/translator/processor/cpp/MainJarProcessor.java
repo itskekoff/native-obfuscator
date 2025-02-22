@@ -90,21 +90,7 @@ public class MainJarProcessor {
 
             mainWriter.write("\n%s".formatted(ResourceUtils.getStringFromResource("/assets/snippets/start.cpp")));
             processJarEntries(jar, out, cppCode, methodProcessor);
-
-            String regex = "([\"'])((?:(?=\\*)\\.|.)*?)\\1";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(cppCode);
-            StringBuilder modifiedContent = new StringBuilder();
-            while (matcher.find()) {
-                String matchedString = matcher.group(2);
-                if (matchedString.equals("C")) continue;
-                
-                String replacement = "xorstr_(\"" + matchedString + "\")";
-                matcher.appendReplacement(modifiedContent, Matcher.quoteReplacement(replacement));
-            }
-            matcher.appendTail(modifiedContent);
-
-            mainWriter.append(modifiedContent.toString());
+            mainWriter.append(cppCode.toString());
             mainWriter.write("\n%s".formatted(ResourceUtils.getStringFromResource("/assets/snippets/initialization.cpp")));
             Optional.ofNullable(jar.getManifest()).ifPresent(manifest -> writeManifest(out, manifest));
             addProtectionClass(out);
