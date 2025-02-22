@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.array;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class ArrayLengthProcessor extends BaseProcessor {
@@ -12,11 +12,11 @@ public class ArrayLengthProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof InsnNode) {
             if (insn.getOpcode() == ARRAYLENGTH) {
-                writer.output().pushMethodLine("cstack%s.i = (env)->GetArrayLength((jarray)cstack%s.l);"
-                        .formatted(writer.getStackPointer().peek() - 1, writer.getStackPointer().peek() - 1));
+                context.output().pushMethodLine("cstack%s.i = (env)->GetArrayLength((jarray)cstack%s.l);"
+                        .formatted(context.getStackPointer().peek() - 1, context.getStackPointer().peek() - 1));
             }
         }
     }

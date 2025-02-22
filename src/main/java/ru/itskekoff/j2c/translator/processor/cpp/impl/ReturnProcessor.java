@@ -4,7 +4,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.MethodProcessor;
 
@@ -16,23 +16,23 @@ public class ReturnProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext classContext, AbstractInsnNode insnNode, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof InsnNode) {
             Type ret = Type.getReturnType(method.desc);
             String returnType = MethodProcessor.CPP_TYPES[ret.getSort()];
 
             switch (insnNode.getOpcode()) {
                 case IRETURN, DRETURN, ARETURN, FRETURN, LRETURN -> {
-                    String stackAccess = getStackAccess(classContext, insnNode.getOpcode());
-                    classContext.output().pushMethodLine("return (%s) %s;".formatted(returnType, stackAccess));
+                    String stackAccess = getStackAccess(context, insnNode.getOpcode());
+                    context.output().pushMethodLine("return (%s) %s;".formatted(returnType, stackAccess));
                 }
-                case RETURN -> classContext.output().pushMethodLine("return;");
+                case RETURN -> context.output().pushMethodLine("return;");
             }
         }
     }
 
-    private String getStackAccess(ClassContext classContext, int opcode) {
-        ClassContext.StackPointer stackPointer = classContext.getStackPointer();
+    private String getStackAccess(MethodContext methodContext, int opcode) {
+        MethodContext.StackPointer stackPointer = methodContext.getStackPointer();
         return switch (opcode) {
             case IRETURN, ARETURN, FRETURN ->
                     "cstack%s.%s".formatted(stackPointer.peek() - 1, getPrimitiveType(opcode));

@@ -1,7 +1,7 @@
 package ru.itskekoff.j2c.translator.processor.cpp.impl;
 
 import org.objectweb.asm.tree.*;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 
@@ -12,9 +12,9 @@ public class GotoProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof JumpInsnNode) {
-            writer.output().pushMethodLine("goto %s;".formatted(writer.getLabelPool().getName(((JumpInsnNode) insn).label.getLabel())));
+            context.output().pushMethodLine("goto %s;".formatted(context.getLabelPool().getName(((JumpInsnNode) insn).label.getLabel())));
         }
     }
 

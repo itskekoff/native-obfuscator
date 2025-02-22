@@ -26,7 +26,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class BaseUtils {
-    private static final Map<Integer, String> OPCODE_NAME_MAP = new HashMap<Integer, String>();
+    public static final Map<Integer, String> OPCODE_NAME_MAP = new HashMap<Integer, String>();
 
     static {
         OPCODE_NAME_MAP.put(-1, "FRAME");

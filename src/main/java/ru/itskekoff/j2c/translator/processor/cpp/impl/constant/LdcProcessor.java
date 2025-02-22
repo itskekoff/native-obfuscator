@@ -4,7 +4,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class LdcProcessor extends BaseProcessor {
@@ -58,24 +58,24 @@ public class LdcProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext classContext, AbstractInsnNode insnNode, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         Object cst = ((LdcInsnNode) insnNode).cst;
         if (cst instanceof String) {
-            classContext.output().pushMethodLine("cstack%s.l = env->NewStringUTF(\"%s\");".formatted(classContext.getStackPointer().peek(), escapeString(cst.toString())));
+            context.output().pushMethodLine("cstack%s.l = env->NewStringUTF(\"%s\");".formatted(context.getStackPointer().peek(), escapeString(cst.toString())));
         } else if (cst instanceof Integer) {
-            classContext.output().pushMethodLine("cstack%s.i = %s;".formatted(classContext.getStackPointer().peek(), getIntString((Integer) cst)));
+            context.output().pushMethodLine("cstack%s.i = %s;".formatted(context.getStackPointer().peek(), getIntString((Integer) cst)));
         } else if (cst instanceof Long) {
-            classContext.output().pushMethodLine("cstack%s.j = %s;".formatted(classContext.getStackPointer().peek(), getLongValue((Long) cst)));
+            context.output().pushMethodLine("cstack%s.j = %s;".formatted(context.getStackPointer().peek(), getLongValue((Long) cst)));
         } else if (cst instanceof Float) {
-            classContext.output().pushMethodLine("cstack%s.f = %s;".formatted(classContext.getStackPointer().peek(), getFloatValue((Float) cst)));
+            context.output().pushMethodLine("cstack%s.f = %s;".formatted(context.getStackPointer().peek(), getFloatValue((Float) cst)));
         } else if (cst instanceof Double) {
-            classContext.output().pushMethodLine("cstack%s.d = %s;".formatted(classContext.getStackPointer().peek(), getDoubleValue((Double) cst)));
+            context.output().pushMethodLine("cstack%s.d = %s;".formatted(context.getStackPointer().peek(), getDoubleValue((Double) cst)));
         } else if (cst instanceof Type) {
-            if (classContext.isNotClinit(method))
-                classContext.output().pushMethodLine("cstack%s.l = classes[%s].applyDecryption();"
-                        .formatted(classContext.getStackPointer().peek(), classContext.output().pushJavaClass(((Type) cst).getClassName().replace(".", "/"))));
-             else             classContext.output().pushMethodLine("cstack%s.l = env->FindClass(\"%s\");"
-                    .formatted(classContext.getStackPointer().peek(), ((Type) cst).getClassName().replace(".", "/")));
+            if (context.notClinit(method))
+                context.output().pushMethodLine("cstack%s.l = classes[%s].applyDecryption();"
+                        .formatted(context.getStackPointer().peek(), context.output().pushJavaClass(((Type) cst).getClassName().replace(".", "/"))));
+             else             context.output().pushMethodLine("cstack%s.l = env->FindClass(\"%s\");"
+                    .formatted(context.getStackPointer().peek(), ((Type) cst).getClassName().replace(".", "/")));
 
         }
     }

@@ -1,7 +1,7 @@
 package ru.itskekoff.j2c.translator.processor.cpp.impl.condition;
 
 import org.objectweb.asm.tree.*;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 import java.util.List;
@@ -16,19 +16,19 @@ public class SwitchProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insnNode, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof LookupSwitchInsnNode lookupSwitchInsn) {
-            processSwitch(writer, lookupSwitchInsn.keys, lookupSwitchInsn.labels, lookupSwitchInsn.dflt);
+            processSwitch(context, lookupSwitchInsn.keys, lookupSwitchInsn.labels, lookupSwitchInsn.dflt);
         } else if (insnNode instanceof TableSwitchInsnNode tableSwitchInsn) {
             List<Integer> keys = IntStream.rangeClosed(tableSwitchInsn.min, tableSwitchInsn.max)
                     .boxed()
                     .collect(Collectors.toList());
-            processSwitch(writer, keys, tableSwitchInsn.labels, tableSwitchInsn.dflt);
+            processSwitch(context, keys, tableSwitchInsn.labels, tableSwitchInsn.dflt);
         }
     }
 
-    private void processSwitch(ClassContext writer, List<Integer> keys, List<LabelNode> labels, LabelNode defaultLabel) {
-        ClassContext.ContextBuilder contextBuilder = writer.output();
+    private void processSwitch(MethodContext writer, List<Integer> keys, List<LabelNode> labels, LabelNode defaultLabel) {
+        MethodContext.ContextBuilder contextBuilder = writer.output();
         String keyAddition = "key_%s".formatted(keyIndex++);
         contextBuilder.pushMethodLine("int %s = cstack%s.i;".formatted(keyAddition, writer.getStackPointer().peek() - 1));
         contextBuilder.pushMethodLine("switch (%s) {".formatted(keyAddition));

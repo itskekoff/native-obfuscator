@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 
@@ -15,37 +15,37 @@ public class DupProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof InsnNode) {
-            int topIndex = writer.getStackPointer().peek();
+            int topIndex = context.getStackPointer().peek();
             switch (insn.getOpcode()) {
-                case DUP -> writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
+                case DUP -> context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
                 case DUP_X1 -> {
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 2));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 2));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex));
                 }
                 case DUP_X2 -> {
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 2));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex - 3));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 3, topIndex));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 2));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex - 3));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 3, topIndex));
                 }
                 case DUP2 -> {
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
                 }
                 case DUP2_X1 -> {
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 3));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex + 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 3));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex + 1));
                 }
                 case DUP2_X2 -> {
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 3));
-                    writer.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex - 4));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex, topIndex - 2));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex + 1, topIndex - 1));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 1, topIndex - 3));
+                    context.output().pushMethodLine("cstack%s = cstack%s;".formatted(topIndex - 2, topIndex - 4));
                 }
             }
         }

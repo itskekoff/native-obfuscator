@@ -20,6 +20,7 @@ import static java.nio.file.Files.walk;
 
 public class TranslatorMain {
     public static Logger LOGGER;
+    public static Logger COMPILE_LOGGER;
     private static MainJarProcessor processor;
 
     public static void main(String[] args) {
@@ -110,5 +111,6 @@ public class TranslatorMain {
     static {
         System.setProperty("slf4j.internal.verbosity", "WARN");
         LOGGER = LoggerFactory.getLogger("Translator");
+        COMPILE_LOGGER = LoggerFactory.getLogger("Compiler");
     }
 }

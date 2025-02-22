@@ -1,12 +1,15 @@
 package ru.itskekoff.j2c.translator.processor.cpp;
 
+import lombok.Setter;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
 import ru.itskekoff.j2c.translator.TranslatorMain;
+import ru.itskekoff.j2c.translator.build.ProcessManager;
+import ru.itskekoff.j2c.translator.build.SetupManager;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.instructions.InsnProcessorManager;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter;
@@ -19,6 +22,7 @@ import software.coley.cafedude.io.ClassFileReader;
 import software.coley.cafedude.io.ClassFileWriter;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.*;
@@ -32,6 +36,7 @@ import java.util.zip.ZipOutputStream;
 import static org.objectweb.asm.Opcodes.ACC_STATIC;
 import static ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor.RETURN;
 
+@Setter
 public class MainJarProcessor {
     private ClassFilter classFilter;
 
@@ -85,6 +90,27 @@ public class MainJarProcessor {
                 tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getFieldIndex()));
 
             }
+            String osName = "windows";
+            String platformTypeName = "x86_64";
+            String libName = "x64-windows.dll";
+            String zigPath = System.getProperty("user.dir") + File.separator + "zig-windows-x86_64-0.9.1" + File.separator + "zig" + (SetupManager.isWindows() ? ".exe" : "");
+
+            if (Files.exists(Paths.get(zigPath))) {
+                TranslatorMain.COMPILE_LOGGER.info("Compiling C++ Objects");
+                List<String> compileCommand = Arrays.asList(
+                        zigPath,
+                        "c++",
+                        "-target", platformTypeName + "-" + osName + "-gnu",
+                        "-I." + File.separator + "cpp",
+                        "-fms-compatibility",
+                        "-o." + File.separator + "build" + File.separator + "lib" + File.separator + libName,
+                        "." + File.separator + "cpp" + File.separator + "dllmain.cpp"
+                );
+                ProcessManager.ProcessResult compileRunResult = ProcessManager.run(outputDir, 600000L, compileCommand);
+                compileRunResult.check("zig build");
+            } else {
+                TranslatorMain.COMPILE_LOGGER.error("Zig compiler not found at path: {}", zigPath);
+            }
         }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
     }
@@ -127,12 +153,12 @@ public class MainJarProcessor {
     }
 
     private void processClass(ClassNode classNode, MethodProcessor methodProcessor, StringBuilder cppCode) {
-        NativeLinker nativeLinker = new NativeLinker(classNode);
+        NativeLinker linker = new NativeLinker(classNode);
+        MethodContext context = new MethodContext(classNode);
 
-        ClassContext context = new ClassContext(classNode);
         classNode.methods.stream()
                 .filter(this::shouldProcessMethod)
-                .forEach(method -> methodProcessor.process(method, classNode, context, nativeLinker));
+                .forEach(method -> methodProcessor.process(context, method, linker));
         cppCode.append(context.output().toString());
     }
 
@@ -223,10 +249,6 @@ public class MainJarProcessor {
     }
     private boolean isClassFile(byte[] bytes) {
         return BaseUtils.byteArrayToInt(Arrays.copyOfRange(bytes, 0, 4)) == 0xCAFEBABE;
-    }
-
-    public void setClassFilter(ClassFilter classFilter) {
-        this.classFilter = classFilter;
     }
 
     public ClassFilter getFilter() {

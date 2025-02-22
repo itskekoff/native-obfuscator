@@ -2,7 +2,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl;
 
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.MethodProcessor;
 
@@ -12,7 +12,6 @@ import java.util.function.Consumer;
 
 
 public class FrameProcessor extends BaseProcessor {
-
     public List<Integer> stacks = new ArrayList<>();
 
     public FrameProcessor() {
@@ -20,9 +19,9 @@ public class FrameProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         if (insn instanceof FrameNode frameNode) {
-            Consumer<Object> appendLocal = local -> writer.locals.add(
+            Consumer<Object> appendLocal = local -> context.getLocals().add(
                     local instanceof String || local instanceof LabelNode
                             ? MethodProcessor.TYPE_TO_STACK[Type.OBJECT]
                             : MethodProcessor.STACK_TO_STACK[(int) local]
@@ -42,13 +41,13 @@ public class FrameProcessor extends BaseProcessor {
                     break;
 
                 case F_CHOP:
-                    frameNode.local.forEach(_ -> writer.locals.removeLast());
+                    frameNode.local.forEach(_ -> context.getLocals().removeLast());
                     stacks.clear();
                     break;
 
                 case F_NEW:
                 case F_FULL:
-                    writer.locals.clear();
+                    context.getLocals().clear();
                     stacks.clear();
                     frameNode.local.forEach(appendLocal);
                     frameNode.stack.forEach(appendStack);
@@ -76,7 +75,7 @@ public class FrameProcessor extends BaseProcessor {
                                 ? MethodProcessor.STACK_TO_STACK[(int) argument]
                                 : MethodProcessor.TYPE_TO_STACK[Type.OBJECT])).sum();
             }
-            writer.getStackPointer().set(newStackPointer);
+            context.getStackPointer().set(newStackPointer);
         }
     }
 

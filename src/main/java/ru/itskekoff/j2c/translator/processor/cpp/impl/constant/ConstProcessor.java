@@ -2,7 +2,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.constant;
 
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 
@@ -17,23 +17,23 @@ public class ConstProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insn, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
         switch (insn.getOpcode()) {
-            case ACONST_NULL -> writer.output().pushMethodLine("cstack%s.l = nullptr;".formatted(writer.getStackPointer().peek()));
-            case ICONST_M1 -> writer.output().pushMethodLine("cstack%s.i = -1;".formatted(writer.getStackPointer().peek()));
-            case ICONST_0 -> writer.output().pushMethodLine("cstack%s.i = 0;".formatted(writer.getStackPointer().peek()));
-            case ICONST_1 -> writer.output().pushMethodLine("cstack%s.i = 1;".formatted(writer.getStackPointer().peek()));
-            case ICONST_2 -> writer.output().pushMethodLine("cstack%s.i = 2;".formatted(writer.getStackPointer().peek()));
-            case ICONST_3 -> writer.output().pushMethodLine("cstack%s.i = 3;".formatted(writer.getStackPointer().peek()));
-            case ICONST_4 -> writer.output().pushMethodLine("cstack%s.i = 4;".formatted(writer.getStackPointer().peek()));
-            case ICONST_5 -> writer.output().pushMethodLine("cstack%s.i = 5;".formatted(writer.getStackPointer().peek()));
-            case LCONST_0 -> writer.output().pushMethodLine("cstack%s.j = 0;".formatted(writer.getStackPointer().peek()));
-            case LCONST_1 -> writer.output().pushMethodLine("cstack%s.j = 1;".formatted(writer.getStackPointer().peek()));
-            case FCONST_0 -> writer.output().pushMethodLine("cstack%s.i = 0.0f;".formatted(writer.getStackPointer().peek()));
-            case FCONST_1 -> writer.output().pushMethodLine("cstack%s.i = 1.0f;".formatted(writer.getStackPointer().peek()));
-            case FCONST_2 -> writer.output().pushMethodLine("cstack%s.i = 2.0f;".formatted(writer.getStackPointer().peek()));
-            case DCONST_0 -> writer.output().pushMethodLine("cstack%s.d = 0.0;".formatted(writer.getStackPointer().peek()));
-            case DCONST_1 -> writer.output().pushMethodLine("cstack%s.d = 1.0;".formatted(writer.getStackPointer().peek()));
+            case ACONST_NULL -> context.output().pushMethodLine("cstack%s.l = nullptr;".formatted(context.getStackPointer().peek()));
+            case ICONST_M1 -> context.output().pushMethodLine("cstack%s.i = -1;".formatted(context.getStackPointer().peek()));
+            case ICONST_0 -> context.output().pushMethodLine("cstack%s.i = 0;".formatted(context.getStackPointer().peek()));
+            case ICONST_1 -> context.output().pushMethodLine("cstack%s.i = 1;".formatted(context.getStackPointer().peek()));
+            case ICONST_2 -> context.output().pushMethodLine("cstack%s.i = 2;".formatted(context.getStackPointer().peek()));
+            case ICONST_3 -> context.output().pushMethodLine("cstack%s.i = 3;".formatted(context.getStackPointer().peek()));
+            case ICONST_4 -> context.output().pushMethodLine("cstack%s.i = 4;".formatted(context.getStackPointer().peek()));
+            case ICONST_5 -> context.output().pushMethodLine("cstack%s.i = 5;".formatted(context.getStackPointer().peek()));
+            case LCONST_0 -> context.output().pushMethodLine("cstack%s.j = 0;".formatted(context.getStackPointer().peek()));
+            case LCONST_1 -> context.output().pushMethodLine("cstack%s.j = 1;".formatted(context.getStackPointer().peek()));
+            case FCONST_0 -> context.output().pushMethodLine("cstack%s.i = 0.0f;".formatted(context.getStackPointer().peek()));
+            case FCONST_1 -> context.output().pushMethodLine("cstack%s.i = 1.0f;".formatted(context.getStackPointer().peek()));
+            case FCONST_2 -> context.output().pushMethodLine("cstack%s.i = 2.0f;".formatted(context.getStackPointer().peek()));
+            case DCONST_0 -> context.output().pushMethodLine("cstack%s.d = 0.0;".formatted(context.getStackPointer().peek()));
+            case DCONST_1 -> context.output().pushMethodLine("cstack%s.d = 1.0;".formatted(context.getStackPointer().peek()));
         }
     }
 

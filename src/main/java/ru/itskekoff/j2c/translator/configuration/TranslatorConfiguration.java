@@ -31,4 +31,15 @@ public class TranslatorConfiguration extends YamlSerializable {
         @Comment(@CommentValue(value = "Включает подробную информацию о компиляции (дебаг)", commentValueIndent = 1))
         public boolean DEBUG_ENABLED = false;
     }
+
+    /*
+    public Compiler COMPILER = new Compiler();
+    @Comment(@CommentValue(value = "Настройки сборки .dll", commentValueIndent = 1))
+    public static class Compiler {
+        @Comment({
+                @CommentValue(value = "Таргеты сборки")
+        })
+        public List<String> TARGETS = List.of("windows_x86_64", "windows_aarch64");
+    }
+     */
 }

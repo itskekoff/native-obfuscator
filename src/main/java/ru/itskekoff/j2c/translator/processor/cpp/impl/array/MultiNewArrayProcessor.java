@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.array;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.MultiANewArrayInsnNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 /**
@@ -16,12 +16,12 @@ public class MultiNewArrayProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext writer, AbstractInsnNode insnNode, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         MultiANewArrayInsnNode multiANewArrayInsn = (MultiANewArrayInsnNode) insnNode;
 
         String desc = multiANewArrayInsn.desc;
         int dims = multiANewArrayInsn.dims;
-        int stackIndex = writer.getStackPointer().peek() - dims;
+        int stackIndex = context.getStackPointer().peek() - dims;
 
         boolean isPrimitive = desc.startsWith("[") && !desc.contains("L");
 
@@ -29,12 +29,12 @@ public class MultiNewArrayProcessor extends BaseProcessor {
         if (isPrimitive) {
             String sort = getPrimitiveSort(desc);
 
-            writer.output().pushMethodLine(
+            context.output().pushMethodLine(
                     "cstack%s.l = create_multidim_array_value<%s>(env, %d, %d, \"%s\", __LINE__, %s);"
                             .formatted(stackIndex, sort, dims, dims, desc, generateDimsArray(dims, stackIndex))
             );
         } else {
-            writer.output().pushMethodLine(
+            context.output().pushMethodLine(
                     "cstack%s.l = create_multidim_array(env, classloader, %d, %d, \"%s\", __LINE__, %s);"
                             .formatted(stackIndex, dims, dims, desc, generateDimsArray(dims, stackIndex))
             );

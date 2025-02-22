@@ -1,5 +1,6 @@
 package ru.itskekoff.j2c.translator.processor.cpp.utils.translate;
 
+import lombok.Getter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
@@ -12,14 +13,15 @@ import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ClassContext {
+@Getter
+public class MethodContext {
     private final LabelPool labelPool = new LabelPool();
     private final StackPointer stackPointer = new StackPointer();
-    public List<Integer> locals = new ArrayList<Integer>();
-    public ClassNode classNode;
+    private final List<Integer> locals = new ArrayList<>();
+    private final ClassNode classNode;
     private final ContextBuilder contextBuilder;
 
-    public ClassContext(ClassNode classNode) {
+    public MethodContext(ClassNode classNode) {
         this.classNode = classNode;
         this.contextBuilder = new ContextBuilder(this.classNode);
     }
@@ -28,15 +30,7 @@ public class ClassContext {
         return this.contextBuilder;
     }
 
-    public LabelPool getLabelPool() {
-        return labelPool;
-    }
-
-    public StackPointer getStackPointer() {
-        return stackPointer;
-    }
-
-    public boolean isNotClinit(MethodNode methodNode) {
+    public boolean notClinit(MethodNode methodNode) {
         return !methodNode.name.contains("$Clinit");
     }
 
@@ -104,8 +98,6 @@ public class ClassContext {
                     }
                 }
             }
-
-            //not found, we should allocate
 
             FieldNode fieldNode = new FieldNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
 
@@ -192,7 +184,6 @@ public class ClassContext {
         public void set(int pointer) {
             this.pointer = pointer;
         }
-
     }
 
     public static class LabelPool {

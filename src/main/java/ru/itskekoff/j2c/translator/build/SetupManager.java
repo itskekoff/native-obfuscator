@@ -84,14 +84,13 @@ public class SetupManager {
 
     public static void downloadZigCompiler(final String fileName, final String dirName) {
         if (Files.exists(Paths.get(dirName))) {
-            TranslatorMain.LOGGER.info("Found compiler at {}", dirName);
+            TranslatorMain.LOGGER.info("Found compiler ({})", dirName);
             return;
         }
 
         try {
             final String currentDir = System.getProperty("user.dir");
             TranslatorMain.LOGGER.info("Downloading zig compiler...");
-            // System.out.println("Ссылка на скачивание：https://ziglang.org/download/0.9.1/" + fileName);
             final InputStream in = new URL("https://ziglang.org/download/0.9.1/" + fileName).openStream();
             Files.copy(in, Paths.get(currentDir + File.separator + fileName), StandardCopyOption.REPLACE_EXISTING);
             TranslatorMain.LOGGER.info("Unpacking zig compiler...");

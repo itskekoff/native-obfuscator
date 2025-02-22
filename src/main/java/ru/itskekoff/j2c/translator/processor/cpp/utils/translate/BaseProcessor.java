@@ -18,6 +18,6 @@ public abstract class BaseProcessor implements Opcodes {
         return supportedOpcodes.contains(opcode);
     }
 
-    public abstract void translate(ClassContext classContext, AbstractInsnNode insnNode, MethodNode method);
+    public abstract void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method);
     public abstract int updateStackPointer(AbstractInsnNode insnNode, int currentPointer);
 }

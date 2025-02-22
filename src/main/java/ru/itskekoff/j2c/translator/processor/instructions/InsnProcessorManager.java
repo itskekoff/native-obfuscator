@@ -1,10 +1,13 @@
 package ru.itskekoff.j2c.translator.processor.instructions;
 
 import org.objectweb.asm.tree.ClassNode;
+import ru.itskekoff.j2c.translator.TranslatorMain;
+import ru.itskekoff.j2c.translator.configuration.TranslatorConfiguration;
 import ru.itskekoff.j2c.translator.processor.instructions.impl.IndyPreprocessor;
 import ru.itskekoff.j2c.translator.processor.instructions.impl.LdcPreprocessor;
 import ru.itskekoff.j2c.translator.processor.instructions.impl.NativePreprocessor;
 import ru.itskekoff.j2c.translator.processor.instructions.interfaces.InstructionProcessor;
+import ru.itskekoff.j2c.translator.utils.ReflectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +20,8 @@ public class InsnProcessorManager {
     private final static List<InstructionProcessor> PROCESSORS = new ArrayList<>();
 
     static {
-        PROCESSORS.add(new IndyPreprocessor());
-        PROCESSORS.add(new LdcPreprocessor());
-        PROCESSORS.add(new NativePreprocessor());
+        PROCESSORS.addAll(ReflectionUtils.getClasses("ru.itskekoff.j2c.translator.processor.instructions.impl", InstructionProcessor.class));
+        TranslatorMain.LOGGER.info("Loaded {} instruction processors before compilation", PROCESSORS.size());
     }
 
     public static void process(ClassNode classNode) {

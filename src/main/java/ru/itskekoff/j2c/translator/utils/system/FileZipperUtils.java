@@ -16,6 +16,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+@SuppressWarnings("deprecation")
 public class FileZipperUtils {
     public static void extract(final Path archive, final Path target) throws IOException {
         final String name = archive.toFile().getName();
@@ -68,11 +69,11 @@ public class FileZipperUtils {
     private static void extractEntry(final Path target, final InputStream in, final String entryName, final boolean isDirectory) throws IOException {
         final Path entryPath = target.resolve(entryName);
         if (isDirectory) {
-            Files.createDirectories(entryPath, (FileAttribute<?>[]) new FileAttribute[0]);
+            Files.createDirectories(entryPath);
         } else {
             final Path dir = entryPath.getParent();
-            Files.createDirectories(dir, (FileAttribute<?>[]) new FileAttribute[0]);
-            Files.copy(in, entryPath, new CopyOption[0]);
+            Files.createDirectories(dir);
+            Files.copy(in, entryPath);
         }
     }
 

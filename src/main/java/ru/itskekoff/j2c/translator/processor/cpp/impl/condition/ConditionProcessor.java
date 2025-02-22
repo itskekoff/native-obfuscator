@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.condition;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.JumpInsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.ClassContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class ConditionProcessor extends BaseProcessor {
@@ -15,42 +15,42 @@ public class ConditionProcessor extends BaseProcessor {
     }
 
     @Override
-    public void translate(ClassContext classContext, AbstractInsnNode insnNode, MethodNode method) {
+    public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof JumpInsnNode jumpNode) {
             int instruction = insnNode.getOpcode();
-            int stackPointer = classContext.getStackPointer().peek();
+            int stackPointer = context.getStackPointer().peek();
 
             switch (instruction) {
-                case IFEQ -> classContext.output().pushMethodLine("if (cstack%s.i == 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IFNE -> classContext.output().pushMethodLine("if (cstack%s.i != 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IFLT -> classContext.output().pushMethodLine("if (cstack%s.i < 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IFLE -> classContext.output().pushMethodLine("if (cstack%s.i <= 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IFGT -> classContext.output().pushMethodLine("if (cstack%s.i > 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IFGE -> classContext.output().pushMethodLine("if (cstack%s.i >= 0) goto %s;"
-                        .formatted(stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPEQ -> classContext.output().pushMethodLine("if (cstack%s.i == cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPNE -> classContext.output().pushMethodLine("if (cstack%s.i != cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPLT -> classContext.output().pushMethodLine("if (cstack%s.i < cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPLE -> classContext.output().pushMethodLine("if (cstack%s.i <= cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPGT -> classContext.output().pushMethodLine("if (cstack%s.i > cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
-                case IF_ICMPGE -> classContext.output().pushMethodLine("if (cstack%s.i >= cstack%s.i) goto %s;"
-                        .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFEQ -> context.output().pushMethodLine("if (cstack%s.i == 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFNE -> context.output().pushMethodLine("if (cstack%s.i != 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFLT -> context.output().pushMethodLine("if (cstack%s.i < 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFLE -> context.output().pushMethodLine("if (cstack%s.i <= 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFGT -> context.output().pushMethodLine("if (cstack%s.i > 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IFGE -> context.output().pushMethodLine("if (cstack%s.i >= 0) goto %s;"
+                        .formatted(stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPEQ -> context.output().pushMethodLine("if (cstack%s.i == cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPNE -> context.output().pushMethodLine("if (cstack%s.i != cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPLT -> context.output().pushMethodLine("if (cstack%s.i < cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPLE -> context.output().pushMethodLine("if (cstack%s.i <= cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPGT -> context.output().pushMethodLine("if (cstack%s.i > cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
+                case IF_ICMPGE -> context.output().pushMethodLine("if (cstack%s.i >= cstack%s.i) goto %s;"
+                        .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
                 case IF_ACMPEQ ->
-                        classContext.output().pushMethodLine("if (env->IsSameObject(cstack%s.l, cstack%s.l)) goto %s;"
-                                .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
+                        context.output().pushMethodLine("if (env->IsSameObject(cstack%s.l, cstack%s.l)) goto %s;"
+                                .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
                 case IF_ACMPNE ->
-                        classContext.output().pushMethodLine("if (!env->IsSameObject(cstack%s.l, cstack%s.l)) goto %s;"
-                                .formatted(stackPointer - 2, stackPointer - 1, classContext.getLabelPool().getName(jumpNode.label.getLabel())));
+                        context.output().pushMethodLine("if (!env->IsSameObject(cstack%s.l, cstack%s.l)) goto %s;"
+                                .formatted(stackPointer - 2, stackPointer - 1, context.getLabelPool().getName(jumpNode.label.getLabel())));
                 default -> throw new IllegalStateException("Unsupported instruction.");
             }
 
