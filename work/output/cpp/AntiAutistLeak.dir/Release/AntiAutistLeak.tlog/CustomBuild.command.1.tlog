@@ -1,6 +1,6 @@
-^C:\IdeaProjects\j2c\WORK\OUTPUT\CPP\CMAKELISTS.TXT
+^C:\PROTECTION\NATIVE-OBFUSCATOR\WORK\OUTPUT\CPP\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/protection/j2c/work/output/cpp -BC:/protection/j2c/work/output/cpp --check-stamp-file C:/protection/j2c/work/output/cpp/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/protection/native-obfuscator/work/output/cpp -BC:/protection/native-obfuscator/work/output/cpp --check-stamp-file C:/protection/native-obfuscator/work/output/cpp/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

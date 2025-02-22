@@ -1,6 +1,6 @@
-^C:\IdeaProjects\j2c\WORK\OUTPUT\CPP\CMAKEFILES\7505C20B4B2727BDF262BC1AB071820D\GENERATE.STAMP.RULE
+^C:\PROTECTION\NATIVE-OBFUSCATOR\WORK\OUTPUT\CPP\CMAKEFILES\32418D0E1C56D0B7A3AB4E0F3A6E2098\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/protection/j2c/work/output/cpp -BC:/protection/j2c/work/output/cpp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/protection/j2c/work/output/cpp/AntiAutistLeak.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/protection/native-obfuscator/work/output/cpp -BC:/protection/native-obfuscator/work/output/cpp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/protection/native-obfuscator/work/output/cpp/AntiAutistLeak.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

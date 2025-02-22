@@ -73,7 +73,7 @@ public class MainJarProcessor {
         Path cppDir = outputDir.resolve("cpp");
         Files.createDirectories(cppDir);
 
-        List<String> resources = List.of("assets/jni.h", "assets/jni_md.h", "assets/xorstr.h");
+        List<String> resources = List.of("assets/jni.h", "assets/jni_md.h", "assets/xorstr.h", "assets/CMakeLists.txt");
         resources.forEach(name -> {
             try {
                 BaseUtils.copyResource(name, cppDir);
@@ -102,34 +102,21 @@ public class MainJarProcessor {
 
             }
         }
-
-        /*
-
-            String osName = "windows";
-            String platformTypeName = "x86_64";
-            String libName = "x64-windows.dll";
-            String zigPath = System.getProperty("user.dir") + File.separator + "zig-windows-x86_64-0.9.1" + File.separator + "zig" + (SetupManager.isWindows() ? ".exe" : "");
-
-            if (Files.exists(Paths.get(zigPath))) {
-                TranslatorMain.COMPILE_LOGGER.info("Compiling C++ Objects");
-                List<String> compileCommand = Arrays.asList(
-                        zigPath,
-                        "c++",
-                        "-target", platformTypeName + "-" + osName + "-gnu",
-                        "-I." + File.separator + "cpp",
-                        "-fms-compatibility",
-                        "-o." + File.separator + "build" + File.separator + "lib" + File.separator + libName,
-                        "." + File.separator + "cpp" + File.separator + "dllmain.cpp"
-                );
-                ProcessManager.ProcessResult compileRunResult = ProcessManager.run(outputDir, 600000L, compileCommand);
-                compileRunResult.check("zig build");
-            } else {
-                TranslatorMain.COMPILE_LOGGER.error("Zig compiler not found at path: {}", zigPath);
-            }
-
-             */
-
+        try {
+            executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "."}, cppDir.toFile());
+            executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "--build", ".", "--config", "Release"}, cppDir.toFile());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
+    }
+
+    private void executeCommand(String[] command, File directory) throws IOException, InterruptedException {
+        Process process = new ProcessBuilder(command)
+                .directory(directory)
+                .inheritIO()
+                .start();
+        process.waitFor();
     }
 
     private void processJarEntries(JarFile jar, ZipOutputStream out, StringBuilder cppCode, MethodProcessor methodProcessor) throws IOException {
