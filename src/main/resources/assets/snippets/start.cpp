@@ -72,6 +72,49 @@ void throw_re(JNIEnv *env, const char *exception_class, const char *error, int l
     env->DeleteLocalRef(exception_class_ptr);
 }
 
+    template <int sort>
+    jarray create_array_value(JNIEnv* env, jint size);
+
+    template <>
+    jarray create_array_value<1>(JNIEnv* env, jint size) {
+        return env->NewBooleanArray(size);
+    }
+
+    template <>
+    jarray create_array_value<2>(JNIEnv* env, jint size) {
+        return env->NewCharArray(size);
+    }
+
+    template <>
+    jarray create_array_value<3>(JNIEnv* env, jint size) {
+        return env->NewByteArray(size);
+    }
+
+    template <>
+    jarray create_array_value<4>(JNIEnv* env, jint size) {
+        return env->NewShortArray(size);
+    }
+
+    template <>
+    jarray create_array_value<5>(JNIEnv* env, jint size) {
+        return env->NewIntArray(size);
+    }
+
+    template <>
+    jarray create_array_value<6>(JNIEnv* env, jint size) {
+        return env->NewFloatArray(size);
+    }
+
+    template <>
+    jarray create_array_value<7>(JNIEnv* env, jint size) {
+        return env->NewLongArray(size);
+    }
+
+    template <>
+    jarray create_array_value<8>(JNIEnv* env, jint size) {
+        return env->NewDoubleArray(size);
+    }
+
 template <int sort>
 jarray create_multidim_array_value(JNIEnv *env, jint count, jint required_count,
     const char *name, int line, std::initializer_list<jint> sizes, int dim_index = 0) {

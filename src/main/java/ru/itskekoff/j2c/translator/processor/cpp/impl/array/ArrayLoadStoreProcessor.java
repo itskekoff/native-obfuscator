@@ -8,7 +8,6 @@ import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 
 public class ArrayLoadStoreProcessor extends BaseProcessor {
-    private int storeIndex = 0;
     public ArrayLoadStoreProcessor() {
         super(IALOAD, LALOAD, FALOAD,
                 DALOAD, AALOAD, BALOAD,
@@ -21,7 +20,6 @@ public class ArrayLoadStoreProcessor extends BaseProcessor {
 
     @Override
     public void translate(MethodContext context, AbstractInsnNode insn, MethodNode method) {
-        String tempAddition = "temp_%d".formatted(storeIndex++);
         if (insn instanceof InsnNode) {
             switch (insn.getOpcode()) {
                 case IALOAD -> {
@@ -79,26 +77,22 @@ public class ArrayLoadStoreProcessor extends BaseProcessor {
                     );
                 }
                 case CALOAD -> {
-                    context.output().pushMethodLine("jchar %s = 0;".formatted(tempAddition));
-                    context.output().pushMethodLine("env->GetCharArrayRegion((jcharArray) cstack%s.l, cstack%s.i, 1, &%s);\ncstack%s.i = (jint) %s;"
+                    context.output().pushMethodLine("{ jchar temp = 0;");
+                    context.output().pushMethodLine("env->GetCharArrayRegion((jcharArray) cstack%s.l, cstack%s.i, 1, &temp);\ncstack%s.i = (jint) temp; }"
                             .formatted(
                                     context.getStackPointer().peek() - 2,
                                     context.getStackPointer().peek() - 1,
-                                    tempAddition,
-                                    context.getStackPointer().peek() - 2,
-                                    tempAddition
+                                    context.getStackPointer().peek() - 2
                             )
                     );
                 }
                 case SALOAD -> {
-                    context.output().pushMethodLine("jshort %s = 0;".formatted(tempAddition));
-                    context.output().pushMethodLine("env->GetShortArrayRegion((jshortArray) cstack%s.l, cstack%s.i, 1, &%s);\ncstack%s.i = (jint) %s;"
+                    context.output().pushMethodLine("{ jshort temp = 0;");
+                    context.output().pushMethodLine("env->GetShortArrayRegion((jshortArray) cstack%s.l, cstack%s.i, 1, &temp);\ncstack%s.i = (jint) temp; }"
                             .formatted(
                                     context.getStackPointer().peek() - 2,
                                     context.getStackPointer().peek() - 1,
-                                    tempAddition,
-                                    context.getStackPointer().peek() - 2,
-                                    tempAddition
+                                    context.getStackPointer().peek() - 2
                             )
                     );
                 }
@@ -157,21 +151,19 @@ public class ArrayLoadStoreProcessor extends BaseProcessor {
                     );
                 }
                 case CASTORE -> {
-                    context.output().pushMethodLine("jchar %s = (jchar) cstack%s.i;".formatted(tempAddition, context.getStackPointer().peek() - 1));
-                    context.output().pushMethodLine("env->SetCharArrayRegion((jcharArray) cstack%s.l, cstack%s.i, 1, &%s);"
+                    context.output().pushMethodLine("{ jchar temp = (jchar) cstack%s.i;".formatted(context.getStackPointer().peek() - 1));
+                    context.output().pushMethodLine("env->SetCharArrayRegion((jcharArray) cstack%s.l, cstack%s.i, 1, &temp); }"
                             .formatted(
                                     context.getStackPointer().peek() - 3,
-                                    context.getStackPointer().peek() - 2,
-                                    tempAddition
+                                    context.getStackPointer().peek() - 2
                             )
                     );
                 }
                 case SASTORE -> {
-                    context.output().pushMethodLine("jshort %s = (jshort) cstack%s.i;".formatted(tempAddition, context.getStackPointer().peek() - 1));
-                    context.output().pushMethodLine("env->SetShortArrayRegion((jshortArray) cstack%s.l, cstack%s.i, 1, &%s);"
+                    context.output().pushMethodLine("{ jshort temp = (jshort) cstack%s.i;".formatted(context.getStackPointer().peek() - 1));
+                    context.output().pushMethodLine("env->SetShortArrayRegion((jshortArray) cstack%s.l, cstack%s.i, 1, &temp); }"
                             .formatted(context.getStackPointer().peek() - 3,
-                                    context.getStackPointer().peek() - 2,
-                                    tempAddition
+                                    context.getStackPointer().peek() - 2
                             )
                     );
                 }
