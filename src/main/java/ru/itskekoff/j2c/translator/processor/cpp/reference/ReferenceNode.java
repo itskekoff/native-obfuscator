@@ -1,17 +1,25 @@
 package ru.itskekoff.j2c.translator.processor.cpp.reference;
 
+import lombok.Getter;
+
 import java.util.Random;
 
-public class FieldNode {
+public class ReferenceNode {
+    @Getter
     private final String className;
+    @Getter
     private final String name;
     private final boolean isStatic;
+    @Getter
     private final int id;
+    @Getter
     private final String signature;
+    @Getter
     private long seed;
+    @Getter
     long clinit, kluch, kluch2, kluch3, kluch4, kluch5,kluch6;
 
-    public FieldNode(String className,String name, String signature,  boolean isStatic, int id) {
+    public ReferenceNode(String className, String name, String signature, boolean isStatic, int id) {
         this.className = className;
         this.name = name;
         this.isStatic = isStatic;
@@ -35,46 +43,6 @@ public class FieldNode {
     //ХЪВАЪХАВХЪВАФЫХЪАВЫХЪФЫАВЪХ, Я ПОТОМ САМ ПЕРЕДЕЛАЮ, ТЫ ПОКА ЭТО НЕ ТРОГАЙ ЫВАХЪФВАХЪАВХЪВАХЪФЪАХФВАХЪЫ
 
 
-    public long getClinit() {
-        return clinit;
-    }
-
-    public long getKluch() {
-        return kluch;
-    }
-
-    public long getKluch2() {
-        return kluch2;
-    }
-
-    public long getKluch3() {
-        return kluch3;
-    }
-
-    public long getKluch4() {
-        return kluch4;
-    }
-
-    public long getKluch5() {
-        return kluch5;
-    }
-
-    public long getKluch6() {
-        return kluch6;
-    }
-
-    public long getSeed() {
-        return seed;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public String isStatic() {
         return isStatic ? "Static" : "";
     }
@@ -83,11 +51,4 @@ public class FieldNode {
         return isStatic;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getClassName() {
-        return className;
-    }
 }

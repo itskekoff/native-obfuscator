@@ -1,5 +1,7 @@
 package ru.itskekoff.j2c.translator.configuration.matcher;
 
+import lombok.Getter;
+import lombok.Setter;
 import ru.itskekoff.j2c.translator.utils.StringUtils;
 
 import java.util.*;
@@ -8,57 +10,29 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AntPathMatcher {
-    public static final String DEFAULT_PATH_SEPARATOR = "/";
-    private static final int CACHE_TURNOFF_THRESHOLD = 65536;
-    private static final Pattern VARIABLE_PATTERN;
     private static final char[] WILDCARD_CHARS;
 
     static {
-        VARIABLE_PATTERN = Pattern.compile("\\{[^/]+?\\}");
         WILDCARD_CHARS = new char[]{'*', '?', '{'};
     }
 
     final Map<String, AntPathStringMatcher> stringMatcherCache;
     private final Map<String, String[]> tokenizedPatternCache;
-    private String pathSeparator;
-    private PathSeparatorPatternCache pathSeparatorPatternCache;
+    private final String pathSeparator;
+    private final PathSeparatorPatternCache pathSeparatorPatternCache;
+    @Setter
     private boolean caseSensitive;
+    @Setter
     private boolean trimTokens;
     private volatile Boolean cachePatterns;
 
     public AntPathMatcher() {
         this.caseSensitive = true;
         this.trimTokens = false;
-        this.tokenizedPatternCache = new ConcurrentHashMap<String, String[]>(256);
-        this.stringMatcherCache = new ConcurrentHashMap<String, AntPathStringMatcher>(256);
+        this.tokenizedPatternCache = new ConcurrentHashMap<>(256);
+        this.stringMatcherCache = new ConcurrentHashMap<>(256);
         this.pathSeparator = "/";
         this.pathSeparatorPatternCache = new PathSeparatorPatternCache("/");
-    }
-
-    public AntPathMatcher(final String pathSeparator) {
-        this.caseSensitive = true;
-        this.trimTokens = false;
-        this.tokenizedPatternCache = new ConcurrentHashMap<String, String[]>(256);
-        this.stringMatcherCache = new ConcurrentHashMap<String, AntPathStringMatcher>(256);
-        this.pathSeparator = pathSeparator;
-        this.pathSeparatorPatternCache = new PathSeparatorPatternCache(pathSeparator);
-    }
-
-    public void setPathSeparator(final String pathSeparator) {
-        this.pathSeparator = ((pathSeparator != null) ? pathSeparator : "/");
-        this.pathSeparatorPatternCache = new PathSeparatorPatternCache(this.pathSeparator);
-    }
-
-    public void setCaseSensitive(final boolean caseSensitive) {
-        this.caseSensitive = caseSensitive;
-    }
-
-    public void setTrimTokens(final boolean trimTokens) {
-        this.trimTokens = trimTokens;
-    }
-
-    public void setCachePatterns(final boolean cachePatterns) {
-        this.cachePatterns = cachePatterns;
     }
 
     private void deactivatePatternCache() {
@@ -67,34 +41,15 @@ public class AntPathMatcher {
         this.stringMatcherCache.clear();
     }
 
-    public boolean isPattern(final String path) {
-        if (path == null) {
-            return false;
-        }
-        boolean uriVar = false;
-        for (int i = 0; i < path.length(); ++i) {
-            final char c = path.charAt(i);
-            if (c == '*' || c == '?') {
-                return true;
-            }
-            if (c == '{') {
-                uriVar = true;
-            } else if (c == '}' && uriVar) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean match(final String pattern, final String path) {
-        return this.doMatch(pattern, path, true, null);
+        return this.doMatch(pattern, path, true);
     }
 
     public boolean matchStart(final String pattern, final String path) {
-        return this.doMatch(pattern, path, false, null);
+        return this.doMatch(pattern, path, false);
     }
 
-    protected boolean doMatch(final String pattern, final String path, final boolean fullMatch, final Map<String, String> uriTemplateVariables) {
+    protected boolean doMatch(final String pattern, final String path, final boolean fullMatch) {
         if (path == null || path.startsWith(this.pathSeparator) != pattern.startsWith(this.pathSeparator)) {
             return false;
         }
@@ -112,7 +67,7 @@ public class AntPathMatcher {
             if ("**".equals(pattDir)) {
                 break;
             }
-            if (!this.matchStrings(pattDir, pathDirs[pathIdxStart], uriTemplateVariables)) {
+            if (this.matchStrings(pattDir, pathDirs[pathIdxStart])) {
                 return false;
             }
         }
@@ -131,7 +86,6 @@ public class AntPathMatcher {
                     return false;
                 }
             }
-            return true;
         } else {
             if (pattIdxStart > pattIdxEnd) {
                 return false;
@@ -144,7 +98,7 @@ public class AntPathMatcher {
                 if (pattDir.equals("**")) {
                     break;
                 }
-                if (!this.matchStrings(pattDir, pathDirs[pathIdxEnd], uriTemplateVariables)) {
+                if (this.matchStrings(pattDir, pathDirs[pathIdxEnd])) {
                     return false;
                 }
                 --pattIdxEnd;
@@ -178,7 +132,7 @@ public class AntPathMatcher {
                         for (int l = 0; l < patLength; ++l) {
                             final String subPat = pattDirs[pattIdxStart + l + 1];
                             final String subStr = pathDirs[pathIdxStart + k + l];
-                            if (!this.matchStrings(subPat, subStr, uriTemplateVariables)) {
+                            if (this.matchStrings(subPat, subStr)) {
                                 ++k;
                                 continue Label_0480;
                             }
@@ -198,8 +152,8 @@ public class AntPathMatcher {
                     return false;
                 }
             }
-            return true;
         }
+        return true;
     }
 
     private boolean isPotentialMatch(final String path, final String[] pattDirs) {
@@ -210,7 +164,7 @@ public class AntPathMatcher {
                 pos += skipped;
                 skipped = this.skipSegment(path, pos, pattDir);
                 if (skipped < pattDir.length()) {
-                    return skipped > 0 || (pattDir.length() > 0 && this.isWildcardChar(pattDir.charAt(0)));
+                    return skipped > 0 || (!pattDir.isEmpty() && this.isWildcardChar(pattDir.charAt(0)));
                 }
                 pos += skipped;
             }
@@ -238,7 +192,9 @@ public class AntPathMatcher {
 
     private int skipSeparator(final String path, final int pos, final String separator) {
         int skipped;
-        for (skipped = 0; path.startsWith(separator, pos + skipped); skipped += separator.length()) {
+        skipped = 0;
+        while (path.startsWith(separator, pos + skipped)) {
+            skipped += separator.length();
         }
         return skipped;
     }
@@ -275,8 +231,8 @@ public class AntPathMatcher {
         return StringUtils.tokenizeToStringArray(path, this.pathSeparator, this.trimTokens, true);
     }
 
-    private boolean matchStrings(final String pattern, final String str, final Map<String, String> uriTemplateVariables) {
-        return this.getStringMatcher(pattern).matchStrings(str, uriTemplateVariables);
+    private boolean matchStrings(final String pattern, final String str) {
+        return !this.getStringMatcher(pattern).matchStrings(str, null);
     }
 
     protected AntPathStringMatcher getStringMatcher(final String pattern) {
@@ -298,46 +254,7 @@ public class AntPathMatcher {
         return matcher;
     }
 
-    public String extractPathWithinPattern(final String pattern, final String path) {
-        final String[] patternParts = StringUtils.tokenizeToStringArray(pattern, this.pathSeparator, this.trimTokens, true);
-        final String[] pathParts = StringUtils.tokenizeToStringArray(path, this.pathSeparator, this.trimTokens, true);
-        final StringBuilder builder = new StringBuilder();
-        boolean pathStarted = false;
-        for (int segment = 0; segment < patternParts.length; ++segment) {
-            final String patternPart = patternParts[segment];
-            if (patternPart.indexOf(42) > -1 || patternPart.indexOf(63) > -1) {
-                while (segment < pathParts.length) {
-                    if (pathStarted || (segment == 0 && !pattern.startsWith(this.pathSeparator))) {
-                        builder.append(this.pathSeparator);
-                    }
-                    builder.append(pathParts[segment]);
-                    pathStarted = true;
-                    ++segment;
-                }
-            }
-        }
-        return builder.toString();
-    }
-
-    public Map<String, String> extractUriTemplateVariables(final String pattern, final String path) {
-        final Map<String, String> variables = new LinkedHashMap<String, String>();
-        final boolean result = this.doMatch(pattern, path, true, variables);
-        if (!result) {
-            throw new IllegalStateException("Pattern \"" + pattern + "\" is not a match for \"" + path + "\"");
-        }
-        return variables;
-    }
-
     public String combine(final String pattern1, final String pattern2) {
-      /*  if (!StringUtils.hasText(pattern1) && !StringUtils.hasText(pattern2)) {
-            return "";
-        }
-        if (!StringUtils.hasText(pattern1)) {
-            return pattern2;
-        }
-        if (!StringUtils.hasText(pattern2)) {
-            return pattern1;
-        }*/
         final boolean pattern1ContainsUriVar = pattern1.indexOf(123) != -1;
         if (!pattern1.equals(pattern2) && !pattern1ContainsUriVar && this.match(pattern1, pattern2)) {
             return pattern2;
@@ -377,16 +294,11 @@ public class AntPathMatcher {
         return path1 + this.pathSeparator + path2;
     }
 
-    public Comparator<String> getPatternComparator(final String path) {
-        return new AntPatternComparator(path);
-    }
-
     protected static class AntPathStringMatcher {
         private static final Pattern GLOB_PATTERN;
-        private static final String DEFAULT_VARIABLE_PATTERN = "((?s).*)";
 
         static {
-            GLOB_PATTERN = Pattern.compile("\\?|\\*|\\{((?:\\{[^/]+?\\}|[^/{}]|\\\\[{}])+?)\\}");
+            GLOB_PATTERN = Pattern.compile("\\?|\\*|\\{((?:\\{[^/]+?}|[^/{}]|\\\\[{}])+?)}");
         }
 
         private final String rawPattern;
@@ -395,12 +307,9 @@ public class AntPathMatcher {
         private final Pattern pattern;
         private final List<String> variableNames;
 
-        public AntPathStringMatcher(final String pattern) {
-            this(pattern, true);
-        }
 
         public AntPathStringMatcher(final String pattern, final boolean caseSensitive) {
-            this.variableNames = new ArrayList<String>();
+            this.variableNames = new ArrayList<>();
             this.rawPattern = pattern;
             this.caseSensitive = caseSensitive;
             final StringBuilder patternBuilder = new StringBuilder();
@@ -435,7 +344,7 @@ public class AntPathMatcher {
             } else {
                 this.exactMatch = false;
                 patternBuilder.append(this.quote(pattern, end, pattern.length()));
-                this.pattern = (this.caseSensitive ? Pattern.compile(patternBuilder.toString()) : Pattern.compile(patternBuilder.toString(), 2));
+                this.pattern = (this.caseSensitive ? Pattern.compile(patternBuilder.toString()) : Pattern.compile(patternBuilder.toString(), Pattern.CASE_INSENSITIVE));
             }
         }
 
@@ -473,145 +382,7 @@ public class AntPathMatcher {
         }
     }
 
-    protected static class AntPatternComparator implements Comparator<String> {
-        private final String path;
-
-        public AntPatternComparator(final String path) {
-            this.path = path;
-        }
-
-        @Override
-        public int compare(final String pattern1, final String pattern2) {
-            final PatternInfo info1 = new PatternInfo(pattern1);
-            final PatternInfo info2 = new PatternInfo(pattern2);
-            if (info1.isLeastSpecific() && info2.isLeastSpecific()) {
-                return 0;
-            }
-            if (info1.isLeastSpecific()) {
-                return 1;
-            }
-            if (info2.isLeastSpecific()) {
-                return -1;
-            }
-            final boolean pattern1EqualsPath = pattern1.equals(this.path);
-            final boolean pattern2EqualsPath = pattern2.equals(this.path);
-            if (pattern1EqualsPath && pattern2EqualsPath) {
-                return 0;
-            }
-            if (pattern1EqualsPath) {
-                return -1;
-            }
-            if (pattern2EqualsPath) {
-                return 1;
-            }
-            if (info1.isPrefixPattern() && info2.isPrefixPattern()) {
-                return info2.getLength() - info1.getLength();
-            }
-            if (info1.isPrefixPattern() && info2.getDoubleWildcards() == 0) {
-                return 1;
-            }
-            if (info2.isPrefixPattern() && info1.getDoubleWildcards() == 0) {
-                return -1;
-            }
-            if (info1.getTotalCount() != info2.getTotalCount()) {
-                return info1.getTotalCount() - info2.getTotalCount();
-            }
-            if (info1.getLength() != info2.getLength()) {
-                return info2.getLength() - info1.getLength();
-            }
-            if (info1.getSingleWildcards() < info2.getSingleWildcards()) {
-                return -1;
-            }
-            if (info2.getSingleWildcards() < info1.getSingleWildcards()) {
-                return 1;
-            }
-            if (info1.getUriVars() < info2.getUriVars()) {
-                return -1;
-            }
-            if (info2.getUriVars() < info1.getUriVars()) {
-                return 1;
-            }
-            return 0;
-        }
-
-        private static class PatternInfo {
-            private final String pattern;
-            private int uriVars;
-            private int singleWildcards;
-            private int doubleWildcards;
-            private boolean catchAllPattern;
-            private boolean prefixPattern;
-            private Integer length;
-
-            public PatternInfo(final String pattern) {
-                this.pattern = pattern;
-                if (this.pattern != null) {
-                    this.initCounters();
-                    this.catchAllPattern = this.pattern.equals("/**");
-                    this.prefixPattern = (!this.catchAllPattern && this.pattern.endsWith("/**"));
-                }
-                if (this.uriVars == 0) {
-                    this.length = ((this.pattern != null) ? this.pattern.length() : 0);
-                }
-            }
-
-            protected void initCounters() {
-                int pos = 0;
-                if (this.pattern != null) {
-                    while (pos < this.pattern.length()) {
-                        if (this.pattern.charAt(pos) == '{') {
-                            ++this.uriVars;
-                            ++pos;
-                        } else if (this.pattern.charAt(pos) == '*') {
-                            if (pos + 1 < this.pattern.length() && this.pattern.charAt(pos + 1) == '*') {
-                                ++this.doubleWildcards;
-                                pos += 2;
-                            } else if (pos > 0 && !this.pattern.substring(pos - 1).equals(".*")) {
-                                ++this.singleWildcards;
-                                ++pos;
-                            } else {
-                                ++pos;
-                            }
-                        } else {
-                            ++pos;
-                        }
-                    }
-                }
-            }
-
-            public int getUriVars() {
-                return this.uriVars;
-            }
-
-            public int getSingleWildcards() {
-                return this.singleWildcards;
-            }
-
-            public int getDoubleWildcards() {
-                return this.doubleWildcards;
-            }
-
-            public boolean isLeastSpecific() {
-                return this.pattern == null || this.catchAllPattern;
-            }
-
-            public boolean isPrefixPattern() {
-                return this.prefixPattern;
-            }
-
-            public int getTotalCount() {
-                return this.uriVars + this.singleWildcards + 2 * this.doubleWildcards;
-            }
-
-            public int getLength() {
-                if (this.length == null) {
-                    this.length = ((this.pattern != null) ? AntPathMatcher.VARIABLE_PATTERN.matcher(this.pattern).replaceAll("#").length() : 0);
-                }
-                return this.length;
-            }
-        }
-    }
-
+    @Getter
     private static class PathSeparatorPatternCache {
         private final String endsOnWildCard;
         private final String endsOnDoubleWildCard;
@@ -621,12 +392,5 @@ public class AntPathMatcher {
             this.endsOnDoubleWildCard = pathSeparator + "**";
         }
 
-        public String getEndsOnWildCard() {
-            return this.endsOnWildCard;
-        }
-
-        public String getEndsOnDoubleWildCard() {
-            return this.endsOnDoubleWildCard;
-        }
     }
 }

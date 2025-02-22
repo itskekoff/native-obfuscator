@@ -6,7 +6,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.reference.FieldNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
@@ -40,7 +40,7 @@ public class MethodContext {
         private final StringBuilder classReferenceBuilder = new StringBuilder();
         private final StringBuilder methodReferenceBuilder = new StringBuilder();
         private Map<String, Integer> classes = new HashMap<>();
-        private @Getter List<FieldNode> fields = new CopyOnWriteArrayList<>();
+        private @Getter List<ReferenceNode> fields = new CopyOnWriteArrayList<>();
 
         private final ClassNode classNode;
 
@@ -81,14 +81,14 @@ public class MethodContext {
             return index;
         }
 
-        public FieldNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
+        public ReferenceNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
 
-            for (FieldNode fieldNode : getFields()) {
-                if (fieldNode.getClassName().equals(className)) {
-                    if (fieldNode.getName().equals(name)) {
-                        if (fieldNode.getSignature().equals(signature)) {
-                            if (fieldNode.isStaticVal() == isStatic) {
-                                return fieldNode;
+            for (ReferenceNode referenceNode : getFields()) {
+                if (referenceNode.getClassName().equals(className)) {
+                    if (referenceNode.getName().equals(name)) {
+                        if (referenceNode.getSignature().equals(signature)) {
+                            if (referenceNode.isStaticVal() == isStatic) {
+                                return referenceNode;
                             }
                         }
                     }
@@ -97,21 +97,21 @@ public class MethodContext {
 
             //not found, we should allocate
 
-            FieldNode fieldNode = new FieldNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
+            ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
 
             methodReferenceBuilder.append("methods[%s] = (jmethodID)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\") ^ %s), rtdsc)));\n"
-                    .formatted(fieldNode.getId(),
-                            fieldNode.getSeed(),
-                            fieldNode.isStatic(),
-                            fieldNode.getClassName(),
-                            fieldNode.getName(),
-                            fieldNode.getSignature(),
-                            fieldNode.getClinit()
+                    .formatted(referenceNode.getId(),
+                            referenceNode.getSeed(),
+                            referenceNode.isStatic(),
+                            referenceNode.getClassName(),
+                            referenceNode.getName(),
+                            referenceNode.getSignature(),
+                            referenceNode.getClinit()
                     ));
 
-            getFields().add(fieldNode);
+            getFields().add(referenceNode);
 
-            return fieldNode;
+            return referenceNode;
         }
 
         public ContextBuilder pushLine() {
