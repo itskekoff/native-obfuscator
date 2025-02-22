@@ -7,6 +7,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
@@ -39,7 +40,9 @@ public class MethodContext {
         private final StringBuilder output = new StringBuilder();
         private final StringBuilder classReferenceBuilder = new StringBuilder();
         private final StringBuilder methodReferenceBuilder = new StringBuilder();
-        private Map<String, Integer> classes = new HashMap<>();
+        private final StringBuilder fieldReferenceBuilder = new StringBuilder();
+        private List<ReferenceNode> classes = new CopyOnWriteArrayList<>();
+        private @Getter List<ReferenceNode> methods = new CopyOnWriteArrayList<>();
         private @Getter List<ReferenceNode> fields = new CopyOnWriteArrayList<>();
 
         private final ClassNode classNode;
@@ -67,23 +70,35 @@ public class MethodContext {
         }
 
 
-        public int pushJavaClass(String klassName) {
-            if (this.classes.containsKey(klassName)) {
-                return this.classes.get(klassName);
+        public ReferenceNode pushJavaClass(String klassName) {
+
+            for (ReferenceNode referenceNode : classes) {
+                if (referenceNode.getClassName().equals(klassName)) {
+                    return referenceNode;
+                }
             }
+
             int index = ReferenceTable.getClassIndex();
-            this.classes.put(klassName, index);
             ReferenceTable.pushClass(klassName, index);
 
-            this.classReferenceBuilder.append("    classes[%s] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass(\"%s\"))))));"
-                    .formatted(index, klassName));
-            this.classReferenceBuilder.append("\n");
-            return index;
+            //not found, we should allocate
+
+            ReferenceNode referenceNode = new ReferenceNode(klassName, "NULL", "NULL", true, index);
+
+
+            this.classReferenceBuilder.append("    classes[%s] = (jclass)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->NewGlobalRef(env->FindClass(\"%s\")) ^ %s), rtdsc)));\n"
+                    .formatted(index,
+                            referenceNode.getSeed(),
+                            klassName,
+                            referenceNode.getClinit()));
+
+            classes.add(referenceNode);
+
+            return referenceNode;
         }
 
-        public ReferenceNode allocateOrGetFieldNode(String className, String name, String signature, boolean isStatic) {
-
-            for (ReferenceNode referenceNode : getFields()) {
+        private ReferenceNode referenceNodeAllocationTemplate(MethodContext context, String className, String name, String signature, boolean isStatic, List<ReferenceNode> references, StringBuilder referenceStringBuilder, String arrayName, String castType, int index, MethodNode methodNode) {
+            for (ReferenceNode referenceNode : references) {
                 if (referenceNode.getClassName().equals(className)) {
                     if (referenceNode.getName().equals(name)) {
                         if (referenceNode.getSignature().equals(signature)) {
@@ -97,21 +112,35 @@ public class MethodContext {
 
             //not found, we should allocate
 
-            ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, ReferenceTable.getFieldIndex());
+            ReferenceNode referenceNode = new ReferenceNode(className, name, signature, isStatic, index);
 
-            methodReferenceBuilder.append("    methods[%s] = (jmethodID)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%sMethodID(env->FindClass(\"%s\"), \"%s\", \"%s\") ^ %s), rtdsc)));\n"
-                    .formatted(referenceNode.getId(),
+            referenceStringBuilder.append("    %ss[%s] = (%s)std::stoll(request(std::format(\"http://localhost:6555/decrypt?value={}&seed=%s&rtdsc={}\", ((__int64)env->Get%s%sID(%s, \"%s\", \"%s\") ^ %s), rtdsc)));\n"
+                    .formatted(
+                            arrayName,
+                            referenceNode.getId(),
+                            castType,
                             referenceNode.getSeed(),
                             referenceNode.isStatic(),
-                            referenceNode.getClassName(),
+                            Character.toUpperCase(arrayName.charAt(0)) + arrayName.substring(1),
+                            ReferenceSnippetGenerator.generateJavaClassReference(context, methodNode, className),
                             referenceNode.getName(),
                             referenceNode.getSignature(),
-                            referenceNode.getClinit()
+                            referenceNode.getClinit(),
+                            arrayName,
+                            castType
                     ));
 
-            getFields().add(referenceNode);
+            getMethods().add(referenceNode);
 
             return referenceNode;
+        }
+
+        public ReferenceNode allocateOrGetMethodNode(MethodContext context,String className, String name, String signature, boolean isStatic, MethodNode methodNode) {
+            return referenceNodeAllocationTemplate(context, className, name, signature, isStatic, getMethods(), methodReferenceBuilder, "method", "jmethodID", ReferenceTable.getMethodIndex(), methodNode);
+        }
+
+        public ReferenceNode allocateOrGetFieldNode(MethodContext context,String className, String name, String signature, boolean isStatic, MethodNode methodNode) {
+            return referenceNodeAllocationTemplate(context, className, name, signature, isStatic, getFields(), fieldReferenceBuilder, "field", "jfieldID", ReferenceTable.getFieldIndex(), methodNode);
         }
 
         public ContextBuilder pushLine() {
@@ -155,6 +184,10 @@ public class MethodContext {
 
         public String getClassReferences() {
             return "%s\n%s".formatted("/* CLASS REFERENCE TABLE */", this.classReferenceBuilder.toString());
+        }
+
+        public String getFieldReferences() {
+            return "%s\n%s".formatted("/* METHOD REFERENCE TABLE */", this.fieldReferenceBuilder.toString());
         }
 
         public String getMethodReferences() {

@@ -28,7 +28,6 @@ public class ReferenceNode {
         seed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
 
         long serverSeed = (seed ^ (0xDC9A ^ (new Random(583485834L).nextLong())));
-        System.out.println(serverSeed);
 
         Random random = new Random(serverSeed);
         clinit = random.nextLong();

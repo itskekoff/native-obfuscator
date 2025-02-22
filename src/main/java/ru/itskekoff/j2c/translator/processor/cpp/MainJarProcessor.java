@@ -6,8 +6,6 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
 import ru.itskekoff.j2c.translator.TranslatorMain;
-import ru.itskekoff.j2c.translator.build.ProcessManager;
-import ru.itskekoff.j2c.translator.build.SetupManager;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.instructions.InsnProcessorManager;
@@ -30,8 +28,6 @@ import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -96,10 +92,9 @@ public class MainJarProcessor {
             addProtectionClass(out);
             try (BufferedWriter tableWriter = Files.newBufferedWriter(cppDir.resolve("table.h"))) {
                 tableWriter.write(ResourceUtils.getStringFromResource("/assets/table.h"));
-                tableWriter.append("\nRBM classes[%s];".formatted(ReferenceTable.getClassIndex()));
-
-                tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getFieldIndex()));
-
+                tableWriter.append("\njclass classes[%s];".formatted(ReferenceTable.getClassIndex()));
+                tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getMethodIndex()));
+                tableWriter.append("\njfieldID fields[%s];".formatted(ReferenceTable.getFieldIndex()));
             }
 
             mainWriter.close();

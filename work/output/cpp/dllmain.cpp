@@ -363,7 +363,7 @@ L3:
 L5:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[0]) ^ 4312067496745863303) ^ -9135705452582381580) ^ 2058245211810174784) ^ 8477036582829493371) ^ 8309697604474073455) ^ -1292882863835120987 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ALOAD; Stack pointer: 1
     cstack1.l = clocal1.l;
@@ -375,7 +375,7 @@ L5:
     env->GetIntArrayRegion((jintArray) cstack1.l, cstack2.i, 1, &cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(I)V"), cstack1.i);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(I)V"), cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L6:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -389,27 +389,27 @@ L4:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[0]) ^ 1244760556833261884) ^ 9221860839282636122) ^ -8623127567900096752) ^ 6929752032770704347) ^ 9080712431064466277) ^ -2712797876098593749 ^ rtdsc));
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[0]) ^ -7412164112488922400) ^ -6235009369104149489) ^ -2580298173230781880) ^ -7378348891237852194) ^ 5881354903917515326) ^ -801747174796244499 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L7:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[1]) ^ -1972258257732135111) ^ -1482665240618784273) ^ -7588795930664841298) ^ 3471469483490007489) ^ 7992646183165588129) ^ 6324573918242664961 ^ rtdsc));
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[1]) ^ 6688316052440567113) ^ -3524017591875167742) ^ 4010190531838376576) ^ -4100354187364869717) ^ -4480527914952727081) ^ -2597713052603474505 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L8:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[2]) ^ 9135770900316183474) ^ -2776549126618218064) ^ -8314160174776458418) ^ -3065693399939620948) ^ -668681278312076915) ^ 7103421659576888616 ^ rtdsc));
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[2]) ^ 7781957994122325002) ^ 3939318318134146517) ^ 5592181479473475615) ^ -8419285186768546469) ^ 5715624610544720339) ^ 2732642162628204948 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L9:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[3]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc));
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[3]) ^ -7487020049815320187) ^ -2319311483425300569) ^ -5945817999465310545) ^ 889524146005969696) ^ 4951814368820363489) ^ -4796475810496138218 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L10:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 0
-    env->CallStaticVoidMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[4]) ^ -34196407739231504) ^ -6424713675353399833) ^ 8648733912584365945) ^ -6691712787007075768) ^ -2052185214396168953) ^ -3088848737347383697 ^ rtdsc));
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[4]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L11:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -429,24 +429,24 @@ void JNICALL  Java_ru_kotopushka_Main_testMathOperations1(JNIEnv *env, jclass cl
 L13:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[1]) ^ -8288537523892522805) ^ -8895737890573223965) ^ 7544126799501677406) ^ -2549931883253357940) ^ -7074600913177047493) ^ 1427811973859851430 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Тестирование математических операций...");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L14:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack0.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[2]) ^ -69799555977171428) ^ -3992603977628267752) ^ -2659862145656183631) ^ -4274366528962105888) ^ -1129849259870085792) ^ -8591831189969225665 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack1.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[3]) ^ -3614545994974998210) ^ 5294814206748637390) ^ 8887425834155538491) ^ 2443084204170204226) ^ 534683203257082783) ^ 1834659230167040889 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.i = env->CallStaticIntMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[5]) ^ 5918752085750786479) ^ 4965668862894945861) ^ -7279828537541202964) ^ -6523975953515285103) ^ -1756747530505922359) ^ -2305950619791404290 ^ rtdsc), cstack0.i, cstack1.i);
+    cstack0.i = env->CallStaticIntMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[5]) ^ 76262677825106207) ^ 5674222814952170783) ^ 4876105731939827160) ^ 1069811991413684078) ^ -2044980633825100276) ^ 6408862346679384694 ^ rtdsc), cstack0.i, cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ISTORE; Stack pointer: 1
     clocal0.i = cstack0.i;
@@ -454,13 +454,13 @@ L14:
 L15:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack0.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[4]) ^ 8839996791861110263) ^ -4611980143545991464) ^ -4134423631131974922) ^ 8125874145582298275) ^ -1612630978846333400) ^ 2560014929533009730 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack1.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[5]) ^ 6834378290537812044) ^ 6142809196410303498) ^ -6900585668570131545) ^ 1243824333010920249) ^ -5395659293202708862) ^ -6043763589664415762 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.i = env->CallStaticIntMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[6]) ^ -7412164112488922400) ^ -6235009369104149489) ^ -2580298173230781880) ^ -7378348891237852194) ^ 5881354903917515326) ^ -801747174796244499 ^ rtdsc), cstack0.i, cstack1.i);
+    cstack0.i = env->CallStaticIntMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[6]) ^ -2702569435333457881) ^ 5523433030492579786) ^ -8375147154045922836) ^ -4802679061859259908) ^ -5878441012178956471) ^ 5108082529837819632 ^ rtdsc), cstack0.i, cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ISTORE; Stack pointer: 1
     clocal1.i = cstack0.i;
@@ -468,13 +468,13 @@ L15:
 L16:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack0.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[6]) ^ -2264382729631657678) ^ -2369574743480175136) ^ -4213987603557376672) ^ -7216887561556539739) ^ -8623835142633934518) ^ -5230069081345004140 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack1.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[7]) ^ -8363393461218920593) ^ -4980040004894375045) ^ 4178606973267148742) ^ 5717941153990463950) ^ -8004141448274199330) ^ -2566916657545074994 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.i = env->CallStaticIntMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[7]) ^ -8801580171215688092) ^ 2912967769078379877) ^ 17447418483635281) ^ 8132149657982711077) ^ -5258747322114188580) ^ 7771234953637748778 ^ rtdsc), cstack0.i, cstack1.i);
+    cstack0.i = env->CallStaticIntMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[7]) ^ 5224044060682370929) ^ -8907086633133406480) ^ 3242416301613232369) ^ 1231273321094996533) ^ 1896573393333001496) ^ 1980540444425592348 ^ rtdsc), cstack0.i, cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ISTORE; Stack pointer: 1
     clocal2.i = cstack0.i;
@@ -482,13 +482,13 @@ L16:
 L17:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack0.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[8]) ^ -361924032171661291) ^ -4879513484784625911) ^ 714946177156313700) ^ 3484020499700898500) ^ 700413496629877770) ^ -1699730115847343150 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack1.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[9]) ^ 621258828240726182) ^ 8931630012923636644) ^ 6069565314025886115) ^ -8596435278123538097) ^ -7557382632153295102) ^ -5867085980347464792 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.i = env->CallStaticIntMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[8]) ^ -4273650876100441132) ^ 7436693082409737289) ^ -6175221420163547129) ^ 7780987220735515982) ^ 3265668163979988886) ^ -6822611330998639417 ^ rtdsc), cstack0.i, cstack1.i);
+    cstack0.i = env->CallStaticIntMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[8]) ^ 7781957994122325002) ^ 3939318318134146517) ^ 5592181479473475615) ^ -8419285186768546469) ^ 5715624610544720339) ^ 2732642162628204948 ^ rtdsc), cstack0.i, cstack1.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ISTORE; Stack pointer: 1
     clocal3.i = cstack0.i;
@@ -496,7 +496,7 @@ L17:
 L18:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[10]) ^ 2484464736612264705) ^ 7905279468162837300) ^ 494831257331013077) ^ 7954999562332752153) ^ -85010491102652404) ^ -828493193632888257 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение суммы: %d + %d = %d (ожидалось 15)\n");
@@ -505,7 +505,7 @@ L18:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -514,10 +514,10 @@ L18:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[11]) ^ 1355219642397599596) ^ 2874053255878655122) ^ 6050988320869948783) ^ -3755467258223120127) ^ 9087917015930502249) ^ 6784913207928174642 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -529,10 +529,10 @@ L18:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[12]) ^ -507986265973938927) ^ 3900403800639454466) ^ -6821021696144729795) ^ -1860158029264826057) ^ 1615544870584892255) ^ 1746320421213598108 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -547,20 +547,20 @@ L18:
     cstack5.i = clocal0.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L19:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[13]) ^ -4088335848914738337) ^ -2826812390968059927) ^ -6582329778868524545) ^ 7274638961912453937) ^ 4202413283943176695) ^ 6669828384433055398 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L20;
@@ -575,7 +575,7 @@ L19:
     if (cstack0.i == cstack1.i) goto L20;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -584,19 +584,19 @@ L19:
     cstack2.i = clocal0.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[10]) ^ -7633082283617597823) ^ 6460605797703812512) ^ 4964958196648230280) ^ -4454654378664787565) ^ 5866945742775377974) ^ -1350425269140229665 ^ rtdsc), cstack2.i);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[12]) ^ -109052345065629292) ^ -2509015789674550913) ^ 5283214086349837280) ^ 1576160250236746122) ^ -2981725753788288086) ^ -7083577368752310121 ^ rtdsc), cstack2.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L20:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[14]) ^ -728904437102614350) ^ -1850725101967167854) ^ 724234678029249662) ^ 1063536487603205868) ^ 1601135709442754903) ^ 1197642326869612941 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение произведения: %d * %d = %d (ожидалось 50)\n");
@@ -605,7 +605,7 @@ L20:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -614,10 +614,10 @@ L20:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[15]) ^ -7412164112488922400) ^ -6235009369104149489) ^ -2580298173230781880) ^ -7378348891237852194) ^ 5881354903917515326) ^ -801747174796244499 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -629,10 +629,10 @@ L20:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[16]) ^ 5117234615968551157) ^ -1610757539958010239) ^ 6210116265720752283) ^ 8483312095229906173) ^ 4663581265501185571) ^ 3918337160269618062 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -647,20 +647,20 @@ L20:
     cstack5.i = clocal1.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L21:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[17]) ^ 5077981826880093293) ^ -127169352004293400) ^ -4293551575982778422) ^ -4112905199280793433) ^ 2811704767288015981) ^ 5426590981486533606 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L22;
@@ -675,7 +675,7 @@ L21:
     if (cstack0.i == cstack1.i) goto L22;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -684,19 +684,19 @@ L21:
     cstack2.i = clocal1.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[11]) ^ -1751340082308492391) ^ 4268463661987838046) ^ 3312691773165698157) ^ 547774970916942860) ^ 8007055340012758185) ^ 6873252012586650127 ^ rtdsc), cstack2.i);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[16]) ^ 3948736728370460888) ^ -5158395568583442874) ^ 1262605491851124580) ^ 2623372049577918607) ^ -6462111799388380982) ^ -5406746690661955111 ^ rtdsc), cstack2.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L22:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[18]) ^ 8220144704119092501) ^ -3953689455838608405) ^ -8693403043747529837) ^ 7613250387243725316) ^ 2970230484384709588) ^ -7605509448554618824 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение разности: %d - %d = %d (ожидалось -5)\n");
@@ -705,7 +705,7 @@ L22:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -714,10 +714,10 @@ L22:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[19]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -729,10 +729,10 @@ L22:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[20]) ^ -4455316258140658692) ^ 201975991849398130) ^ -6573041282290555879) ^ 4854154954109728600) ^ 5103135501051021123) ^ -8879543246559540127 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -747,20 +747,20 @@ L22:
     cstack5.i = clocal2.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L23:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[21]) ^ 1244760556833261884) ^ 9221860839282636122) ^ -8623127567900096752) ^ 6929752032770704347) ^ 9080712431064466277) ^ -2712797876098593749 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L24;
@@ -775,7 +775,7 @@ L23:
     if (cstack0.i == cstack1.i) goto L24;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -784,19 +784,19 @@ L23:
     cstack2.i = clocal2.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[12]) ^ 3945087091814910245) ^ -6106917074059890819) ^ 2067533708388143450) ^ 6056552575026768034) ^ 9210419821581917883) ^ 1604489583176802401 ^ rtdsc), cstack2.i);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[20]) ^ -9018848701493845575) ^ -1889639619461859906) ^ 6757775576120595868) ^ 7622663645106926279) ^ -2498944030517073181) ^ 211320585455006101 ^ rtdsc), cstack2.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L24:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[22]) ^ 5444962231811046352) ^ -3155957730526784161) ^ -4302840072560747088) ^ -1692421191478068096) ^ 1910982554475138849) ^ 2529218538769577515 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение частного: %d / %d = %d (ожидалось 2)\n");
@@ -805,7 +805,7 @@ L24:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -814,10 +814,10 @@ L24:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intB", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[23]) ^ -4198794938774043345) ^ 3520995196730888369) ^ -2809701589634051169) ^ -486885816508305909) ^ 4195208703372108019) ^ -2827882699593712993 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -829,10 +829,10 @@ L24:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.i = (jint) env->GetStaticIntField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "intA", "I"));
+    cstack5.i = (jint) env->GetStaticIntField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[24]) ^ -4964709260318338742) ^ -5487540908142167107) ^ 3542095193863934742) ^ -6343688103812603425) ^ -8753542533151386124) ^ 8899387537384118622 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -847,20 +847,20 @@ L24:
     cstack5.i = clocal3.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[4].applyDecryption(), (jmethodID)(((((((__int64)(methods[9]) ^ 8038479317783907645) ^ 7258337527310604052) ^ -9091222905874538587) ^ 4686418120617937934) ^ 4807697817160774530) ^ 8784302713888999378 ^ rtdsc), cstack5.i);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), (jmethodID)(((((((__int64)(methods[9]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack5.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L25:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[25]) ^ 76262677825106207) ^ 5674222814952170783) ^ 4876105731939827160) ^ 1069811991413684078) ^ -2044980633825100276) ^ 6408862346679384694 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L26;
@@ -875,7 +875,7 @@ L25:
     if (cstack0.i == cstack1.i) goto L26;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -884,25 +884,25 @@ L25:
     cstack2.i = clocal3.i;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[13]) ^ 514449383526906410) ^ -2218784963315551435) ^ 9037265278133406029) ^ -1344396512578563049) ^ -4790374759985111027) ^ -3929289260208471782 ^ rtdsc), cstack2.i);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[24]) ^ -3247565585749077855) ^ 2266025828226146629) ^ 8878137333282602529) ^ 4863568216267896859) ^ -366039013850761645) ^ -1062713216844882498 ^ rtdsc), cstack2.i);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L26:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[26]) ^ -2481651264204782457) ^ -7172182140610349510) ^ 2526340549784616619) ^ -7726373574432324537) ^ -5864031851036819119) ^ 5656760624181804798 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Математические операции пройдены успешно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L27:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -922,13 +922,13 @@ void JNICALL  Java_ru_kotopushka_Main_testStringManipulation2(JNIEnv *env, jclas
 L29:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[27]) ^ 8074082470316814865) ^ 4826227825290504676) ^ 2217373156660978284) ^ 2269071862572968055) ^ 3885361862634691369) ^ -4159458907198710271 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Тестирование манипуляций со строками...");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L30:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -944,7 +944,7 @@ L31:
     cstack0.l = clocal0.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[14]) ^ -6792312020451937341) ^ -6893300061106499844) ^ 1978681235089805738) ^ -6865725128604311939) ^ 1298493440686472337) ^ -9082966870418167561 ^ rtdsc), cstack0.l);
+    cstack0.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[25]) ^ 2815841997600245136) ^ 7308600783070511323) ^ 7623690776222046452) ^ -5653914245529104246) ^ -63396749389446376) ^ 9217895984737865300 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal1.l = cstack0.l;
@@ -952,7 +952,7 @@ L31:
 L32:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[28]) ^ 8733187347147290491) ^ 2684348949629404777) ^ -1166723667024455008) ^ -3068831153992343701) ^ 1154376893321850675) ^ 4497811649672002739 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение реверсирования строки: '%s' (ожидалось '!dlroW ,olleH')\n");
@@ -961,7 +961,7 @@ L32:
     cstack2.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -976,14 +976,14 @@ L32:
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L33:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[29]) ^ -3539690057648600423) ^ 1379116321069788471) ^ -6193798413319484461) ^ -5824788833073617665) ^ 1464223742649201916) ^ 5829387857277000016 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L34;
@@ -995,13 +995,13 @@ L33:
     cstack1.l = env->NewStringUTF("!dlroW ,olleH");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID(classes[6].applyDecryption(), "equals", "(Ljava/lang/Object;)Z"), cstack1.l);
+    cstack0.i = (jint) env->CallBooleanMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[6]) ^ 1355219642397599596) ^ 2874053255878655122) ^ 6050988320869948783) ^ -3755467258223120127) ^ 9087917015930502249) ^ 6784913207928174642 ^ rtdsc), "equals", "(Ljava/lang/Object;)Z"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L34;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1010,25 +1010,25 @@ L33:
     cstack2.l = clocal1.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[15]) ^ -8655517928823475864) ^ -5866949512050733204) ^ 7553415296079646072) ^ -4970415895351050573) ^ -6173878696069203064) ^ 4325184412281840225 ^ rtdsc), cstack2.l);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[26]) ^ -7633082283617597823) ^ 6460605797703812512) ^ 4964958196648230280) ^ -4454654378664787565) ^ 5866945742775377974) ^ -1350425269140229665 ^ rtdsc), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L34:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[30]) ^ -6681852934887599630) ^ 5205636433494038068) ^ -1793946945554733046) ^ 895799654111415202) ^ 1305698025552508309) ^ 414744213608600830 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Манипуляции со строками пройдены успешно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L35:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -1048,13 +1048,13 @@ void JNICALL  Java_ru_kotopushka_Main_testArraySorting3(JNIEnv *env, jclass claz
 L37:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[31]) ^ -8035665841081458102) ^ -6525240195463148967) ^ -6334349365014350629) ^ -4457792128422543022) ^ 7690003914409305563) ^ -3956035283340082837 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Тестирование сортировки массива...");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L38:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -1133,7 +1133,7 @@ L39:
     cstack0.l = clocal0.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[16]) ^ -4052732700676798413) ^ -5258922084398224712) ^ 4726266279372025030) ^ 4857292703867484057) ^ 3280077329417093534) ^ -6273933232359686955 ^ rtdsc), cstack0.l);
+    cstack0.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[27]) ^ -290717731400814148) ^ 8703011193474661544) ^ 4885394224222828530) ^ -1350672016389041259) ^ -1144258416717255848) ^ -9140509284313210831 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ASTORE; Stack pointer: 1
     clocal1.l = cstack0.l;
@@ -1212,7 +1212,7 @@ L40:
 L41:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[32]) ^ -4419713109902718768) ^ -2230133705875733950) ^ 4735554775949993696) ^ 2436808696064758720) ^ 4180799546524937962) ^ -3376560793937698160 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение сортировки массива: %s (ожидалось %s)\n");
@@ -1221,7 +1221,7 @@ L41:
     cstack2.i = 2;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1235,7 +1235,7 @@ L41:
 L42:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[7].applyDecryption(), (jmethodID)(((((((__int64)(methods[17]) ^ -4711837577507274039) ^ -3117043208737124813) ^ 8110363098762491026) ^ -8251548348981788508) ^ 6011062294434966932) ^ 3515540280184184355 ^ rtdsc), cstack5.l);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), (jmethodID)(((((((__int64)(methods[28]) ^ -3286818374837535719) ^ 3749614016179863469) ^ -1625530504125960880) ^ -7732649078242802747) ^ -2217915507768963939) ^ 445540604372033046 ^ rtdsc), cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1252,7 +1252,7 @@ L42:
 L43:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[7].applyDecryption(), (jmethodID)(((((((__int64)(methods[17]) ^ -4711837577507274039) ^ -3117043208737124813) ^ 8110363098762491026) ^ -8251548348981788508) ^ 6011062294434966932) ^ 3515540280184184355 ^ rtdsc), cstack5.l);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), (jmethodID)(((((((__int64)(methods[28]) ^ -3286818374837535719) ^ 3749614016179863469) ^ -1625530504125960880) ^ -7732649078242802747) ^ -2217915507768963939) ^ 445540604372033046 ^ rtdsc), cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1260,14 +1260,14 @@ L43:
 L44:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L45:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[33]) ^ -7048833339818552688) ^ 8234424812016528829) ^ -1784658453271731676) ^ -1524684357986277431) ^ 2206420242660352738) ^ 3312116652030589626 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L46;
@@ -1279,13 +1279,13 @@ L45:
     cstack1.l = clocal2.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.i = (jint) env->CallStaticBooleanMethod(classes[7].applyDecryption(), env->GetStaticMethodID(classes[7].applyDecryption(), "equals", "([I[I)Z"), cstack0.l, cstack1.l);
+    cstack0.i = (jint) env->CallStaticBooleanMethod((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), (jmethodID)(((((((__int64)(methods[30]) ^ 877780147607341529) ^ -6196094855904424733) ^ -8613839071322128087) ^ 4509268024967979010) ^ -8465309429832208207) ^ 184574566618362342 ^ rtdsc), cstack0.l, cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L46;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1294,22 +1294,22 @@ L45:
     cstack2.l = env->NewStringUTF("Ошибка: Массив не отсортирован правильно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L46:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[34]) ^ 5224044060682370929) ^ -8907086633133406480) ^ 3242416301613232369) ^ 1231273321094996533) ^ 1896573393333001496) ^ 1980540444425592348 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сортировка массива пройдена успешно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L47:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -1329,24 +1329,24 @@ void JNICALL  Java_ru_kotopushka_Main_testFloatOperations4(JNIEnv *env, jclass c
 L49:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[35]) ^ 3325235004072892482) ^ -5448626386352507760) ^ -2491445704227411465) ^ 5543928812393227779) ^ -4653462793191558040) ^ -8561034794910826153 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Тестирование операций с float...");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L50:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack0.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[36]) ^ -215861798369383656) ^ 4787313307795812624) ^ 8250914054752324491) ^ 8828199020076688466) ^ -214717877325136715) ^ -5145780648613317111 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack1.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[37]) ^ -2446048111671875237) ^ 8842452235374070025) ^ -4611807465684385422) ^ 8303024245527224495) ^ -6786367809857869576) ^ -7287000996905904850 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.f = env->CallStaticFloatMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[19]) ^ 8109685618554754789) ^ 2394118127565372595) ^ -4920774854513056460) ^ -148274395472001825) ^ 2963025903813640912) ^ 1343523541128164401 ^ rtdsc), cstack0.f, cstack1.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[31]) ^ 4785857354980570726) ^ -1014078859160651558) ^ -918743253170281092) ^ 3645481825087243660) ^ 4641967523787979543) ^ -6128052018101135495 ^ rtdsc), cstack0.f, cstack1.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // FSTORE; Stack pointer: 1
     clocal0.f = cstack0.f;
@@ -1354,13 +1354,13 @@ L50:
 L51:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack0.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[38]) ^ -6575043490173779858) ^ -2090692663976325469) ^ -4761646913957220256) ^ -6356239115728527141) ^ -1461309846615675765) ^ -1523052506530392179 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack1.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[39]) ^ 5883148937512846555) ^ 7397778564915045237) ^ -141680522072200923) ^ -4106629695470315223) ^ -834411575979839198) ^ -7808933076708213554 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.f = env->CallStaticFloatMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[20]) ^ 8074082470316814865) ^ 4826227825290504676) ^ 2217373156660978284) ^ 2269071862572968055) ^ 3885361862634691369) ^ -4159458907198710271 ^ rtdsc), cstack0.f, cstack1.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[32]) ^ 3400090941399290270) ^ 9082419801678194936) ^ 874074126302084496) ^ -2723944224850594112) ^ -3723922253799438907) ^ -4566306163505899730 ^ rtdsc), cstack0.f, cstack1.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // FSTORE; Stack pointer: 1
     clocal1.f = cstack0.f;
@@ -1368,13 +1368,13 @@ L51:
 L52:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack0.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[40]) ^ 5883148937512846555) ^ 7397778564915045237) ^ -141680522072200923) ^ -4106629695470315223) ^ -834411575979839198) ^ -7808933076708213554 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack1.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[41]) ^ -3432880608639813355) ^ -5917212772105607771) ^ -9161498381721971671) ^ 5369916470795991608) ^ -1302784133813949455) ^ 3891591141432974303 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.f = env->CallStaticFloatMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[21]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), cstack0.f, cstack1.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[33]) ^ -1021028909002136917) ^ -2737634609123526013) ^ 4099043000841746992) ^ 8821923511971242960) ^ 3431398461647751169) ^ 8089743400991495456 ^ rtdsc), cstack0.f, cstack1.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // FSTORE; Stack pointer: 1
     clocal2.f = cstack0.f;
@@ -1382,13 +1382,13 @@ L52:
 L53:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack0.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[42]) ^ 5918752085750786479) ^ 4965668862894945861) ^ -7279828537541202964) ^ -6523975953515285103) ^ -1756747530505922359) ^ -2305950619791404290 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 1
-    cstack1.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack1.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[43]) ^ 1900215797108186866) ^ 6131460453850120982) ^ 7244447902956007738) ^ 5025029537359274722) ^ 3575515013307340127) ^ -5491035119098674844 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.f = env->CallStaticFloatMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[22]) ^ 9025311814751845762) ^ 3571258456785762936) ^ -4541531989836952338) ^ 7619525891054203526) ^ -675885858883145591) ^ -2394289424449879776 ^ rtdsc), cstack0.f, cstack1.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[34]) ^ 1939468586196644730) ^ 4647872265896404143) ^ -698628324755045877) ^ -825497241839577289) ^ 5427391507225542421) ^ -6999288940315590388 ^ rtdsc), cstack0.f, cstack1.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // FSTORE; Stack pointer: 1
     clocal3.f = cstack0.f;
@@ -1396,7 +1396,7 @@ L53:
 L54:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[44]) ^ 8587125113345012855) ^ -6982477838656066462) ^ -8702691540325498502) ^ -8413009674368133667) ^ 2069508267276865159) ^ 7943862186732943997 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение суммы: %.2f + %.2f = %.2f (ожидалось 8.00)\n");
@@ -1405,7 +1405,7 @@ L54:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1414,10 +1414,10 @@ L54:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[45]) ^ -4163191786241136125) ^ 1088885499005756289) ^ 8498894468606498407) ^ -2904232074553275789) ^ 3272872748846024858) ^ 2675099753028128974 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1429,10 +1429,10 @@ L54:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[46]) ^ -7850350818190722602) ^ 1657998404868605433) ^ -6741457723719328045) ^ -4964140387245605067) ^ 8626749034372493372) ^ -8910339637322972342 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1447,20 +1447,20 @@ L54:
     cstack5.f = clocal0.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L55:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[47]) ^ -5769876375246059300) ^ 5434255252943013168) ^ -609775860046642757) ^ -6349963611918048931) ^ -5107426189883530945) ^ 3688167513279379573 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L56;
@@ -1475,7 +1475,7 @@ L55:
     cstack0.f = cstack0.f - cstack1.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.f = env->CallStaticFloatMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[24]) ^ 8768790495385230415) ^ 252239256199239993) ^ -8304871678198489752) ^ -5486177412037313581) ^ 232040934500800218) ^ -8445949975710674205 ^ rtdsc), cstack0.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[38]) ^ -5402895970315106241) ^ 2405466870125555111) ^ -619064352329644127) ^ -3929479604115323595) ^ -6008148402696408077) ^ 790795074857390778 ^ rtdsc), cstack0.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // F2D; Stack pointer: 1
     cstack0.d = (jdouble) cstack0.f;
@@ -1494,7 +1494,7 @@ L55:
     if (cstack0.i < 0) goto L56;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1503,19 +1503,19 @@ L55:
     cstack2.f = clocal0.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[25]) ^ 2484464736612264705) ^ 7905279468162837300) ^ 494831257331013077) ^ 7954999562332752153) ^ -85010491102652404) ^ -828493193632888257 ^ rtdsc), cstack2.f);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[39]) ^ 4347670644983803227) ^ 6878928919107070660) ^ -5079902803658827256) ^ 6059690329079490787) ^ 7387361649947990294) ^ 4210099593081688277 ^ rtdsc), cstack2.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L56:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[48]) ^ 7525436674755709655) ^ 620299113252656278) ^ 1828841791111938200) ^ -3078244411855544664) ^ 6623551403928666147) ^ -3319018380042654890 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение разности: %.2f - %.2f = %.2f (ожидалось 3.00)\n");
@@ -1524,7 +1524,7 @@ L56:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1533,10 +1533,10 @@ L56:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[49]) ^ -8363393461218920593) ^ -4980040004894375045) ^ 4178606973267148742) ^ 5717941153990463950) ^ -8004141448274199330) ^ -2566916657545074994 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1548,10 +1548,10 @@ L56:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[50]) ^ -7266101878686644764) ^ 3431817414886354455) ^ 4955669700070261614) ^ -2034170366567094932) ^ 4966223529962500841) ^ -4247797716152153052 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1566,20 +1566,20 @@ L56:
     cstack5.f = clocal2.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L57:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[51]) ^ 2085530819998922366) ^ -4132045015232708938) ^ 6837339544251030322) ^ 4518681282831179973) ^ 4512260133270527936) ^ 8001404596333019971 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L58;
@@ -1594,7 +1594,7 @@ L57:
     cstack0.f = cstack0.f - cstack1.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.f = env->CallStaticFloatMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[24]) ^ 8768790495385230415) ^ 252239256199239993) ^ -8304871678198489752) ^ -5486177412037313581) ^ 232040934500800218) ^ -8445949975710674205 ^ rtdsc), cstack0.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[38]) ^ -5402895970315106241) ^ 2405466870125555111) ^ -619064352329644127) ^ -3929479604115323595) ^ -6008148402696408077) ^ 790795074857390778 ^ rtdsc), cstack0.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // F2D; Stack pointer: 1
     cstack0.d = (jdouble) cstack0.f;
@@ -1613,7 +1613,7 @@ L57:
     if (cstack0.i < 0) goto L58;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1622,19 +1622,19 @@ L57:
     cstack2.f = clocal2.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[26]) ^ 7781957994122325002) ^ 3939318318134146517) ^ 5592181479473475615) ^ -8419285186768546469) ^ 5715624610544720339) ^ 2732642162628204948 ^ rtdsc), cstack2.f);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[44]) ^ -1861799167872830103) ^ -7830472824022765273) ^ 7085319962400171534) ^ -7213749807503816986) ^ 7999850763736656805) ^ -2624459071440118264 ^ rtdsc), cstack2.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L58:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[52]) ^ -1751340082308492391) ^ 4268463661987838046) ^ 3312691773165698157) ^ 547774970916942860) ^ 8007055340012758185) ^ 6873252012586650127 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение частного: %.2f / %.2f = %.2f (ожидалось 2.20)\n");
@@ -1643,7 +1643,7 @@ L58:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1652,10 +1652,10 @@ L58:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatA", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[53]) ^ 8622728261582952779) ^ 9032156537328353074) ^ 2605904522210018369) ^ 7616388141296448069) ^ 1147172312750781998) ^ -4999899434354765652 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1667,10 +1667,10 @@ L58:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.f = env->GetStaticFloatField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "floatB", "F"));
+    cstack5.f = env->GetStaticFloatField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[54]) ^ -728904437102614350) ^ -1850725101967167854) ^ 724234678029249662) ^ 1063536487603205868) ^ 1601135709442754903) ^ 1197642326869612941 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1685,20 +1685,20 @@ L58:
     cstack5.f = clocal3.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 6
-    cstack5.l = env->CallStaticObjectMethod(classes[8].applyDecryption(), (jmethodID)(((((((__int64)(methods[23]) ^ 2776589208511787272) ^ 8792188975319195458) ^ -2879977069776451549) ^ 196612533669747764) ^ -1915273243307648670) ^ -7720594267754770772 ^ rtdsc), cstack5.f);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), (jmethodID)(((((((__int64)(methods[35]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), cstack5.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L59:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[55]) ^ -3176359289273198007) ^ -2598193567224117531) ^ -5398158693360434256) ^ 28875700177957099) ^ -2210710927197895263) ^ -8503492385310750179 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L60;
@@ -1713,7 +1713,7 @@ L59:
     cstack0.f = cstack0.f - cstack1.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    cstack0.f = env->CallStaticFloatMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[24]) ^ 8768790495385230415) ^ 252239256199239993) ^ -8304871678198489752) ^ -5486177412037313581) ^ 232040934500800218) ^ -8445949975710674205 ^ rtdsc), cstack0.f);
+    cstack0.f = env->CallStaticFloatMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[38]) ^ -5402895970315106241) ^ 2405466870125555111) ^ -619064352329644127) ^ -3929479604115323595) ^ -6008148402696408077) ^ 790795074857390778 ^ rtdsc), cstack0.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // F2D; Stack pointer: 1
     cstack0.d = (jdouble) cstack0.f;
@@ -1732,7 +1732,7 @@ L59:
     if (cstack0.i < 0) goto L60;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1741,25 +1741,25 @@ L59:
     cstack2.f = clocal3.f;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 3
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[27]) ^ 7087249969053909452) ^ 8513306891520378496) ^ -2332317759376607965) ^ -664035912158264833) ^ -9077798539325907422) ^ 7019133231140168883 ^ rtdsc), cstack2.f);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[49]) ^ -582842203300336715) ^ 7816101690613270681) ^ 8260202551330293156) ^ 6407715007978995833) ^ 686004331192773122) ^ -2248408210191328316 ^ rtdsc), cstack2.f);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L60:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[56]) ^ -1131487994566474629) ^ 3610172978575422283) ^ 7871671185781253072) ^ 1060398733550483115) ^ 3424193881076682493) ^ -1407967683035272935 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Операции с float пройдены успешно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L61:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -1779,24 +1779,24 @@ void JNICALL  Java_ru_kotopushka_Main_testDoubleOperations5(JNIEnv *env, jclass 
 L63:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[57]) ^ 7963623384752477153) ^ -7272708660720098644) ^ 5990001341600484365) ^ -5492452915847791791) ^ 3878157277768655397) ^ 4789574082484072954 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Тестирование операций с double...");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L64:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack0.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[58]) ^ 4055546177379247956) ^ 5992019416245679797) ^ -1705094480846329926) ^ -4628666715967056441) ^ 9217624402152986559) ^ -7344543406505980824 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 2
-    cstack2.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack2.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[59]) ^ -7451416901577380263) ^ -4751421185445399945) ^ 5362778058775239030) ^ -1527822107744032888) ^ 4029478409999313032) ^ 706506642125703749 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack0.d = env->CallStaticDoubleMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[28]) ^ 8950455877425447974) ^ 7486956346759579152) ^ -7907051816071481002) ^ -2559345141116558903) ^ -1605426393980297428) ^ -6389018060149773495 ^ rtdsc), cstack0.d, cstack2.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[50]) ^ -8912039256780025803) ^ -9185968716932223443) ^ 3790075607718108657) ^ 370624875266983935) ^ -5265951902685257256) ^ -1726476130389019613 ^ rtdsc), cstack0.d, cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DSTORE; Stack pointer: 2
     clocal0.d = cstack0.d;
@@ -1804,13 +1804,13 @@ L64:
 L65:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack0.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[60]) ^ -547239055062396791) ^ 5383991988593171305) ^ 1122054535861291116) ^ 3990368754228993249) ^ -236331623333310039) ^ 3254574242430513652 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 2
-    cstack2.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack2.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[61]) ^ 2887048294076124984) ^ 2444381387620247162) ^ -6652605254715957629) ^ 7958137312090507610) ^ -1908068662736579994) ^ 1777116816271997619 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack0.d = env->CallStaticDoubleMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[29]) ^ 1355219642397599596) ^ 2874053255878655122) ^ 6050988320869948783) ^ -3755467258223120127) ^ 9087917015930502249) ^ 6784913207928174642 ^ rtdsc), cstack0.d, cstack2.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[51]) ^ -5442148755108596809) ^ 3889055062374239246) ^ 7324011875381409488) ^ 1921047179378495712) ^ -7860024896614610371) ^ 2299048891779339026 ^ rtdsc), cstack0.d, cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DSTORE; Stack pointer: 2
     clocal2.d = cstack0.d;
@@ -1818,13 +1818,13 @@ L65:
 L66:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack0.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[62]) ^ 1059445533942526385) ^ 1038622238950881722) ^ -8216019209195119336) ^ 7436100291593766392) ^ 8143967311101278468) ^ 2241506482179263052 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 2
-    cstack2.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack2.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[63]) ^ -5150024283209074242) ^ 4775964565235630109) ^ 3949203552568912158) ^ -5837339849284508677) ^ 8756456420594977683) ^ -4593052182342543489 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack0.d = env->CallStaticDoubleMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[30]) ^ -5185627431447014166) ^ 7208074262960762189) ^ -7359392509966604714) ^ -3419993591239538797) ^ -8767951689998556180) ^ 8350709438745166160 ^ rtdsc), cstack0.d, cstack2.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[52]) ^ -5548958204117383877) ^ -7261359918159916129) ^ -8155032229925654918) ^ 9173085949218438056) ^ -5093017024446426297) ^ 4236845607623364740 ^ rtdsc), cstack0.d, cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DSTORE; Stack pointer: 2
     clocal4.d = cstack0.d;
@@ -1832,13 +1832,13 @@ L66:
 L67:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack0.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[64]) ^ 1572488176970724375) ^ 7676660648713862200) ^ -689339832472044507) ^ -3245981249642302625) ^ 6328113720038419554) ^ -4101916497598634297 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 2
-    cstack2.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack2.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[65]) ^ -7013230191580612764) ^ 5802315109996429453) ^ -8922806464445766421) ^ -3942030611736280015) ^ 1284084283839302281) ^ 8815099108947398889 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack0.d = env->CallStaticDoubleMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[31]) ^ 6941187735251631816) ^ -1153519896765092744) ^ 8578458441031900157) ^ -6008214432534054799) ^ -8162667161075925641) ^ -7981560309803408772 ^ rtdsc), cstack0.d, cstack2.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[53]) ^ -6827915168689877265) ^ -4461190359086400467) ^ 9116829254853775075) ^ -4448378870559342059) ^ 2220829399507522794) ^ 3860794746374574792 ^ rtdsc), cstack0.d, cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DSTORE; Stack pointer: 2
     clocal6.d = cstack0.d;
@@ -1846,7 +1846,7 @@ L67:
 L68:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[66]) ^ 3435694089637230194) ^ 6650310099658095560) ^ -6264073889166917545) ^ -5141290482895563992) ^ -4646258212620489364) ^ 936676289115942238 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение суммы: %.2f + %.2f = %.2f (ожидалось 13.00)\n");
@@ -1855,7 +1855,7 @@ L68:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1864,10 +1864,10 @@ L68:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[67]) ^ 1501281876199877231) ^ -5905864029545425255) ^ -4859787879538559338) ^ 1588711262152669838) ^ 8172785637680520468) ^ 3338862670867233384 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1879,10 +1879,10 @@ L68:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[68]) ^ 1462029091406386664) ^ -4422275841591708416) ^ 3083288352467461573) ^ 7439238045646489145) ^ 6320909143762318174) ^ 4847116492084148928 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1897,20 +1897,20 @@ L68:
     cstack5.d = clocal0.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L69:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[69]) ^ 7051646820815969528) ^ -7501327484464041040) ^ 4805830251797426780) ^ 1753310345886705047) ^ -8155462580504856965) ^ 1516150774223359619 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L70;
@@ -1925,7 +1925,7 @@ L69:
     cstack0.d = cstack0.d - cstack2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.d = env->CallStaticDoubleMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[33]) ^ 6246479710183216266) ^ 3420468672326171939) ^ 653959197886849281) ^ 1747034837781259541) ^ -4509346237237001786) ^ -3695069241291444837 ^ rtdsc), cstack0.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[57]) ^ 3727818557241785465) ^ 7537219606814453719) ^ 8807861861730136741) ^ 5547066566445950532) ^ -6476520960530518334) ^ -5955424785005940277 ^ rtdsc), cstack0.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 2
     cstack2.d = 1.0E-4;
@@ -1941,7 +1941,7 @@ L69:
     if (cstack0.i < 0) goto L70;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -1950,19 +1950,19 @@ L69:
     cstack2.d = clocal0.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[34]) ^ -5331689665249291801) ^ -2458752525324709050) ^ 3551383690441903407) ^ -8764172111615328762) ^ -7852820316043541695) ^ -6649984097903444199 ^ rtdsc), cstack2.d);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[58]) ^ 7051646820815969528) ^ -7501327484464041040) ^ 4805830251797426780) ^ 1753310345886705047) ^ -8155462580504856965) ^ 1516150774223359619 ^ rtdsc), cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L70:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[70]) ^ -5221230579684954090) ^ -8806560113023657346) ^ -221244494497602673) ^ -1002647333194568917) ^ -7845615735472473019) ^ 2847726986123324192 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение произведения: %.2f * %.2f = %.2f (ожидалось 30.00)\n");
@@ -1971,7 +1971,7 @@ L70:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -1980,10 +1980,10 @@ L70:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[71]) ^ 6834378290537812044) ^ 6142809196410303498) ^ -6900585668570131545) ^ 1243824333010920249) ^ -5395659293202708862) ^ -6043763589664415762 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -1995,10 +1995,10 @@ L70:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[72]) ^ 2630526970414542340) ^ -874637817261243077) ^ 8030799126337089276) ^ -5147565986706042201) ^ -1000141869352634185) ^ -4274543730693829515 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -2013,20 +2013,20 @@ L70:
     cstack5.d = clocal2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L71:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[73]) ^ 2338402502809987069) ^ -1761547324417601236) ^ -7041136620264997714) ^ 2610821037661994891) ^ 830120887147329377) ^ 2617557343428053000 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L72;
@@ -2041,7 +2041,7 @@ L71:
     cstack0.d = cstack0.d - cstack2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.d = env->CallStaticDoubleMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[33]) ^ 6246479710183216266) ^ 3420468672326171939) ^ 653959197886849281) ^ 1747034837781259541) ^ -4509346237237001786) ^ -3695069241291444837 ^ rtdsc), cstack0.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[57]) ^ 3727818557241785465) ^ 7537219606814453719) ^ 8807861861730136741) ^ 5547066566445950532) ^ -6476520960530518334) ^ -5955424785005940277 ^ rtdsc), cstack0.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 2
     cstack2.d = 1.0E-4;
@@ -2057,7 +2057,7 @@ L71:
     if (cstack0.i < 0) goto L72;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -2066,19 +2066,19 @@ L71:
     cstack2.d = clocal2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[35]) ^ 1355219642397599596) ^ 2874053255878655122) ^ 6050988320869948783) ^ -3755467258223120127) ^ 9087917015930502249) ^ 6784913207928174642 ^ rtdsc), cstack2.d);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[63]) ^ -6208063080947859503) ^ -5119481046793783526) ^ -4770935410535188922) ^ -3935755107925801805) ^ -2362032059428552898) ^ -4420424949247348270 ^ rtdsc), cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L72:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[74]) ^ 8658331409820892703) ^ 6600046839603220993) ^ -4532243493258983672) ^ 5199041883251478189) ^ 224836353929731542) ^ 503083013972109020 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение разности: %.2f - %.2f = %.2f (ожидалось 7.00)\n");
@@ -2087,7 +2087,7 @@ L72:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -2096,10 +2096,10 @@ L72:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[75]) ^ -3871067318636580853) ^ 1975795006162114447) ^ 5124086145794001076) ^ 7784124974788238735) ^ 1442609996641028592) ^ -4217001321093753541 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -2111,10 +2111,10 @@ L72:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[76]) ^ -255114583162874224) ^ 6270901495749529464) ^ -2252753786951206214) ^ -3768018274434011139) ^ -2066594375538306305) ^ -3637526831691368863 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -2129,20 +2129,20 @@ L72:
     cstack5.d = clocal4.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L73:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[77]) ^ -5734273227008119376) ^ 3002145550922913791) ^ -7747923871220677502) ^ -8767309865668051515) ^ -6029762144409614106) ^ 9191149970196188837 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L74;
@@ -2157,7 +2157,7 @@ L73:
     cstack0.d = cstack0.d - cstack2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.d = env->CallStaticDoubleMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[33]) ^ 6246479710183216266) ^ 3420468672326171939) ^ 653959197886849281) ^ 1747034837781259541) ^ -4509346237237001786) ^ -3695069241291444837 ^ rtdsc), cstack0.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[57]) ^ 3727818557241785465) ^ 7537219606814453719) ^ 8807861861730136741) ^ 5547066566445950532) ^ -6476520960530518334) ^ -5955424785005940277 ^ rtdsc), cstack0.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 2
     cstack2.d = 1.0E-4;
@@ -2173,7 +2173,7 @@ L73:
     if (cstack0.i < 0) goto L74;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -2182,19 +2182,19 @@ L73:
     cstack2.d = clocal4.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[36]) ^ -290717731400814148) ^ 8703011193474661544) ^ 4885394224222828530) ^ -1350672016389041259) ^ -1144258416717255848) ^ -9140509284313210831 ^ rtdsc), cstack2.d);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[68]) ^ -2592110349769120169) ^ -824374552911401214) ^ 6298968734724122699) ^ 2958845720856467234) ^ -5871236431607887795) ^ -3840950459844963593 ^ rtdsc), cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L74:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[78]) ^ -8142475285795277874) ^ 771088897712247275) ^ -3366649396611863419) ^ 2794246637122432025) ^ -7989732287132061978) ^ -2018238563201089828 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Сравнение частного: %.2f / %.2f = %.2f (ожидалось 3.33)\n");
@@ -2203,7 +2203,7 @@ L74:
     cstack2.i = 3;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ANEWARRAY; Stack pointer: 3
-    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, classes[3].applyDecryption(), nullptr); }
+    if (cstack2.i < 0) throw_re(env, "java/lang/NegativeArraySizeException", "ARRAYLENGTH negative", __LINE__); else { cstack2.l = env->NewObjectArray(cstack2.i, (jclass)(((((((__int64)(classes[3]) ^ 3360838152310832406) ^ -7880736088372607136) ^ 8817150358308105407) ^ 3126582554348257899) ^ -5575798747717641201) ^ -3058052346583951482 ^ rtdsc), nullptr); }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 3
     cstack3 = cstack2;
@@ -2212,10 +2212,10 @@ L74:
     cstack4.i = 0;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleA", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[79]) ^ -2994693902938013152) ^ 4636523523336221627) ^ -5000338826938458210) ^ 2955707966803744481) ^ -4048178259973960205) ^ -6446560465454882173 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -2227,10 +2227,10 @@ L74:
     cstack4.i = 1;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 5
-    cstack5.d = env->GetStaticDoubleField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "doubleB", "D"));
+    cstack5.d = env->GetStaticDoubleField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[80]) ^ 8148938403348245357) ^ 910529939611655756) ^ 5582892982895506949) ^ -5998801174670853836) ^ 4814902397731843206) ^ -164730275793783847 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
@@ -2245,20 +2245,20 @@ L74:
     cstack5.d = clocal6.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 7
-    cstack5.l = env->CallStaticObjectMethod(classes[10].applyDecryption(), (jmethodID)(((((((__int64)(methods[32]) ^ 2594923822176602416) ^ 1557471884758856299) ^ -3277796931903460299) ^ -2730219732956039618) ^ -77805910531583728) ^ 8669217890393880134 ^ rtdsc), cstack5.d);
+    cstack5.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), (jmethodID)(((((((__int64)(methods[54]) ^ -5256833732217861310) ^ -6374450415298525266) ^ 6916903516676432072) ^ 1414698924850400963) ^ -6923279776651422562) ^ -2655255466498517775 ^ rtdsc), cstack5.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // AASTORE; Stack pointer: 6
     env->SetObjectArrayElement((jobjectArray) cstack3.l, cstack4.i, cstack5.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 3
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;"), cstack1.l, cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // POP; Stack pointer: 1
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L75:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.i =  env->GetStaticBooleanField(classes[2].applyDecryption(), env->GetStaticFieldID(classes[2].applyDecryption(), "$assertionsDisabled", "Z"));
+    cstack0.i =  env->GetStaticBooleanField((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jfieldID)(((((((__int64)(fields[81]) ^ -8181728074883735737) ^ 2254677085665964114) ^ 4576426831099190196) ^ 8644773420616251332) ^ 8605135292659287344) ^ -509984741984174284 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // IFNE; Stack pointer: 1
     if (cstack0.i != 0) goto L76;
@@ -2273,7 +2273,7 @@ L75:
     cstack0.d = cstack0.d - cstack2.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 2
-    cstack0.d = env->CallStaticDoubleMethod(classes[9].applyDecryption(), (jmethodID)(((((((__int64)(methods[33]) ^ 6246479710183216266) ^ 3420468672326171939) ^ 653959197886849281) ^ 1747034837781259541) ^ -4509346237237001786) ^ -3695069241291444837 ^ rtdsc), cstack0.d);
+    cstack0.d = env->CallStaticDoubleMethod((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), (jmethodID)(((((((__int64)(methods[57]) ^ 3727818557241785465) ^ 7537219606814453719) ^ 8807861861730136741) ^ 5547066566445950532) ^ -6476520960530518334) ^ -5955424785005940277 ^ rtdsc), cstack0.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 2
     cstack2.d = 1.0E-4;
@@ -2289,7 +2289,7 @@ L75:
     if (cstack0.i < 0) goto L76;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[5].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -2298,25 +2298,25 @@ L75:
     cstack2.d = clocal6.d;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 4
-    cstack2.l = env->CallStaticObjectMethod(classes[2].applyDecryption(), (jmethodID)(((((((__int64)(methods[37]) ^ 4240861200269983456) ^ -4271486057132117419) ^ -2112202835256340046) ^ -5135014974790118486) ^ -8292374551593377248) ^ 6147896308925713990 ^ rtdsc), cstack2.d);
+    cstack2.l = env->CallStaticObjectMethod((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), (jmethodID)(((((((__int64)(methods[73]) ^ -5477751907641504029) ^ 6321164755804404030) ^ -3984584182859140088) ^ 4338393437423465592) ^ -6937688937793559915) ^ -3203933560842502941 ^ rtdsc), cstack2.d);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[5].applyDecryption(), env->GetMethodID(classes[5].applyDecryption(), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[5]) ^ -5588210993205841740) ^ -5777771730206199289) ^ -211956002214601303) ^ -3423131345292261550) ^ -6944893522659595887) ^ 5745099428840280284 ^ rtdsc), "<init>", "(Ljava/lang/Object;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ATHROW; Stack pointer: 1
-    if (cstack0.l == nullptr) env->ThrowNew(classes[2].applyDecryption(), ""); else env->Throw((jthrowable) cstack0.l);
+    if (cstack0.l == nullptr) env->ThrowNew((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), ""); else env->Throw((jthrowable) cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L76:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // GETSTATIC; Stack pointer: 0
-    cstack0.l = env->GetStaticObjectField(classes[0].applyDecryption(), env->GetStaticFieldID(classes[0].applyDecryption(), "out", "Ljava/io/PrintStream;"));
+    cstack0.l = env->GetStaticObjectField((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), (jfieldID)(((((((__int64)(fields[82]) ^ 8658331409820892703) ^ 6600046839603220993) ^ -4532243493258983672) ^ 5199041883251478189) ^ 224836353929731542) ^ 503083013972109020 ^ rtdsc));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // LDC; Stack pointer: 1
     cstack1.l = env->NewStringUTF("Операции с double пройдены успешно.");
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 2
-    env->CallVoidMethod(cstack0.l, env->GetMethodID(classes[1].applyDecryption(), "println", "(Ljava/lang/String;)V"), cstack1.l);
+    env->CallVoidMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[1]) ^ 6392541943985493902) ^ -5359448608802941141) ^ 8189927075482860072) ^ 7091213362452016802) ^ -5424477615486983567) ^ -7141119782647353391 ^ rtdsc), "println", "(Ljava/lang/String;)V"), cstack1.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L77:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2650,7 +2650,7 @@ jobject JNICALL  Java_ru_kotopushka_Main_reverseString18(JNIEnv *env, jclass cla
 L103:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // NEW; Stack pointer: 0
-    if (jobject obj = env->AllocObject(classes[11].applyDecryption())) { cstack0.l = obj; }
+    if (jobject obj = env->AllocObject((jclass)(((((((__int64)(classes[11]) ^ 7272564991944644951) ^ -1750198581857418720) ^ -2739426118081585381) ^ -1170384166686359582) ^ -8141053419362719613) ^ 2064828868567344785 ^ rtdsc))) { cstack0.l = obj; }
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // DUP; Stack pointer: 1
     cstack1 = cstack0;
@@ -2659,13 +2659,13 @@ L103:
     cstack2.l = clocal0.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESPECIAL; Stack pointer: 3
-    env->CallNonvirtualVoidMethod(cstack1.l, classes[11].applyDecryption(), env->GetMethodID(classes[11].applyDecryption(), "<init>", "(Ljava/lang/String;)V"), cstack2.l);
+    env->CallNonvirtualVoidMethod(cstack1.l, (jclass)(((((((__int64)(classes[11]) ^ 7272564991944644951) ^ -1750198581857418720) ^ -2739426118081585381) ^ -1170384166686359582) ^ -8141053419362719613) ^ 2064828868567344785 ^ rtdsc), env->GetMethodID((jclass)(((((((__int64)(classes[11]) ^ 7272564991944644951) ^ -1750198581857418720) ^ -2739426118081585381) ^ -1170384166686359582) ^ -8141053419362719613) ^ 2064828868567344785 ^ rtdsc), "<init>", "(Ljava/lang/String;)V"), cstack2.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 1
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "reverse", "()Ljava/lang/StringBuilder;"));
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[11]) ^ 7272564991944644951) ^ -1750198581857418720) ^ -2739426118081585381) ^ -1170384166686359582) ^ -8141053419362719613) ^ 2064828868567344785 ^ rtdsc), "reverse", "()Ljava/lang/StringBuilder;"));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKEVIRTUAL; Stack pointer: 1
-    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID(classes[11].applyDecryption(), "toString", "()Ljava/lang/String;"));
+    cstack0.l = env->CallObjectMethod(cstack0.l, env->GetMethodID((jclass)(((((((__int64)(classes[11]) ^ 7272564991944644951) ^ -1750198581857418720) ^ -2739426118081585381) ^ -1170384166686359582) ^ -8141053419362719613) ^ 2064828868567344785 ^ rtdsc), "toString", "()Ljava/lang/String;"));
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // ARETURN; Stack pointer: 1
     return (jobject) cstack0.l;
@@ -2688,7 +2688,7 @@ L105:
     cstack0.l = clocal0.l;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
     // INVOKESTATIC; Stack pointer: 1
-    env->CallStaticVoidMethod(classes[7].applyDecryption(), (jmethodID)(((((((__int64)(methods[38]) ^ 5077981826880093293) ^ -127169352004293400) ^ -4293551575982778422) ^ -4112905199280793433) ^ 2811704767288015981) ^ 5426590981486533606 ^ rtdsc), cstack0.l);
+    env->CallStaticVoidMethod((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), (jmethodID)(((((((__int64)(methods[74]) ^ 4785857354980570726) ^ -1014078859160651558) ^ -918743253170281092) ^ 3645481825087243660) ^ 4641967523787979543) ^ -6128052018101135495 ^ rtdsc), cstack0.l);
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
 L106:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
@@ -2733,59 +2733,144 @@ extern "C" JNIEXPORT void JNICALL  Java_ru_kotopushka_Main__00024Clinit(JNIEnv *
     env->RegisterNatives(env->FindClass("ru/kotopushka/Main"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
 
     /* CLASS REFERENCE TABLE */
-    classes[0] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/System"))))));
-    classes[1] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/io/PrintStream"))))));
-    classes[2] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("ru/kotopushka/Main"))))));
-    classes[3] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Object"))))));
-    classes[4] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Integer"))))));
-    classes[5] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/AssertionError"))))));
-    classes[6] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/String"))))));
-    classes[7] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/util/Arrays"))))));
-    classes[8] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Float"))))));
-    classes[9] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Math"))))));
-    classes[10] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/Double"))))));
-    classes[11] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("java/lang/StringBuilder"))))));
+    classes[0] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=197&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/System")) ^ 1786243946462463404), rtdsc)));
+    classes[1] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=155&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/io/PrintStream")) ^ 1908527760331663727), rtdsc)));
+    classes[2] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=49&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("ru/kotopushka/Main")) ^ 1660655170454862121), rtdsc)));
+    classes[3] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=142&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/Object")) ^ 1877130566329763406), rtdsc)));
+    classes[4] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=356&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/Integer")) ^ 1100463115185806843), rtdsc)));
+    classes[5] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=192&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/AssertionError")) ^ 1794506371135818636), rtdsc)));
+    classes[6] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=361&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/String")) ^ 1092200690512451611), rtdsc)));
+    classes[7] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=163&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/util/Arrays")) ^ 1842428401599527533), rtdsc)));
+    classes[8] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=384&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/Float")) ^ 1477229451798545284), rtdsc)));
+    classes[9] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=87&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/Math")) ^ 1597860782451061479), rtdsc)));
+    classes[10] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=13&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/Double")) ^ 1667265107616565929), rtdsc)));
+    classes[11] = (jclass)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=330&rtdsc={}", ((__int64)env->NewGlobalRef(env->FindClass("java/lang/StringBuilder")) ^ 1143427695999463356), rtdsc)));
 
     /* METHOD REFERENCE TABLE */
-    methods[0] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=272&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "testMathOperations", "()V") ^ 1292151249925544320), rtdsc)));
-    methods[1] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=177&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "testStringManipulation", "()V") ^ 1872173112384743726), rtdsc)));
-    methods[2] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=367&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "testArraySorting", "()V") ^ 1082285791212346842), rtdsc)));
-    methods[3] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=197&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "testFloatOperations", "()V") ^ 1786243946462463404), rtdsc)));
-    methods[4] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=431&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "testDoubleOperations", "()V") ^ 1399562706254652898), rtdsc)));
-    methods[5] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=48&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "add", "(II)I") ^ 1662307653671546249), rtdsc)));
-    methods[6] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=308&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "multiply", "(II)I") ^ 1232661828355111934), rtdsc)));
-    methods[7] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=122&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "subtract", "(II)I") ^ 1540023839802345926), rtdsc)));
-    methods[8] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=129&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "divide", "(II)I") ^ 1898612861031558958), rtdsc)));
-    methods[9] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=423&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Integer"), "valueOf", "(I)Ljava/lang/Integer;") ^ 1412782576283093218), rtdsc)));
-    methods[10] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=34&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello0_proxy1", "(I)Ljava/lang/String;") ^ 1632562942886330056), rtdsc)));
-    methods[11] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=387&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello1_proxy2", "(I)Ljava/lang/String;") ^ 1472271997853525604), rtdsc)));
-    methods[12] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=146&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello2_proxy3", "(I)Ljava/lang/String;") ^ 1923400117871755471), rtdsc)));
-    methods[13] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=307&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello3_proxy4", "(I)Ljava/lang/String;") ^ 1234314311571796062), rtdsc)));
-    methods[14] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=408&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "reverseString", "(Ljava/lang/String;)Ljava/lang/String;") ^ 1490449321826985604), rtdsc)));
-    methods[15] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=115&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello4_proxy5", "(Ljava/lang/String;)Ljava/lang/String;") ^ 1551591230909069414), rtdsc)));
-    methods[16] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=403&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "sortArray", "([I)[I") ^ 1498711742205373541), rtdsc)));
-    methods[17] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=182&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/Arrays"), "toString", "([I)Ljava/lang/String;") ^ 1863910696301323086), rtdsc)));
-    methods[18] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=326&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/Arrays"), "equals", "([I[I)Z") ^ 1150037633161167164), rtdsc)));
-    methods[19] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=167&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "add", "(FF)F") ^ 1835818464437823725), rtdsc)));
-    methods[20] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=39&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "multiply", "(FF)F") ^ 1624300522507942120), rtdsc)));
-    methods[21] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=49&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "subtract", "(FF)F") ^ 1660655170454862121), rtdsc)));
-    methods[22] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=278&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "divide", "(FF)F") ^ 1282236346330472255), rtdsc)));
-    methods[23] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=170&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Float"), "valueOf", "(F)Ljava/lang/Float;") ^ 1830861014787771341), rtdsc)));
-    methods[24] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=388&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Math"), "abs", "(F)F") ^ 1470619518931808772), rtdsc)));
-    methods[25] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=216&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello5_proxy6", "(F)Ljava/lang/String;") ^ 1807726241164258956), rtdsc)));
-    methods[26] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=85&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello6_proxy7", "(F)Ljava/lang/String;") ^ 1601165748884429735), rtdsc)));
-    methods[27] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=248&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello7_proxy8", "(F)Ljava/lang/String;") ^ 1754846752460563083), rtdsc)));
-    methods[28] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=29&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "add", "(DD)D") ^ 1693704847673446569), rtdsc)));
-    methods[29] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=361&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "multiply", "(DD)D") ^ 1092200690512451611), rtdsc)));
-    methods[30] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=43&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "subtract", "(DD)D") ^ 1617690589641205608), rtdsc)));
-    methods[31] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=255&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "divide", "(DD)D") ^ 1743279365648806891), rtdsc)));
-    methods[32] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=81&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Double"), "valueOf", "(D)Ljava/lang/Double;") ^ 1607775681751166247), rtdsc)));
-    methods[33] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=130&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/lang/Math"), "abs", "(D)D") ^ 1896960373519907534), rtdsc)));
-    methods[34] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=82&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello8_proxy9", "(D)Ljava/lang/String;") ^ 1606123198534482119), rtdsc)));
-    methods[35] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=361&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello9_proxy10", "(D)Ljava/lang/String;") ^ 1092200690512451611), rtdsc)));
-    methods[36] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=93&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello10_proxy11", "(D)Ljava/lang/String;") ^ 1587945874561022119), rtdsc)));
-    methods[37] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=381&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("ru/kotopushka/Main"), "$hello11_proxy12", "(D)Ljava/lang/String;") ^ 1112030497702595739), rtdsc)));
-    methods[38] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=218&rtdsc={}", ((__int64)env->GetStaticMethodID(env->FindClass("java/util/Arrays"), "sort", "([I)V") ^ 1804421270435923404), rtdsc)));
+    methods[0] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=308&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "testMathOperations", "()V") ^ 1232661828355111934), rtdsc)));
+    methods[1] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=358&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "testStringManipulation", "()V") ^ 1097158144457471291), rtdsc)));
+    methods[2] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=85&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "testArraySorting", "()V") ^ 1601165748884429735), rtdsc)));
+    methods[3] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=59&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "testFloatOperations", "()V") ^ 1644130329698086248), rtdsc)));
+    methods[4] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=423&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "testDoubleOperations", "()V") ^ 1412782576283093218), rtdsc)));
+    methods[5] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=296&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "add", "(II)I") ^ 1199612151136527485), rtdsc)));
+    methods[6] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=212&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "multiply", "(II)I") ^ 1814336178325962764), rtdsc)));
+    methods[7] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=211&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "subtract", "(II)I") ^ 1815988661542646892), rtdsc)));
+    methods[8] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=85&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "divide", "(II)I") ^ 1601165748884429735), rtdsc)));
+    methods[9] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=89&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[4]) ^ 4094798966467705820) ^ 4508431223996995662) ^ 8798573360857200779) ^ 7967550574248675869) ^ -7377243177638362763) ^ -8852797227722896368 ^ rtdsc), "valueOf", "(I)Ljava/lang/Integer;") ^ 1594555811722725927), rtdsc)));
+    methods[12] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=214&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello0_proxy1", "(I)Ljava/lang/String;") ^ 1811031207597627212), rtdsc)));
+    methods[16] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=363&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello1_proxy2", "(I)Ljava/lang/String;") ^ 1088895728374050651), rtdsc)));
+    methods[20] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=353&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello2_proxy3", "(I)Ljava/lang/String;") ^ 1105420564835859227), rtdsc)));
+    methods[24] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=329&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello3_proxy4", "(I)Ljava/lang/String;") ^ 1145080179216147484), rtdsc)));
+    methods[25] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=291&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "reverseString", "(Ljava/lang/String;)Ljava/lang/String;") ^ 1207874567219948125), rtdsc)));
+    methods[26] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=34&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello4_proxy5", "(Ljava/lang/String;)Ljava/lang/String;") ^ 1632562942886330056), rtdsc)));
+    methods[27] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=93&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "sortArray", "([I)[I") ^ 1587945874561022119), rtdsc)));
+    methods[28] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=240&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), "toString", "([I)Ljava/lang/String;") ^ 1768066626783970699), rtdsc)));
+    methods[30] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=5&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), "equals", "([I[I)Z") ^ 1680484977645006249), rtdsc)));
+    methods[31] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=200&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "add", "(FF)F") ^ 1781286496812411020), rtdsc)));
+    methods[32] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=263&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "multiply", "(FF)F") ^ 1254144123056907487), rtdsc)));
+    methods[33] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=96&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "subtract", "(FF)F") ^ 1530108940502241157), rtdsc)));
+    methods[34] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=333&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "divide", "(FF)F") ^ 1138470246349410972), rtdsc)));
+    methods[35] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=142&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[8]) ^ 3581756323439507830) ^ -2129607181471017521) ^ 1271893984134125950) ^ 202888041775193270) ^ -5561389586575503849) ^ -2509374247944999020 ^ rtdsc), "valueOf", "(F)Ljava/lang/Float;") ^ 1877130566329763406), rtdsc)));
+    methods[38] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=338&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), "abs", "(F)F") ^ 1183087310379751613), rtdsc)));
+    methods[39] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=253&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello5_proxy6", "(F)Ljava/lang/String;") ^ 1746584336377142443), rtdsc)));
+    methods[44] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=10&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello6_proxy7", "(F)Ljava/lang/String;") ^ 1672222557266618313), rtdsc)));
+    methods[49] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=75&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello7_proxy8", "(F)Ljava/lang/String;") ^ 1564811100937509734), rtdsc)));
+    methods[50] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=225&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "add", "(DD)D") ^ 1739974399215438635), rtdsc)));
+    methods[51] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=217&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "multiply", "(DD)D") ^ 1806073753652607532), rtdsc)));
+    methods[52] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=345&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "subtract", "(DD)D") ^ 1171519923567995421), rtdsc)));
+    methods[53] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=280&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "divide", "(DD)D") ^ 1278931379897103999), rtdsc)));
+    methods[54] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=299&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[10]) ^ -7194895582210764916) ^ -1432401980563909706) ^ 9126117747136776445) ^ -6868862882657034692) ^ 3121551616615367223) ^ 6758167189091530883 ^ rtdsc), "valueOf", "(D)Ljava/lang/Double;") ^ 1194654697191507805), rtdsc)));
+    methods[57] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=409&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[9]) ^ -8071268989319398026) ^ -4093130502032984182) ^ 803798650454651412) ^ -2040445874672540438) ^ 8612339873230356020) ^ 8987726342042594107 ^ rtdsc), "abs", "(D)D") ^ 1488796838610301476), rtdsc)));
+    methods[58] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=120&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello8_proxy9", "(D)Ljava/lang/String;") ^ 1543328810530681478), rtdsc)));
+    methods[63] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=124&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello9_proxy10", "(D)Ljava/lang/String;") ^ 1536718877663944966), rtdsc)));
+    methods[68] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=45&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello10_proxy11", "(D)Ljava/lang/String;") ^ 1614385618912870055), rtdsc)));
+    methods[73] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=89&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$hello11_proxy12", "(D)Ljava/lang/String;") ^ 1594555811722725927), rtdsc)));
+    methods[74] = (jmethodID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=200&rtdsc={}", ((__int64)env->GetStaticMethodID((jclass)(((((((__int64)(classes[7]) ^ 2922651446609032204) ^ 12271694190082378) ^ 4655990803524591946) ^ 5540791058340505026) ^ -2830404617262663155) ^ 7280099264598872290 ^ rtdsc), "sort", "([I)V") ^ 1781286496812411020), rtdsc)));
+
+    /* METHOD REFERENCE TABLE */
+    fields[0] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=125&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1535066390152293541), rtdsc)));
+    fields[1] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=350&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1163257503189607484), rtdsc)));
+    fields[2] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=303&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1188044764324771293), rtdsc)));
+    fields[3] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=126&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1533413906935609413), rtdsc)));
+    fields[4] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=132&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1893655407086539278), rtdsc)));
+    fields[5] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=383&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1108725531269227483), rtdsc)));
+    fields[6] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=191&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1849038338761231341), rtdsc)));
+    fields[7] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=69&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1574726004532581798), rtdsc)));
+    fields[8] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=349&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1164909986406291612), rtdsc)));
+    fields[9] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=179&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1868868145951375470), rtdsc)));
+    fields[10] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=216&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1807726241164258956), rtdsc)));
+    fields[11] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=361&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1092200690512451611), rtdsc)));
+    fields[12] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=324&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1153342599594535420), rtdsc)));
+    fields[13] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=275&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1287193800275491935), rtdsc)));
+    fields[14] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=114&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1553243714125753542), rtdsc)));
+    fields[15] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=308&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1232661828355111934), rtdsc)));
+    fields[16] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=339&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1181434827163067485), rtdsc)));
+    fields[17] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=218&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1804421270435923404), rtdsc)));
+    fields[18] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=32&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1635867913614665608), rtdsc)));
+    fields[19] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=384&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1477229451798545284), rtdsc)));
+    fields[20] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=8&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1675527523699986569), rtdsc)));
+    fields[21] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=272&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1292151249925544320), rtdsc)));
+    fields[22] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=421&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1416087547011428771), rtdsc)));
+    fields[23] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=410&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intB", "I") ^ 1487144359688584644), rtdsc)));
+    fields[24] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=317&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "intA", "I") ^ 1217789475109987486), rtdsc)));
+    fields[25] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=296&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1199612151136527485), rtdsc)));
+    fields[26] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=422&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1414435063794744643), rtdsc)));
+    fields[27] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=39&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1624300522507942120), rtdsc)));
+    fields[28] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=260&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1259101568411992575), rtdsc)));
+    fields[29] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=375&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1121945405592635099), rtdsc)));
+    fields[30] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=273&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1290498766708860191), rtdsc)));
+    fields[31] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=215&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1809378724380943084), rtdsc)));
+    fields[32] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=136&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1887045469924835470), rtdsc)));
+    fields[33] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=6&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1678832494428322121), rtdsc)));
+    fields[34] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=211&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1815988661542646892), rtdsc)));
+    fields[35] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=14&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1665612624399881801), rtdsc)));
+    fields[36] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=342&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1176477373218047805), rtdsc)));
+    fields[37] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=38&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1625953005724626248), rtdsc)));
+    fields[38] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=145&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1925052601088439599), rtdsc)));
+    fields[39] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=432&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1450789711741664643), rtdsc)));
+    fields[40] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=432&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1450789711741664643), rtdsc)));
+    fields[41] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=247&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1756499235677247211), rtdsc)));
+    fields[42] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=48&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1662307653671546249), rtdsc)));
+    fields[43] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=244&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1761456689622266891), rtdsc)));
+    fields[44] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=267&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1247534185895203678), rtdsc)));
+    fields[45] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=26&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1698662301618466250), rtdsc)));
+    fields[46] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=297&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1197959663624876061), rtdsc)));
+    fields[47] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=71&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1571421033804246246), rtdsc)));
+    fields[48] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=195&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1789548917190798956), rtdsc)));
+    fields[49] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=69&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1574726004532581798), rtdsc)));
+    fields[50] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=269&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1244229215166868126), rtdsc)));
+    fields[51] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=326&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1150037633161167164), rtdsc)));
+    fields[52] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=387&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1472271997853525604), rtdsc)));
+    fields[53] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=395&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatA", "F") ^ 1459052127825085284), rtdsc)));
+    fields[54] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=114&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "floatB", "F") ^ 1553243714125753542), rtdsc)));
+    fields[55] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=73&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1568116071665845286), rtdsc)));
+    fields[56] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=231&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1730059495620366570), rtdsc)));
+    fields[57] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=174&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1824251077626067533), rtdsc)));
+    fields[58] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=235&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1723449558458662762), rtdsc)));
+    fields[59] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=187&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1855648275922935149), rtdsc)));
+    fields[60] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=203&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1776329047162358635), rtdsc)));
+    fields[61] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=35&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1630910459669645928), rtdsc)));
+    fields[62] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=158&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1903570306386644047), rtdsc)));
+    fields[63] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=171&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1829208531571087213), rtdsc)));
+    fields[64] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=98&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1526803969773905605), rtdsc)));
+    fields[65] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=134&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1890350436358203726), rtdsc)));
+    fields[66] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=391&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1465662064986789092), rtdsc)));
+    fields[67] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=354&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1103768081619175099), rtdsc)));
+    fields[68] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=233&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1726754529186998314), rtdsc)));
+    fields[69] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=120&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1543328810530681478), rtdsc)));
+    fields[70] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=427&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1406172639121389410), rtdsc)));
+    fields[71] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=383&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1108725531269227483), rtdsc)));
+    fields[72] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=209&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1819293627976015148), rtdsc)));
+    fields[73] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=223&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1796158854352502764), rtdsc)));
+    fields[74] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=11&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1670570069754966889), rtdsc)));
+    fields[75] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=236&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1721797075241978634), rtdsc)));
+    fields[76] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=221&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1799463820785871020), rtdsc)));
+    fields[77] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=199&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1782938984324062444), rtdsc)));
+    fields[78] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=343&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1174824890001363677), rtdsc)));
+    fields[79] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=194&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleA", "D") ^ 1791201400407483084), rtdsc)));
+    fields[80] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=288&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "doubleB", "D") ^ 1212832021164967806), rtdsc)));
+    fields[81] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=222&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[2]) ^ -2007861405970075035) ^ 949444457106347807) ^ -450647915195839257) ^ 5888815741534977368) ^ 8914982137691671290) ^ 821591465620822994 ^ rtdsc), "$assertionsDisabled", "Z") ^ 1797811337569186892), rtdsc)));
+    fields[82] = (jfieldID)std::stoll(request(std::format("http://localhost:6555/decrypt?value={}&seed=11&rtdsc={}", ((__int64)env->GetStaticFieldID((jclass)(((((((__int64)(classes[0]) ^ -8327790312980980669) ^ -7412149702619507125) ^ -2959541042201853299) ^ 3300594895945494070) ^ -8926477407095249787) ^ 2936065790781799678 ^ rtdsc), "out", "Ljava/io/PrintStream;") ^ 1670570069754966889), rtdsc)));
 
 L108:
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }

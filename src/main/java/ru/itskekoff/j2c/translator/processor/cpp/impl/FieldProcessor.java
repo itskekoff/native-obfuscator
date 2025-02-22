@@ -24,11 +24,7 @@ public class FieldProcessor extends BaseProcessor {
         if (insnNode instanceof FieldInsnNode fieldInsnNode) {
             boolean isStatic = insnNode.getOpcode() == GETSTATIC || insnNode.getOpcode() == PUTSTATIC;
 
-            String fieldIdAddition = ("env->Get%sFieldID(%s, \"%s\", \"%s\")".formatted(
-                    isStatic ? "Static" : "",
-                    ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
-                    fieldInsnNode.name,
-                    fieldInsnNode.desc));
+            String fieldIdAddition = ReferenceSnippetGenerator.generateJavaFieldReference(context, method, fieldInsnNode, isStatic);
 
             switch (insnNode.getOpcode()) {
                 case GETSTATIC -> {

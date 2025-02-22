@@ -51,5 +51,6 @@ public:
     }
 };
 
-RBM classes[12];
-jmethodID methods[39];
+jclass classes[13];
+jmethodID methods[75];
+jfieldID fields[90];

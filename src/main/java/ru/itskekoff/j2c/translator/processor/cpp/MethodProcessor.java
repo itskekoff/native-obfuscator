@@ -89,6 +89,7 @@ public class MethodProcessor {
             context.output().pushMethodLine(linker.getMethods().toString());
             context.output().pushMethodLine(context.output().getClassReferences());
             context.output().pushMethodLine(context.output().getMethodReferences());
+            context.output().pushMethodLine(context.output().getFieldReferences());
         }
 
         Map<String, List<CatchInfo>> catchHandlers = new HashMap<>();
