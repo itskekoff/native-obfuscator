@@ -2792,4 +2792,151 @@ L145:
     // RETURN; Stack pointer: 0
     return;
     if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
-L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->Excep
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
+
+    return;
+}
+// ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L1:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // GETSTATIC; Stack pointer: 0
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "username", "Ljava/lang/String;"));
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // ARETURN; Stack pointer: 1
+    return (jobject) cstack0.l;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+jint JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L2:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // GETSTATIC; Stack pointer: 0
+    cstack0.i = (jint) env->GetStaticIntField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "uid", "I"));
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // IRETURN; Stack pointer: 1
+    return (jint) cstack0.i;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jint) 0; }
+
+    return (jint) 0;
+}
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L3:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // GETSTATIC; Stack pointer: 0
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "expire", "Ljava/lang/String;"));
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // ARETURN; Stack pointer: 1
+    return (jobject) cstack0.l;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+jobject JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+L4:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // GETSTATIC; Stack pointer: 0
+    cstack0.l = env->GetStaticObjectField(classes[60].applyDecryption(), env->GetStaticFieldID(classes[60].applyDecryption(), "role", "Ljava/lang/String;"));
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // ARETURN; Stack pointer: 1
+    return (jobject) cstack0.l;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return (jobject) 0; }
+
+    return (jobject) 0;
+}
+extern "C" JNIEXPORT void JNICALL  Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile__00024Clinit(JNIEnv *env, jclass clazz) {
+    // stack count: 1, locals count: 0, try-catches: 0
+    jvalue cstack0 = {}, cstack_exception = {};
+    jvalue clocal0 = {};
+
+    JNINativeMethod jniMethods[] = {
+        (char*)"getUsername", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUsername7,
+        (char*)"getUid", (char*)"()I", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getUid8,
+        (char*)"getExpire", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getExpire9,
+        (char*)"getRole", (char*)"()Ljava/lang/String;", &Java_ru_kotopushka_antiautistleak_obfuscator_includes_profile_Profile_getRole10,
+    };
+    env->RegisterNatives(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));
+
+    /* CLASS REFERENCE TABLE */
+    classes[60] = RBM((jobject)((__int64)env->NewGlobalRef((jclass)(((__int64)env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"))))));
+
+    /* METHOD REFERENCE TABLE */
+
+L5:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // LDC; Stack pointer: 0
+    cstack0.l = env->NewStringUTF("username");
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // INVOKESTATIC; Stack pointer: 1
+    cstack0.l = env->CallStaticObjectMethod(env->FindClass("java/lang/System"), env->GetStaticMethodID(env->FindClass("java/lang/System"), "getenv", "(Ljava/lang/String;)Ljava/lang/String;"), cstack0.l);
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // PUTSTATIC; Stack pointer: 1
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "username", "Ljava/lang/String;"), cstack0.l);
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L6:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // ICONST_1; Stack pointer: 0
+    cstack0.i = 1;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // PUTSTATIC; Stack pointer: 1
+    env->SetStaticIntField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "uid", "I"), (jint) cstack0.i);
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L7:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // LDC; Stack pointer: 0
+    cstack0.l = env->NewStringUTF("2038-06-06");
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // PUTSTATIC; Stack pointer: 1
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "expire", "Ljava/lang/String;"), cstack0.l);
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L8:
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // LDC; Stack pointer: 0
+    cstack0.l = env->NewStringUTF("Разработчик");
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // PUTSTATIC; Stack pointer: 1
+    env->SetStaticObjectField(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), env->GetStaticFieldID(env->FindClass("ru/kotopushka/antiautistleak/obfuscator/includes/profile/Profile"), "role", "Ljava/lang/String;"), cstack0.l);
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+    // RETURN; Stack pointer: 0
+    return;
+    if (env->ExceptionCheck()) { cstack_exception.l = env->ExceptionOccurred(); env->ExceptionClear(); goto L_EXCEPTION; }
+L_EXCEPTION: if (env->ExceptionOccurred()) { env->ExceptionDescribe(); env->ExceptionClear(); return; }
+
+    return;
+}
+#ifndef _Included_ru_itskekoff_j2c_loader_Protection
+#define _Included_ru_itskekoff_j2c_loader_Protection
+#ifdef __cplusplus
+extern "C" {
+#endif
+    JNIEXPORT void JNICALL Java_ru_itskekoff_j2c_loader_Protection_initialize(JNIEnv* env, jclass klass) {
+        jclass clazz = env->FindClass("[Z");
+        boolean_array_class = (jclass)env->NewGlobalRef(clazz);
+
+
+    }
+#ifdef __cplusplus
+}
+#endif
+#endif
