@@ -101,12 +101,19 @@ public class MainJarProcessor {
                 tableWriter.append("\njmethodID methods[%s];".formatted(ReferenceTable.getFieldIndex()));
 
             }
-        }
-        try {
-            executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "."}, cppDir.toFile());
-            executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "--build", ".", "--config", "Release"}, cppDir.toFile());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+
+            mainWriter.close();
+
+            try {
+                executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "."}, cppDir.toFile());
+                executeCommand(new String[]{"C:\\Program Files\\CMake\\bin\\cmake.exe", "--build", ".", "--config", "Release"}, cppDir.toFile());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+            out.putNextEntry(new ZipEntry("⚜richessssstafffs⚜/AntiAutistLeak.dll"));
+            out.write(Files.readAllBytes(new File("%s/build/lib/AntiAutistLeak.dll".formatted(cppDir.toFile().getAbsolutePath())).toPath()));
+
         }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
     }
