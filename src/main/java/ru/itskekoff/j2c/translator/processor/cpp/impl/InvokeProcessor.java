@@ -6,6 +6,7 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.SnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
@@ -57,50 +58,42 @@ public class InvokeProcessor extends BaseProcessor {
                 arg4Call.append(appender);
             }
 
-            String tempClassAddition;
-
             boolean clinit = method.name.contains("$Clinit");
-
-            if (clinit) {
-                tempClassAddition = "env->FindClass(\"%s\")".formatted(mh.owner);
-            } else {
-                tempClassAddition = "classes[%s].applyDecryption()".formatted(classContext.output().pushJavaClass(mh.owner));
-            }
 
             if (insnNode.getOpcode() == INVOKEVIRTUAL || insnNode.getOpcode() == INVOKEINTERFACE) {
                 String returnType = Type.getReturnType(mh.desc).getDescriptor();
                 switch (returnType) {
                     case "V" -> {
                         classContext.output().pushMethodLine("env->CallVoidMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                .formatted(invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     }
                     case "Z" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallBooleanMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "C" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallCharMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "B" ->
                             classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallByteMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "S" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallShortMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "I" ->
                             classContext.output().pushMethodLine("cstack%s.i = env->CallIntMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "F" ->
                             classContext.output().pushMethodLine("cstack%s.f = env->CallFloatMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "J" ->
                             classContext.output().pushMethodLine("cstack%s.j = env->CallLongMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "D" ->
                             classContext.output().pushMethodLine("cstack%s.d = env->CallDoubleMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     default ->
                             classContext.output().pushMethodLine("cstack%s.l = env->CallObjectMethod(cstack%s.l, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                 }
             }
             if (insnNode.getOpcode() == INVOKESTATIC) {
@@ -112,10 +105,10 @@ public class InvokeProcessor extends BaseProcessor {
                             ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
 
                             classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("env->CallStaticVoidMethod(%s, %s%s);"
-                                    .formatted(tempClassAddition, SnippetGenerator.getMethodID(true, mh.name, mh.desc, tempClassAddition), arg4Call));
+                                    .formatted(ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), SnippetGenerator.getMethodID(true, mh.name, mh.desc, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner)), arg4Call));
                         }
                     }
                     case "Z" -> {
@@ -124,10 +117,10 @@ public class InvokeProcessor extends BaseProcessor {
 
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticBooleanMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticBooleanMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
 
                     }
@@ -136,10 +129,10 @@ public class InvokeProcessor extends BaseProcessor {
                         ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticCharMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticCharMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
                     }
                     case "B" -> {
@@ -147,10 +140,10 @@ public class InvokeProcessor extends BaseProcessor {
                         ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallStaticByteMethod(%s,(jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallStaticByteMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
                     }
                     case "S" -> {
@@ -158,10 +151,10 @@ public class InvokeProcessor extends BaseProcessor {
                         ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticShortMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallStaticShortMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
                     }
                     case "I" -> {
@@ -169,10 +162,10 @@ public class InvokeProcessor extends BaseProcessor {
                         ReferenceNode referenceNode = classContext.output().allocateOrGetFieldNode(mh.owner, mh.name, mh.desc, true);
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.i = env->CallStaticIntMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.i = env->CallStaticIntMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
                     }
                     case "F" -> {
@@ -181,10 +174,10 @@ public class InvokeProcessor extends BaseProcessor {
 
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.f = env->CallStaticFloatMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.f = env->CallStaticFloatMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
 
                     }
@@ -194,10 +187,10 @@ public class InvokeProcessor extends BaseProcessor {
 
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.j = env->CallStaticLongMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.j = env->CallStaticLongMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
 
                     }
@@ -206,10 +199,10 @@ public class InvokeProcessor extends BaseProcessor {
 
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.d = env->CallStaticDoubleMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.d = env->CallStaticDoubleMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
 
                         }
                     }
@@ -219,10 +212,10 @@ public class InvokeProcessor extends BaseProcessor {
 
                         if (classContext.notClinit(method)) {
                             classContext.output().pushMethodLine("cstack%s.l = env->CallStaticObjectMethod(%s, (jmethodID)(((((((__int64)(methods[%s]) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s) ^ %s ^ rtdsc)%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), referenceNode.getId(), referenceNode.getKluch2(), referenceNode.getKluch3(), referenceNode.getKluch4(), referenceNode.getKluch5(), referenceNode.getKluch6(), referenceNode.getKluch(), arg4Call));
                         } else {
                             classContext.output().pushMethodLine("cstack%s.l = env->CallStaticObjectMethod(%s, env->GetStaticMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                         }
 
                     }
@@ -234,34 +227,34 @@ public class InvokeProcessor extends BaseProcessor {
                 switch (returnType) {
                     case "V" ->
                             classContext.output().pushMethodLine("env->CallNonvirtualVoidMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "Z" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualBooleanMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "C" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualCharMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "B" ->
                             classContext.output().pushMethodLine("cstack%s.b = (jint) env->CallNonvirtualByteMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "S" ->
                             classContext.output().pushMethodLine("cstack%s.i = (jint) env->CallNonvirtualShortMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "I" ->
                             classContext.output().pushMethodLine("cstack%s.i = env->CallNonvirtualIntMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "F" ->
                             classContext.output().pushMethodLine("cstack%s.f = env->CallNonvirtualFloatMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "J" ->
                             classContext.output().pushMethodLine("cstack%s.j = env->CallNonvirtualLongMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     case "D" ->
                             classContext.output().pushMethodLine("cstack%s.d = env->CallNonvirtualDoubleMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                     default ->
                             classContext.output().pushMethodLine("cstack%s.l = env->CallNonvirtualObjectMethod(cstack%s.l, %s, env->GetMethodID(%s, \"%s\", \"%s\")%s);"
-                                    .formatted(invokeStackPointer, invokeStackPointer, tempClassAddition, tempClassAddition, mh.name, mh.desc, arg4Call));
+                                    .formatted(invokeStackPointer, invokeStackPointer, ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), ReferenceSnippetGenerator.generateJavaClassReference(classContext, method, mh.owner), mh.name, mh.desc, arg4Call));
                 }
             }
 

@@ -5,6 +5,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.MethodProcessor;
@@ -23,16 +24,9 @@ public class FieldProcessor extends BaseProcessor {
         if (insnNode instanceof FieldInsnNode fieldInsnNode) {
             boolean isStatic = insnNode.getOpcode() == GETSTATIC || insnNode.getOpcode() == PUTSTATIC;
 
-            int classId = context.output().pushJavaClass(fieldInsnNode.owner);
-
-            String class_ptr = "env->FindClass(\"%s\")".formatted(fieldInsnNode.owner);
-
-            if (context.notClinit(method))
-                class_ptr = "classes[%s].applyDecryption()".formatted(classId);
-
             String fieldIdAddition = ("env->Get%sFieldID(%s, \"%s\", \"%s\")".formatted(
                     isStatic ? "Static" : "",
-                    class_ptr,
+                    ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                     fieldInsnNode.name,
                     fieldInsnNode.desc));
 
@@ -43,35 +37,35 @@ public class FieldProcessor extends BaseProcessor {
                                 context.getStackPointer().peek(),
                                 Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(jint)" : "",
                                 reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                class_ptr,
+                                ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                 fieldIdAddition
                         ));
                         case 6 ->
                                 context.output().pushMethodLine("cstack%s.f = env->GetStatic%sField(%s, %s);".formatted(
                                         context.getStackPointer().peek(),
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition
                                 ));
                         case 7 ->
                                 context.output().pushMethodLine("cstack%s.j = env->GetStatic%sField(%s, %s);".formatted(
                                         context.getStackPointer().peek(),
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition
                                 ));
                         case 8 ->
                                 context.output().pushMethodLine("cstack%s.d = env->GetStatic%sField(%s, %s);".formatted(
                                         context.getStackPointer().peek(),
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition
                                 ));
                         case 9, 10, 11 ->
                                 context.output().pushMethodLine("cstack%s.l = env->GetStatic%sField(%s, %s);".formatted(
                                         context.getStackPointer().peek(),
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition
                                 ));
                     }
@@ -119,7 +113,7 @@ public class FieldProcessor extends BaseProcessor {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
                         case 1, 2, 4, 5 -> context.output().pushMethodLine("env->SetStatic%sField(%s, %s, %s cstack%s.i);".formatted(
                                 reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                class_ptr,
+                                ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                 fieldIdAddition,
                                 Type.getType(((FieldInsnNode) insnNode).desc).getSort() == 5 ? "(%s)".formatted(MethodProcessor.CPP_TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]) : "",
                                 context.getStackPointer().peek() - 1
@@ -127,28 +121,28 @@ public class FieldProcessor extends BaseProcessor {
                         case 6 ->
                                 context.output().pushMethodLine("env->SetStatic%sField(%s, %s, cstack%s.f);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition,
                                         context.getStackPointer().peek() - 1
                                 ));
                         case 7 ->
                                 context.output().pushMethodLine("env->SetStatic%sField(%s, %s, cstack%s.j);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition,
                                         context.getStackPointer().peek() - 2
                                 ));
                         case 8 ->
                                 context.output().pushMethodLine("env->SetStatic%sField(%s, %s, cstack%s.d);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition,
                                         context.getStackPointer().peek() - 2
                                 ));
                         case 9, 10, 11 ->
                                 context.output().pushMethodLine("env->SetStatic%sField(%s, %s, cstack%s.l);".formatted(
                                         reinterpretArray(TYPES[Type.getType(((FieldInsnNode) insnNode).desc).getSort()]),
-                                        class_ptr,
+                                        ReferenceSnippetGenerator.generateJavaClassReference(context, method, fieldInsnNode.owner),
                                         fieldIdAddition,
                                         context.getStackPointer().peek() - 1
                                 ));

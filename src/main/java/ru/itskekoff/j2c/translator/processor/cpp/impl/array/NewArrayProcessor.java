@@ -2,6 +2,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.array;
 
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
@@ -14,26 +15,14 @@ public class NewArrayProcessor extends BaseProcessor {
     public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof TypeInsnNode type) {
             if (insnNode.getOpcode() == ANEWARRAY) {
-
-                if(context.notClinit(method))
-                context.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, classes[%s].applyDecryption(), nullptr); }"
+                context.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, %s, nullptr); }"
                         .formatted(
                                 context.getStackPointer().peek() - 1,
                                 context.getStackPointer().peek() - 1,
                                 context.getStackPointer().peek() - 1,
-                                context.output().pushJavaClass(type.desc)
+                                ReferenceSnippetGenerator.generateJavaClassReference(context, method, type.desc)
                         )
                 );
-                else
-                    context.output().pushMethodLine("if (cstack%s.i < 0) throw_re(env, \"java/lang/NegativeArraySizeException\", \"ARRAYLENGTH negative\", __LINE__); else { cstack%s.l = env->NewObjectArray(cstack%s.i, env->FindClass(\"%s\"), nullptr); }"
-                        .formatted(
-                                context.getStackPointer().peek() - 1,
-                                context.getStackPointer().peek() - 1,
-                                context.getStackPointer().peek() - 1,
-                                type.desc
-                        )
-                );
-
             }
         } else if (insnNode instanceof IntInsnNode intInsnNode) {
             if (insnNode.getOpcode() == NEWARRAY) {
@@ -56,7 +45,7 @@ public class NewArrayProcessor extends BaseProcessor {
                                 context.getStackPointer().peek() - 1
                         )
                 );
-//                writer.getStackPointer().pop();
+
             }
         }
 

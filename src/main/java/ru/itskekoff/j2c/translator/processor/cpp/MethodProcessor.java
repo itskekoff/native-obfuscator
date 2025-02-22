@@ -6,6 +6,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
 import ru.itskekoff.j2c.translator.TranslatorMain;
 import ru.itskekoff.j2c.translator.configuration.TranslatorConfiguration;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.NativeLinker;
@@ -262,16 +263,8 @@ public class MethodProcessor {
                 if (handler.exceptionType == null) {
                     context.output().pushMethodLine("goto %s;".formatted(handler.targetLabel));
                 } else {
-
-                    if (context.notClinit(method)) {
-                        int classId = context.output().pushJavaClass(handler.exceptionType);
-
-                        context.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, classes[%s].applyDecryption())) { env->ExceptionClear(); goto %s; } "
-                                .formatted(classId, handler.targetLabel));
-                    }
-                    else
-                        context.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, env->FindClass(\"%s\"))) { env->ExceptionClear(); goto %s; } "
-                                .formatted(handler.exceptionType, handler.targetLabel));
+                    context.output().pushMethodLine("if (env->IsInstanceOf(cstack_exception.l, %s)) { env->ExceptionClear(); goto %s; } "
+                            .formatted(ReferenceSnippetGenerator.generateJavaClassReference(context, method, handler.exceptionType), handler.targetLabel));
                 }
             });
         });

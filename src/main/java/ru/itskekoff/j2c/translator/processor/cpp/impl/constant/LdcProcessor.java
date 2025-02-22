@@ -4,6 +4,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
@@ -71,12 +72,9 @@ public class LdcProcessor extends BaseProcessor {
         } else if (cst instanceof Double) {
             context.output().pushMethodLine("cstack%s.d = %s;".formatted(context.getStackPointer().peek(), getDoubleValue((Double) cst)));
         } else if (cst instanceof Type) {
-            if (context.notClinit(method))
-                context.output().pushMethodLine("cstack%s.l = classes[%s].applyDecryption();"
-                        .formatted(context.getStackPointer().peek(), context.output().pushJavaClass(((Type) cst).getClassName().replace(".", "/"))));
-             else             context.output().pushMethodLine("cstack%s.l = env->FindClass(\"%s\");"
-                    .formatted(context.getStackPointer().peek(), ((Type) cst).getClassName().replace(".", "/")));
-
+                context.output().pushMethodLine("cstack%s.l = %s;"
+                        .formatted(context.getStackPointer().peek(),
+                                ReferenceSnippetGenerator.generateJavaClassReference(context, method, ((Type) cst).getClassName().replace(".", "/"))));
         }
     }
 
