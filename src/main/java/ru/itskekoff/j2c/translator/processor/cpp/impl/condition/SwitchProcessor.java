@@ -29,9 +29,7 @@ public class SwitchProcessor extends BaseProcessor {
 
     private void processSwitch(MethodContext writer, List<Integer> keys, List<LabelNode> labels, LabelNode defaultLabel) {
         MethodContext.ContextBuilder contextBuilder = writer.output();
-        String keyAddition = "key_%s".formatted(keyIndex++);
-        contextBuilder.pushMethodLine("int %s = cstack%s.i;".formatted(keyAddition, writer.getStackPointer().peek() - 1));
-        contextBuilder.pushMethodLine("switch (%s) {".formatted(keyAddition));
+        contextBuilder.pushMethodLine("switch (cstack%s.i) {".formatted(writer.getStackPointer().peek() - 1));
 
         for (int i = 0; i < keys.size(); i++) {
             int key = keys.get(i);
@@ -43,7 +41,7 @@ public class SwitchProcessor extends BaseProcessor {
         }
 
         String defaultLabelName = writer.getLabelPool().getName(defaultLabel.getLabel());
-        contextBuilder.pushLineWithTab(2,"default: goto " + defaultLabelName + "; break;");
+        contextBuilder.pushLineWithTab(2, "default: goto " + defaultLabelName + "; break;");
         contextBuilder.pushMethodLine("}");
     }
 
