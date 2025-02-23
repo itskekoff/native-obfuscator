@@ -7,6 +7,7 @@ import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.annotations.NativeExclude;
 import ru.itskekoff.j2c.annotations.NativeInclude;
 import ru.itskekoff.j2c.annotations.vmp.VMProtect;
+import ru.itskekoff.j2c.translator.configuration.TranslatorConfiguration;
 import ru.itskekoff.j2c.translator.configuration.matcher.AntPathMatcher;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 
@@ -37,7 +38,7 @@ public class ClassFilter {
         classNode.methods.stream()
                 .filter(method -> method.visibleAnnotations != null)
                 .forEach(method -> method.visibleAnnotations.removeIf(annotation ->
-                        annotation.desc.equals(NATIVE_ANNOTATION_DESC) ||
+                        (TranslatorConfiguration.IMP.MAIN.CLEAN_VMPROTECT_ANNOTATIONS && annotation.desc.equals(NATIVE_ANNOTATION_DESC)) ||
                         annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC) ||
                         annotation.desc.equals(VMPROTECT_ANNOTATION_DESC))
                 );
@@ -62,8 +63,7 @@ public class ClassFilter {
             return !isBlacklisted(classNode);
         } else if (!blackList.getFirst().isBlank()) {
             return !isBlacklisted(classNode) && isWhitelisted(classNode);
-        }
-        return false;
+        } else return blackList.getFirst().isBlank() && whiteList.getFirst().isBlank();
     }
 
     public boolean shouldProcess(ClassNode classNode, MethodNode methodNode) {
@@ -93,6 +93,11 @@ public class ClassFilter {
 
     private boolean isEnum(ClassNode classNode) {
         return (classNode.access & Opcodes.ACC_ENUM) != 0;
+    }
+
+
+    public static boolean isClinit(MethodNode method) {
+        return method.name.contains("$Clinit");
     }
 
     private boolean isInvalidJavaClassName(ClassNode classNode) {

@@ -5,7 +5,7 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class LdcProcessor extends BaseProcessor {
@@ -62,7 +62,7 @@ public class LdcProcessor extends BaseProcessor {
     public void translate(MethodContext context, AbstractInsnNode insnNode, MethodNode method) {
         Object cst = ((LdcInsnNode) insnNode).cst;
         if (cst instanceof String) {
-            context.output().pushMethodLine("cstack%s.l = env->NewStringUTF((\"%s\"));".formatted(context.getStackPointer().peek(), escapeString(cst.toString())));
+            context.output().pushMethodLine("cstack%s.l = env->NewStringUTF(\"%s\");".formatted(context.getStackPointer().peek(), escapeString(cst.toString())));
         } else if (cst instanceof Integer) {
             context.output().pushMethodLine("cstack%s.i = %s;".formatted(context.getStackPointer().peek(), getIntString((Integer) cst)));
         } else if (cst instanceof Long) {
@@ -72,11 +72,9 @@ public class LdcProcessor extends BaseProcessor {
         } else if (cst instanceof Double) {
             context.output().pushMethodLine("cstack%s.d = %s;".formatted(context.getStackPointer().peek(), getDoubleValue((Double) cst)));
         } else if (cst instanceof Type) {
-            context.output().begin(method);
                 context.output().pushMethodLine("cstack%s.l = %s;"
                         .formatted(context.getStackPointer().peek(),
                                 ReferenceSnippetGenerator.generateJavaClassReference(context, method, ((Type) cst).getClassName().replace(".", "/"))));
-            context.output().end(method);
         }
     }
 

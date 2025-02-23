@@ -3,6 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.utils.translate;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 
 import java.util.*;
 import java.util.stream.Collectors;

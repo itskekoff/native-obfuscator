@@ -6,7 +6,7 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.MethodProcessor;
 
@@ -25,7 +25,6 @@ public class FieldProcessor extends BaseProcessor {
             boolean isStatic = insnNode.getOpcode() == GETSTATIC || insnNode.getOpcode() == PUTSTATIC;
 
             String fieldIdAddition = ReferenceSnippetGenerator.generateJavaFieldReference(context, method, fieldInsnNode, isStatic);
-            context.output().begin(method);
             switch (insnNode.getOpcode()) {
                 case GETSTATIC -> {
                     switch (Type.getType(((FieldInsnNode) insnNode).desc).getSort()) {
@@ -184,7 +183,6 @@ public class FieldProcessor extends BaseProcessor {
                     }
                 }
             }
-            context.output().end(method);
             if (insnNode.getOpcode() == Opcodes.GETFIELD || insnNode.getOpcode() == Opcodes.PUTFIELD) {
                 context.getStackPointer().pop(1);
             }

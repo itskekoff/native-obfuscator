@@ -22,24 +22,24 @@ public class NativeLinker {
                 .formatted(classNode.name));
 
         this.methods = new StringBuilder();
-        methods.append("      VMProtectBeginUltra(\"clinit_%s\");\n".formatted(
+        methods.append("VMProtectBeginUltra(\"clinit_%s\");\n".formatted(
                 String.valueOf(new Random().nextLong()*new Random().nextLong()+new Random().nextLong()+new Random().nextLong())
         ));
-        methods.append("JNINativeMethod jniMethods[] = {\n");
+        methods.append("    JNINativeMethod jniMethods[] = {\n");
     }
 
     public void pushMethod(MethodNode methodNode, String nativeName) {
         count++;
-        methods.append("        (char*)xorstr_(\"%s\"), (char*)xorstr_(\"%s\"), &Java_%s,\n"
+        methods.append("        (char*)\"%s\", (char*)\"%s\", &Java_%s,\n"
                 .formatted(methodNode.name, methodNode.desc, nativeName));
     }
 
     public void end() {
         if (count > 0) {
             methods.append("    };\n");
-            methods.append("    env->RegisterNatives(env->FindClass(xorstr_(\"%s\")), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));\n"
+            methods.append("    env->RegisterNatives(env->FindClass(\"%s\"), jniMethods, sizeof(jniMethods) / sizeof(JNINativeMethod));\n"
                     .formatted(classNode.name));
-            methods.append("VMProtectEnd();\n");
+            methods.append("    VMProtectEnd();\n");
         }
     }
 

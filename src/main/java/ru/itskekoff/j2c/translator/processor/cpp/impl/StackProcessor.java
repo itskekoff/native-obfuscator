@@ -4,7 +4,7 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.IntInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 
 public class StackProcessor extends BaseProcessor {
 

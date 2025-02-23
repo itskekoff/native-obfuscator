@@ -1,7 +1,8 @@
 package ru.itskekoff.j2c.translator.processor.cpp.impl.condition;
 
 import org.objectweb.asm.tree.*;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.ContextBuilder;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 import java.util.List;
@@ -9,8 +10,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class SwitchProcessor extends BaseProcessor {
-    private int keyIndex = 0;
-
     public SwitchProcessor() {
         super(LOOKUPSWITCH, TABLESWITCH);
     }
@@ -28,7 +27,7 @@ public class SwitchProcessor extends BaseProcessor {
     }
 
     private void processSwitch(MethodContext writer, List<Integer> keys, List<LabelNode> labels, LabelNode defaultLabel) {
-        MethodContext.ContextBuilder contextBuilder = writer.output();
+        ContextBuilder contextBuilder = writer.output();
         contextBuilder.pushMethodLine("switch (cstack%s.i) {".formatted(writer.getStackPointer().peek() - 1));
 
         for (int i = 0; i < keys.size(); i++) {

@@ -1,6 +1,7 @@
 package ru.itskekoff.j2c.translator.processor.cpp.reference;
 
 import lombok.Getter;
+import ru.itskekoff.j2c.translator.configuration.TranslatorConfiguration;
 
 import java.util.Random;
 
@@ -12,7 +13,9 @@ public class ReferenceNode {
     private final int id;
     private final String signature;
     private final long initialSeed;
-    long clinit, kluch, kluch2, kluch3, kluch4, kluch5,kluch6;
+    private final long clinitKey;
+
+    private final @Getter long[] referenceKeys = new long[6];
 
     public ReferenceNode(String className, String name, String signature, boolean isStatic, int id) {
         this.className = className;
@@ -22,17 +25,15 @@ public class ReferenceNode {
         this.signature = signature;
         initialSeed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
 
-        CustomRandom randomSource = new CustomRandom(583485834L);
-        long serverSeed = initialSeed ^ (0xDC9A ^ randomSource.nextLong());
+        CustomRandom randomSource = new CustomRandom(TranslatorConfiguration.IMP.REFERENCE.SEED_CONSTANT);
+        long serverSeed = initialSeed ^ (TranslatorConfiguration.IMP.REFERENCE.XOR_CONSTANT ^ randomSource.nextLong());
         randomSource = new CustomRandom(serverSeed);
 
-        clinit = randomSource.nextLong();
-        kluch = randomSource.nextLong();
-        kluch2 = randomSource.nextLong();
-        kluch3 = randomSource.nextLong();
-        kluch4 = randomSource.nextLong();
-        kluch5 = randomSource.nextLong();
-        kluch6 = randomSource.nextLong();
+        clinitKey = randomSource.nextLong();
+
+        for (int i = 0; i < referenceKeys.length; i++) {
+            referenceKeys[i] = randomSource.nextLong();
+        }
     }
 
     public String isStatic() {
@@ -51,7 +52,7 @@ public class ReferenceNode {
         }
 
         public long nextLong() {
-            seed = (seed * 6364136222846791005L + 1);
+            seed = (seed * TranslatorConfiguration.IMP.REFERENCE.RANDOM_FACTOR + 1);
             return seed;
         }
     }

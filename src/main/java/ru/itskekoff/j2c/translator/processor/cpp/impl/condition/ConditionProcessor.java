@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.condition;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.JumpInsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class ConditionProcessor extends BaseProcessor {

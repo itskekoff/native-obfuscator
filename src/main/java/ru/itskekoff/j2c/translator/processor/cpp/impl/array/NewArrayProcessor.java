@@ -3,7 +3,7 @@ package ru.itskekoff.j2c.translator.processor.cpp.impl.array;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGenerator;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 
 public class NewArrayProcessor extends BaseProcessor {

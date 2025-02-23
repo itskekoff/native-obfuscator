@@ -10,16 +10,18 @@ import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceSnippetGener
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.NativeLinker;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.utils.ReflectionUtils;
+import ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
-public class MethodProcessor {
+public class MethodProcessor implements Opcodes {
     private static final List<BaseProcessor> processors = new ArrayList<>();
     public static final String[] CPP_TYPES = new String[]{
             "void", "jboolean", "jchar",
@@ -30,7 +32,7 @@ public class MethodProcessor {
     public static final int[] TYPE_TO_STACK = new int[]{1, 1, 1, 1, 1, 1, 1, 2, 2, 0, 0, 0};
     public static final int[] STACK_TO_STACK = new int[]{1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    private static int index = 0;
+    private static int methodIndex = 0;
 
     static {
         processors.addAll(ReflectionUtils.getClasses("ru.itskekoff.j2c.translator.processor.cpp.impl", BaseProcessor.class));
@@ -62,17 +64,17 @@ public class MethodProcessor {
         String methodName = BaseUtils.getJNICompatibleName(method.name);
         String nativeName = generateNativeName(className, methodName);
 
-        if (!isClinit(method)) linker.pushMethod(method, nativeName);
+        if (ClassFilter.isClinit(method)) linker.pushMethod(method, nativeName);
         Type[] args = Type.getArgumentTypes(method.desc);
-        boolean isStatic = BaseUtils.hasFlag(method.access, Opcodes.ACC_STATIC);
+        boolean isStatic = BaseUtils.hasFlag(method.access, ACC_STATIC);
 
         List<Type> argTypes = new ArrayList<>(Arrays.asList(args));
         List<String> argNames = new ArrayList<>();
         initializeArguments(args, argTypes, argNames, isStatic);
-        context.output().pushMethod(method, nativeName, argNames, CPP_TYPES, args, isClinit(method), isStatic);
+        context.output().pushMethod(method, nativeName, argNames, CPP_TYPES, args, ClassFilter.isClinit(method), isStatic);
         context.output().pushMethodLine("// stack count: %d, locals count: %d, try-catches: %d"
                 .formatted(method.maxStack, method.maxLocals, method.tryCatchBlocks.size()));
-
+        context.output().begin(method);
         if (method.maxStack == 0) {
             context.output().pushMethodLine("jvalue cstack_exception = {};");
         } else {
@@ -84,7 +86,7 @@ public class MethodProcessor {
             writeLocals(context, argTypes, argNames);
         }
 
-        if (isClinit(method)) {
+        if (ClassFilter.isClinit(method)) {
             linker.end();
             context.output().pushMethodLine(linker.getMethods().toString());
             context.output().pushMethodLine(context.output().getClassReferences());
@@ -105,13 +107,10 @@ public class MethodProcessor {
         }
 
         processInstructions(method, context, catchLabels);
+        context.output().end(method);
         writeCatchHandlers(context, method, catchHandlers);
 
         finalizeMethod(method, context);
-    }
-
-    private boolean isClinit(MethodNode method) {
-        return method.name.equals("$Clinit");
     }
 
     public static String generateNativeName(String className, String methodName) {
@@ -122,7 +121,7 @@ public class MethodProcessor {
         String sanitizedMethodName = methodName.replaceAll("\\$", "_00024")
                 .replaceAll(" ", "_00020");
 
-        return sanitizedClassName + "_" + sanitizedMethodName + (clinit ? "" : index++);
+        return sanitizedClassName + "_" + sanitizedMethodName + (clinit ? "" : methodIndex++);
     }
 
 
@@ -209,14 +208,12 @@ public class MethodProcessor {
                     TranslatorMain.LOGGER.info("Label start (name={})", labelName);
                 return;
             }
-            writer.output().pushMethodLine("\n    { ");
             if (insn.getOpcode() != -1) {
                 String opcodeName = BaseUtils.getOpcodeString(insn.getOpcode()).equals("UNKNOWN")
                         ? String.valueOf(insn.getOpcode())
                         : BaseUtils.getOpcodeString(insn.getOpcode());
-                writer.output().pushString("// %s; Stack pointer: %d\n".formatted(opcodeName, writer.getStackPointer().peek()));
+                writer.output().pushMethodLine("// %s; Stack pointer: %d".formatted(opcodeName, writer.getStackPointer().peek()));
             }
-
 
             processors.stream()
                     .filter(compiler -> compiler.supports(insn.getOpcode()))
@@ -224,8 +221,16 @@ public class MethodProcessor {
                     .ifPresentOrElse(
                             compiler -> {
                                 int currentPointer = writer.getStackPointer().peek();
+
+                                // -1: F_NEW, 0: NOP, 87: POP, 88: POP2
+                                if (Stream.of(F_NEW, NOP, POP, POP2).noneMatch(e -> e == insn.getOpcode()))
+                                    writer.output().pushMethodLine("{");
                                 compiler.translate(writer, insn, method);
+                                if (Stream.of(F_NEW, NOP, POP, POP2).noneMatch(e -> e == insn.getOpcode()))
+                                    writer.output().pushMethodLine("}");
+
                                 writer.getStackPointer().set(compiler.updateStackPointer(insn, writer.getStackPointer().peek()));
+
                                 int updatedPointer = writer.getStackPointer().peek();
                                 int diff = updatedPointer - currentPointer;
                                 if (TranslatorConfiguration.IMP.MAIN.DEBUG_ENABLED)
@@ -236,7 +241,7 @@ public class MethodProcessor {
                                     BaseUtils.getOpcodeString(insn.getOpcode()),
                                     insn.getOpcode())
                     );
-            writer.output().pushMethodLine("\n    }\n");
+
             boolean inTryCatchBlock = false;
             String currentCatchLabel = null;
 
@@ -284,7 +289,7 @@ public class MethodProcessor {
         writer.getStackPointer().set(0);
 
         method.instructions.clear();
-        method.access |= Opcodes.ACC_NATIVE;
+        method.access |= ACC_NATIVE;
     }
 
     private String getReturn(MethodNode method) {

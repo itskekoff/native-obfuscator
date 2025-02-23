@@ -4,9 +4,10 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.MethodNode;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.BaseProcessor;
 import ru.itskekoff.j2c.translator.processor.cpp.MethodProcessor;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.stack.StackPointer;
 
 public class ReturnProcessor extends BaseProcessor {
     public ReturnProcessor() {
@@ -32,7 +33,7 @@ public class ReturnProcessor extends BaseProcessor {
     }
 
     private String getStackAccess(MethodContext methodContext, int opcode) {
-        MethodContext.StackPointer stackPointer = methodContext.getStackPointer();
+        StackPointer stackPointer = methodContext.getStackPointer();
         return switch (opcode) {
             case IRETURN, ARETURN, FRETURN ->
                     "cstack%s.%s".formatted(stackPointer.peek() - 1, getPrimitiveType(opcode));

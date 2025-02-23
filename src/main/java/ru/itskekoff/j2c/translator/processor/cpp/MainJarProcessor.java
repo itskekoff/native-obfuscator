@@ -4,10 +4,15 @@ import lombok.Setter;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
+import ru.itskekoff.j2c.annotations.NativeExclude;
+import ru.itskekoff.j2c.annotations.NativeInclude;
+import ru.itskekoff.j2c.annotations.vmp.VMProtect;
+import ru.itskekoff.j2c.annotations.vmp.VMProtectType;
 import ru.itskekoff.j2c.translator.TranslatorMain;
 import ru.itskekoff.j2c.translator.processor.cpp.reference.ReferenceTable;
-import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.MethodContext;
+import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.processor.instructions.InsnProcessorManager;
 import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter;
@@ -121,14 +126,14 @@ public class MainJarProcessor {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                TranslatorMain.LOGGER.info(line);
+                TranslatorMain.COMPILE_LOGGER.info(line);
             }
         }
 
         try (BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
             String line;
             while ((line = errorReader.readLine()) != null) {
-                TranslatorMain.LOGGER.error(line);
+                TranslatorMain.COMPILE_LOGGER.error(line);
             }
         }
 
@@ -159,10 +164,19 @@ public class MainJarProcessor {
             }
 
             ClassNode classNode = loadClassNode(classBytes);
+
+            List<Class<?>> removeClasses = List.of(VMProtect.class, VMProtectType.class, NativeInclude.class, NativeExclude.class);
+            if (removeClasses.stream().anyMatch(clazz -> Type.getInternalName(clazz).equals(classNode.name))) {
+                return;
+            }
+
             if (!this.classFilter.shouldProcess(classNode)) {
                 BaseUtils.writeEntry(out, entry.getName(), classBytes);
                 return;
             }
+
+            TranslatorMain.LOGGER.info("Processing class {}", classNode.name);
+
             this.ensureClinitMethod(classNode);
 
             InsnProcessorManager.process(classNode);
