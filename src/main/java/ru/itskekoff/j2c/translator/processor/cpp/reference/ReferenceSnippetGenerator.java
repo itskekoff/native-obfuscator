@@ -5,14 +5,13 @@ import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
-import ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter;
 
 @UtilityClass
 public class ReferenceSnippetGenerator {
     public String generateJavaClassReference(MethodContext methodContext, MethodNode method, String className) {
         ReferenceNode referenceNode = methodContext.output().pushJavaClass(className);
 
-        if (!ClassFilter.isClinit(method)) {
+        if (methodContext.notClinit(method)) {
             return generateObfuscatedReference("classes", referenceNode);
         } else {
             return "env->FindClass(\"%s\")".formatted(className);
@@ -22,7 +21,7 @@ public class ReferenceSnippetGenerator {
     public String generateJavaMethodReference(MethodContext methodContext, MethodNode method, MethodInsnNode mh, boolean isStatic) {
         ReferenceNode referenceNode = methodContext.output().allocateOrGetMethodNode(methodContext, mh.owner, mh.name, mh.desc, isStatic, method);
 
-        if (!ClassFilter.isClinit(method)) {
+        if (methodContext.notClinit(method)) {
             return generateObfuscatedReference("methods", referenceNode);
         } else {
             return "env->GetStaticMethodID(%s, \"%s\", \"%s\")"
@@ -33,7 +32,7 @@ public class ReferenceSnippetGenerator {
     public String generateJavaFieldReference(MethodContext methodContext, MethodNode method, FieldInsnNode fn, boolean isStatic) {
         ReferenceNode referenceNode = methodContext.output().allocateOrGetFieldNode(methodContext, fn.owner, fn.name, fn.desc, isStatic, method);
 
-        if (!ClassFilter.isClinit(method)) {
+        if (methodContext.notClinit(method)) {
             return generateObfuscatedReference("fields", referenceNode);
         } else {
             return "env->Get%sFieldID(%s, \"%s\", \"%s\")"

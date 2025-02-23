@@ -12,7 +12,6 @@ import ru.itskekoff.j2c.translator.utils.BaseUtils;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.NativeLinker;
 import ru.itskekoff.j2c.translator.processor.cpp.utils.translate.context.MethodContext;
 import ru.itskekoff.j2c.translator.utils.ReflectionUtils;
-import ru.itskekoff.j2c.translator.utils.clazz.parser.ClassFilter;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -32,7 +31,7 @@ public class MethodProcessor implements Opcodes {
     public static final int[] TYPE_TO_STACK = new int[]{1, 1, 1, 1, 1, 1, 1, 2, 2, 0, 0, 0};
     public static final int[] STACK_TO_STACK = new int[]{1, 1, 1, 2, 2, 0, 0, 0, 0};
 
-    private static int methodIndex = 0;
+    private static int index = 0;
 
     static {
         processors.addAll(ReflectionUtils.getClasses("ru.itskekoff.j2c.translator.processor.cpp.impl", BaseProcessor.class));
@@ -64,17 +63,17 @@ public class MethodProcessor implements Opcodes {
         String methodName = BaseUtils.getJNICompatibleName(method.name);
         String nativeName = generateNativeName(className, methodName);
 
-        if (ClassFilter.isClinit(method)) linker.pushMethod(method, nativeName);
+        if (!isClinit(method)) linker.pushMethod(method, nativeName);
         Type[] args = Type.getArgumentTypes(method.desc);
         boolean isStatic = BaseUtils.hasFlag(method.access, ACC_STATIC);
 
         List<Type> argTypes = new ArrayList<>(Arrays.asList(args));
         List<String> argNames = new ArrayList<>();
         initializeArguments(args, argTypes, argNames, isStatic);
-        context.output().pushMethod(method, nativeName, argNames, CPP_TYPES, args, ClassFilter.isClinit(method), isStatic);
+        context.output().pushMethod(method, nativeName, argNames, CPP_TYPES, args, isClinit(method), isStatic);
         context.output().pushMethodLine("// stack count: %d, locals count: %d, try-catches: %d"
                 .formatted(method.maxStack, method.maxLocals, method.tryCatchBlocks.size()));
-       // context.output().begin(method);
+        context.output().begin(method);
         if (method.maxStack == 0) {
             context.output().pushMethodLine("jvalue cstack_exception = {};");
         } else {
@@ -86,7 +85,7 @@ public class MethodProcessor implements Opcodes {
             writeLocals(context, argTypes, argNames);
         }
 
-        if (ClassFilter.isClinit(method)) {
+        if (isClinit(method)) {
             linker.end();
             context.output().pushMethodLine(linker.getMethods().toString());
             context.output().pushMethodLine(context.output().getClassReferences());
@@ -107,10 +106,14 @@ public class MethodProcessor implements Opcodes {
         }
 
         processInstructions(method, context, catchLabels);
-       // context.output().end(method);
+        context.output().end(method);
         writeCatchHandlers(context, method, catchHandlers);
 
         finalizeMethod(method, context);
+    }
+
+    private boolean isClinit(MethodNode method) {
+        return method.name.equals("$Clinit");
     }
 
     public static String generateNativeName(String className, String methodName) {
@@ -121,7 +124,7 @@ public class MethodProcessor implements Opcodes {
         String sanitizedMethodName = methodName.replaceAll("\\$", "_00024")
                 .replaceAll(" ", "_00020");
 
-        return sanitizedClassName + "_" + sanitizedMethodName + (clinit ? "" : methodIndex++);
+        return sanitizedClassName + "_" + sanitizedMethodName + (clinit ? "" : index++);
     }
 
 

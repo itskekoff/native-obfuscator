@@ -95,11 +95,6 @@ public class ClassFilter {
         return (classNode.access & Opcodes.ACC_ENUM) != 0;
     }
 
-
-    public static boolean isClinit(MethodNode method) {
-        return method.name.contains("$Clinit");
-    }
-
     private boolean isInvalidJavaClassName(ClassNode classNode) {
         return BaseUtils.isValidJavaFullClassName(classNode.name.replaceAll("/", "."));
     }

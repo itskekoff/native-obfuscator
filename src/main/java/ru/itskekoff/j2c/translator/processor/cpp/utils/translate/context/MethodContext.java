@@ -36,6 +36,10 @@ public class MethodContext {
         return this.contextBuilder;
     }
 
+    public boolean notClinit(MethodNode methodNode) {
+        return !methodNode.name.contains("$Clinit");
+    }
+
     public static class LabelPool {
 
         private final WeakHashMap<Label, Long> labels = new WeakHashMap<>();

@@ -174,9 +174,6 @@ public class MainJarProcessor {
                 BaseUtils.writeEntry(out, entry.getName(), classBytes);
                 return;
             }
-
-            TranslatorMain.LOGGER.info("Processing class {}", classNode.name);
-
             this.ensureClinitMethod(classNode);
 
             InsnProcessorManager.process(classNode);
