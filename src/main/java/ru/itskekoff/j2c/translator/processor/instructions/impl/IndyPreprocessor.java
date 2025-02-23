@@ -107,7 +107,7 @@ public class IndyPreprocessor implements InstructionProcessor {
         if (!BaseUtils.hasFlag(classNode.access, Opcodes.ACC_INTERFACE)) {
             MainJarProcessor jarProcessor = TranslatorMain.getProcessor();
             classNode.methods.stream()
-                    .filter(ClassFilter::shouldProcess)
+                    .filter(methodNode -> ClassFilter.shouldProcess(methodNode) || methodNode.name.contains("linit"))
                     .filter(methodNode -> jarProcessor.getFilter().shouldProcess(classNode, methodNode))
                     .forEach(methodNode -> Arrays.stream(methodNode.instructions.toArray())
                             .filter(abstractInsnNode -> abstractInsnNode instanceof InvokeDynamicInsnNode)
@@ -115,4 +115,5 @@ public class IndyPreprocessor implements InstructionProcessor {
         }
         classNode.methods.addAll(methodNodes);
     }
+
 }

@@ -55,7 +55,8 @@ public class MultiNewArrayProcessor extends BaseProcessor {
     }
 
     private String getPrimitiveSort(String desc) {
-        return switch (desc.substring(1)) {
+        String primitiveCode = desc.replaceAll("\\[+", "");
+        return switch (primitiveCode) {
             case "Z" -> "jbool";
             case "B" -> "jbyte";
             case "C" -> "jchar";
