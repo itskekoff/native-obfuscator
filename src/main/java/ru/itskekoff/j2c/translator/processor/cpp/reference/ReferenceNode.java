@@ -11,7 +11,7 @@ public class ReferenceNode {
     private final boolean isStatic;
     private final int id;
     private final String signature;
-    private final long initialSeed;
+    private long Seed;
     long clinit, kluch, kluch2, kluch3, kluch4, kluch5,kluch6;
 
     public ReferenceNode(String className, String name, String signature, boolean isStatic, int id) {
@@ -20,10 +20,10 @@ public class ReferenceNode {
         this.isStatic = isStatic;
         this.id = id;
         this.signature = signature;
-        initialSeed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
+        Seed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
 
         CustomRandom randomSource = new CustomRandom(583485834L);
-        long serverSeed = initialSeed ^ (0xDC9A ^ randomSource.nextLong());
+        long serverSeed = Seed ^ (0xDC9A ^ randomSource.nextLong());
         randomSource = new CustomRandom(serverSeed);
 
         clinit = randomSource.nextLong();
