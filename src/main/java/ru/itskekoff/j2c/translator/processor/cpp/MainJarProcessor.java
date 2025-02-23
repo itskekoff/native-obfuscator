@@ -159,7 +159,7 @@ public class MainJarProcessor {
             }
 
             ClassNode classNode = loadClassNode(classBytes);
-            if (!this.shouldProcessClass(classNode)) {
+            if (!this.classFilter.shouldProcess(classNode)) {
                 BaseUtils.writeEntry(out, entry.getName(), classBytes);
                 return;
             }
@@ -179,7 +179,8 @@ public class MainJarProcessor {
         NativeLinker linker = new NativeLinker(classNode);
         MethodContext context = new MethodContext(classNode);
         classNode.methods.stream()
-                .filter(methodNode -> this.shouldProcessMethod(classNode, methodNode))
+                .filter(this::shouldProcessMethod)
+                .filter(method -> this.classFilter.shouldProcess(classNode, method))
                 .forEach(method -> methodProcessor.process(context, method, linker));
         cppCode.append(context.output().toString());
     }
@@ -221,12 +222,11 @@ public class MainJarProcessor {
         }
     }
 
-    private boolean shouldProcessMethod(ClassNode classNode, MethodNode method) {
+    private boolean shouldProcessMethod(MethodNode method) {
         return !method.name.equals("<clinit>") &&
                !method.name.equals("<init>") &&
                !BaseUtils.hasFlag(method.access, Opcodes.ACC_ABSTRACT) &&
-               (!method.name.contains("_proxy") && !method.name.contains("hello")) &&
-               this.classFilter.shouldProcess(classNode, method);
+               (!method.name.contains("_proxy") && !method.name.contains("hello"));
     }
 
     private void writeManifest(ZipOutputStream out, Manifest manifest) {
@@ -263,12 +263,6 @@ public class MainJarProcessor {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private boolean shouldProcessClass(ClassNode classNode) {
-        return classFilter.shouldProcess(classNode) &&
-               classNode.methods.stream()
-                       .anyMatch(method -> ClassFilter.shouldProcess(method) && classFilter.shouldProcess(classNode, method));
     }
 
     private boolean isClassFile(byte[] bytes) {

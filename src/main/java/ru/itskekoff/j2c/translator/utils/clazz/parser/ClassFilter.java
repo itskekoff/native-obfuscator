@@ -78,10 +78,8 @@ public class ClassFilter {
                             .anyMatch(annotation -> annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC)))
                     .orElse(false);
 
-            if (methodNode.name.equals("<clinit>")) return true;
             return methodIsMarked || (classIsMarked && !methodIsExcluded);
         }
-
         return !isBlacklisted(classNode, methodNode);
     }
 
