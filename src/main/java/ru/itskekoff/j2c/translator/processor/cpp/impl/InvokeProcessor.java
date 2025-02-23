@@ -23,6 +23,7 @@ public class InvokeProcessor extends BaseProcessor {
     @Override
     public void translate(MethodContext classContext, AbstractInsnNode insnNode, MethodNode method) {
         if (insnNode instanceof MethodInsnNode mh) {
+            classContext.output().begin(method);
             Type[] args = Type.getArgumentTypes(mh.desc);
             List<Integer> argOffsets = new ArrayList<>();
 
@@ -156,6 +157,8 @@ public class InvokeProcessor extends BaseProcessor {
                 classContext.getStackPointer().pop();
             }
             classContext.getStackPointer().pop(Arrays.stream(Type.getArgumentTypes(mh.desc)).mapToInt(Type::getSize).sum()).push(Type.getReturnType(mh.desc).getSize());
+
+            classContext.output().end(method);
         }
     }
 

@@ -74,7 +74,7 @@ public class MethodProcessor implements Opcodes {
         context.output().pushMethod(method, nativeName, argNames, CPP_TYPES, args, ClassFilter.isClinit(method), isStatic);
         context.output().pushMethodLine("// stack count: %d, locals count: %d, try-catches: %d"
                 .formatted(method.maxStack, method.maxLocals, method.tryCatchBlocks.size()));
-        context.output().begin(method);
+       // context.output().begin(method);
         if (method.maxStack == 0) {
             context.output().pushMethodLine("jvalue cstack_exception = {};");
         } else {
@@ -107,7 +107,7 @@ public class MethodProcessor implements Opcodes {
         }
 
         processInstructions(method, context, catchLabels);
-        context.output().end(method);
+       // context.output().end(method);
         writeCatchHandlers(context, method, catchHandlers);
 
         finalizeMethod(method, context);
