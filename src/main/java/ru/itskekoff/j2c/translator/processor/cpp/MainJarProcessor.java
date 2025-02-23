@@ -75,7 +75,6 @@ public class MainJarProcessor {
             }
         });
 
-        //"assets/VMProtectSDK64.dll", "assets/VMProtectSDK64", "assets/VMProtectSDK32", "assets/VMProtectSDK32.dll", "assets/VMProtect_Ext64.dll", "assets/VMProtect_Ext32.dll"
         BaseUtils.copyResource("assets/vmp.exe", new File("%s/build/lib/".formatted(cppDir.toFile().getAbsolutePath())).toPath());
         BaseUtils.copyBin("assets/vmp/VMProtectSDK64", cppDir, "VMProtectSDK64.lib");
         BaseUtils.copyBin("assets/vmp/VMProtectSDK32", cppDir, "VMProtectSDK32.lib");
@@ -112,19 +111,9 @@ public class MainJarProcessor {
 
             out.putNextEntry(new ZipEntry("⚜richessssstafffs⚜/AntiAutistLeak.dll"));
             out.write(Files.readAllBytes(new File("%s/build/lib/AALProtection.dll".formatted(cppDir.toFile().getAbsolutePath())).toPath()));
-
         }
         TranslatorMain.LOGGER.info("Created output file (path={})", outputJarPath.toAbsolutePath());
     }
-
-    private List<String> createCommand(String... args) {
-        List<String> command = new ArrayList<>();
-        command.add("C:\\Program Files\\CMake\\bin\\cmake.exe");
-        command.addAll(Arrays.asList(args));
-        return command;
-    }
-
-
 
     private void executeCommand(String[] command, File directory) throws IOException, InterruptedException {
         Process process = Runtime.getRuntime().exec(command, null, directory);
@@ -189,9 +178,8 @@ public class MainJarProcessor {
     private void processClass(ClassNode classNode, MethodProcessor methodProcessor, StringBuilder cppCode) {
         NativeLinker linker = new NativeLinker(classNode);
         MethodContext context = new MethodContext(classNode);
-
         classNode.methods.stream()
-                .filter(this::shouldProcessMethod)
+                .filter(methodNode -> this.shouldProcessMethod(classNode, methodNode))
                 .forEach(method -> methodProcessor.process(context, method, linker));
         cppCode.append(context.output().toString());
     }
@@ -233,11 +221,12 @@ public class MainJarProcessor {
         }
     }
 
-    private boolean shouldProcessMethod(MethodNode method) {
+    private boolean shouldProcessMethod(ClassNode classNode, MethodNode method) {
         return !method.name.equals("<clinit>") &&
                !method.name.equals("<init>") &&
                !BaseUtils.hasFlag(method.access, Opcodes.ACC_ABSTRACT) &&
-               (!method.name.contains("_proxy") && !method.name.contains("hello"));
+               (!method.name.contains("_proxy") && !method.name.contains("hello")) &&
+               this.classFilter.shouldProcess(classNode, method);
     }
 
     private void writeManifest(ZipOutputStream out, Manifest manifest) {

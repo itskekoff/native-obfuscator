@@ -31,13 +31,16 @@ public class ClassFilter {
     }
 
     public void cleanAnnotations(ClassNode classNode) {
-        Optional.ofNullable(classNode.invisibleAnnotations)
+        Optional.ofNullable(classNode.visibleAnnotations)
                 .ifPresent(annotations -> annotations.removeIf(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)));
 
         classNode.methods.stream()
-                .filter(method -> method.invisibleAnnotations != null)
-                .forEach(method -> method.invisibleAnnotations.removeIf(annotation ->
-                        annotation.desc.equals(NATIVE_ANNOTATION_DESC) || annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC)));
+                .filter(method -> method.visibleAnnotations != null)
+                .forEach(method -> method.visibleAnnotations.removeIf(annotation ->
+                        annotation.desc.equals(NATIVE_ANNOTATION_DESC) ||
+                        annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC) ||
+                        annotation.desc.equals(VMPROTECT_ANNOTATION_DESC))
+                );
     }
 
     public static boolean shouldProcess(MethodNode method) {
@@ -49,6 +52,10 @@ public class ClassFilter {
             return false;
         }
 
+        if (this.useAnnotations) {
+            return hasNativeAnnotation(classNode) || classNode.methods.stream().anyMatch(method -> shouldProcess(classNode, method));
+        }
+
         if (blackList.getFirst().isBlank() && !whiteList.getFirst().isBlank()) {
             return isWhitelisted(classNode);
         } else if (!blackList.getFirst().isBlank() && whiteList.getFirst().isBlank()) {
@@ -56,36 +63,26 @@ public class ClassFilter {
         } else if (!blackList.getFirst().isBlank()) {
             return !isBlacklisted(classNode) && isWhitelisted(classNode);
         }
-
-        return useAnnotations && hasNativeAnnotation(classNode) ||
-               classNode.methods.stream().anyMatch(method -> shouldProcess(classNode, method));
+        return false;
     }
 
     public boolean shouldProcess(ClassNode classNode, MethodNode methodNode) {
-        if (isBlacklisted(classNode, methodNode)) {
-            return false;
-        }
-
-        if (isWhitelisted(classNode, methodNode)) {
-            return true;
-        }
-
-        if (useAnnotations) {
+        if (this.useAnnotations) {
             boolean classIsMarked = hasNativeAnnotation(classNode);
-            boolean methodIsMarked = Optional.ofNullable(methodNode.invisibleAnnotations)
+            boolean methodIsMarked = Optional.ofNullable(methodNode.visibleAnnotations)
                     .map(annotations -> annotations.stream()
                             .anyMatch(annotation -> annotation.desc.equals(NATIVE_ANNOTATION_DESC)))
                     .orElse(false);
-
-            boolean methodIsExcluded = Optional.ofNullable(methodNode.invisibleAnnotations)
+            boolean methodIsExcluded = Optional.ofNullable(methodNode.visibleAnnotations)
                     .map(annotations -> annotations.stream()
                             .anyMatch(annotation -> annotation.desc.equals(NOT_NATIVE_ANNOTATION_DESC)))
                     .orElse(false);
 
+            if (methodNode.name.equals("<clinit>")) return true;
             return methodIsMarked || (classIsMarked && !methodIsExcluded);
         }
 
-        return true;
+        return !isBlacklisted(classNode, methodNode);
     }
 
     private boolean isInterface(ClassNode classNode) {
