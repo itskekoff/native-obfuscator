@@ -4,19 +4,14 @@ import lombok.Getter;
 
 import java.util.Random;
 
+@Getter
 public class ReferenceNode {
-    @Getter
     private final String className;
-    @Getter
     private final String name;
     private final boolean isStatic;
-    @Getter
     private final int id;
-    @Getter
     private final String signature;
-    @Getter
-    private long seed;
-    @Getter
+    private final long initialSeed;
     long clinit, kluch, kluch2, kluch3, kluch4, kluch5,kluch6;
 
     public ReferenceNode(String className, String name, String signature, boolean isStatic, int id) {
@@ -25,22 +20,20 @@ public class ReferenceNode {
         this.isStatic = isStatic;
         this.id = id;
         this.signature = signature;
-        seed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
+        initialSeed = new Random().nextInt(0x15 * 0x15 ^ 0x16 >> 2);
 
-        long serverSeed = (seed ^ (0xDC9A ^ (new Random(583485834L).nextLong())));
+        CustomRandom randomSource = new CustomRandom(583485834L);
+        long serverSeed = initialSeed ^ (0xDC9A ^ randomSource.nextLong());
+        randomSource = new CustomRandom(serverSeed);
 
-        Random random = new Random(serverSeed);
-        clinit = random.nextLong();
-        kluch = random.nextLong();
-        kluch2 = random.nextLong();
-        kluch3 = random.nextLong();
-        kluch4 = random.nextLong();
-        kluch5 = random.nextLong();
-        kluch6 = random.nextLong();
+        clinit = randomSource.nextLong();
+        kluch = randomSource.nextLong();
+        kluch2 = randomSource.nextLong();
+        kluch3 = randomSource.nextLong();
+        kluch4 = randomSource.nextLong();
+        kluch5 = randomSource.nextLong();
+        kluch6 = randomSource.nextLong();
     }
-
-    //ХЪВАЪХАВХЪВАФЫХЪАВЫХЪФЫАВЪХ, Я ПОТОМ САМ ПЕРЕДЕЛАЮ, ТЫ ПОКА ЭТО НЕ ТРОГАЙ ЫВАХЪФВАХЪАВХЪВАХЪФЪАХФВАХЪЫ
-
 
     public String isStatic() {
         return isStatic ? "Static" : "";
@@ -50,4 +43,16 @@ public class ReferenceNode {
         return isStatic;
     }
 
+    static class CustomRandom {
+        private long seed;
+
+        public CustomRandom(long seed) {
+            this.seed = seed;
+        }
+
+        public long nextLong() {
+            seed = (seed * 6364136222846791005L + 1);
+            return seed;
+        }
+    }
 }
